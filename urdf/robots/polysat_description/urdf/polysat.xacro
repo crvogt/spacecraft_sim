@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<robot name="polysat" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  <xacro:arg name="debug" default="false"/>
+  <xacro:arg name="namespace" default="polysat"/>
+
+  <!-- "Dummy base link to eliminate root link inertia warning -->
+  <link name="$(arg namespace)/base_link"/>
+
+  <!-- Start of main robot body -->
+  <link name="$(arg namespace)/polysat_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="100.0"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Connect dummy link to main link -->
+  <joint name="$(arg namespace)/polysat_base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="$(arg namespace)/base_link"/>
+    <child link="$(arg namespace)/polysat_link"/>
+  </joint>
+
+  <gazebo reference="$(arg namespace)/base_link">
+    <gravity>0</gravity>
+  </gazebo>
+</robot>
