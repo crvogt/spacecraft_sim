@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<xacro:macro name="add_thruster">
+
+</xacro:macro>
