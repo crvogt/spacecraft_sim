@@ -25,15 +25,14 @@
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
 
-  <include file="$(find polysat_description)/launch/upload_polysat.launch"/>
-
- <!-- Spawn the robot in Gazebo -->
- <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
-   respawn="false" output="screen"
-   args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param /$(arg namespace)/polysat"/>
-
- <!-- Start the state publisher -->
- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
-   <remap from="robot_description" to="/$(arg namespace)/polysat"/>
+  <include file="$(find polysat_description)/launch/upload_polysat.launch">
+    <arg name="x" value="0.0"/>
+    <arg name="y" value="0.0"/>
+    <arg name="z" value="2.0"/>
+  </include>
+  
+  <!-- Start the state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+  <remap from="/$(arg namespace)/robot_description" to="/$(arg namespace)/polysat"/>
  </node>
 </launch>
