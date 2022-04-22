@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="https://www.ros.org/wiki/xacro">
+<robot name="polysat" xmlns:xacro="https://www.ros.org/wiki/xacro">
   
   <!-- <xacro:property name="debug" default="false"/> -->
-  <xacro:property name="namespace" default="polysat"/>
+  <xacro:arg name="namespace" default="polysat"/>
 
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thrusters.xacro"/>
 
@@ -16,9 +16,9 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="100.0"/>
         <inertia
-          ixx="1.0" ixy="0.0" ixz="0.0"
-          iyy="1.0" iyz="0.0"
-          izz="1.0"/>
+          ixx="10.0" ixy="0.0" ixz="0.0"
+          iyy="10.0" iyz="0.0"
+          izz="10.0"/>
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -41,14 +41,58 @@
       <child link="$(arg namespace)/polysat_link"/>
     </joint>
 
-      <gazebo reference="$(arg namespace)/base_link">
+    <gazebo reference="$(arg namespace)/base_link">
+      <gravity>0</gravity>
+    </gazebo>
+    <gazebo reference="$(arg namespace)/polysat_link">
       <gravity>0</gravity>
     </gazebo>
 
-    <!-- Add thrusters -->
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>$(arg namespace)</robotNamespace>
+        <robotParam>$(arg namespace)</robotParam>
+      </plugin>
+    </gazebo>
+
+    <!-- Add maneuvering thrusters -->
     <xacro:thruster_macro namespace="${namespace}" thruster_id="0">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
     </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="1">
+      <origin xyz="-0.5 0 0.5" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="2">
+      <origin xyz="0.5 0 -0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="3">
+      <origin xyz="-0.5 0 -0.5" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+    
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="4">
+      <origin xyz="0 0.5 0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="5">
+      <origin xyz="0 -0.5 0.5" rpy="0 3.1415926535 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="6">
+      <origin xyz="0 0.5 -0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="7">
+      <origin xyz="0 -0.5 -0.5" rpy="0 3.1415926535 0"/>
+    </xacro:thruster_macro>
+   
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="8">
+      <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="9">
+      <origin xyz="0.5 0 -0.5" rpy="3.1415926535 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="10">
+      <origin xyz="-0.5 0 0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="11">
+      <origin xyz="-0.5 0 -0.5" rpy="3.1415926535 0 0"/>
 
   </xacro:macro>
 </robot>

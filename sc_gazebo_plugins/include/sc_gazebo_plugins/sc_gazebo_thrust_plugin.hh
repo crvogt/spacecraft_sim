@@ -49,6 +49,8 @@ namespace gazebo
 		// Link where thrust force is applied
 		public: physics::LinkPtr link;
 
+    public: physics::Link_V link_vect;
+
 		// Thruster mapping (0=linear; 1=GLF, nonlinear)
 		public: int mappingType;
 

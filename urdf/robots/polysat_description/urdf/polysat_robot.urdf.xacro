@@ -4,7 +4,6 @@
   <xacro:arg name="debug" default="false"/>
 
   <xacro:include filename="$(find polysat_description)/urdf/polysat_base.xacro"/>
-
   <xacro:polysat_base namespace="$(arg namespace)"/>
 
 </robot>

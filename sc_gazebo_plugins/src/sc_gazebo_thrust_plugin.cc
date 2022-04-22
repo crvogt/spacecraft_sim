@@ -6,6 +6,8 @@
 
 #include "sc_gazebo_plugins/sc_gazebo_thrust_plugin.hh"
 
+#include <iostream>
+
 using namespace gazebo;
 
 Thruster::Thruster(ScThrust *_parent)
@@ -75,7 +77,10 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 		ROS_INFO_STREAM("Thruster namespace <" << nodeNamespace << ">");
 	}
 
-	this->cmdTimeout = this->SdfParamDouble(_sdf, "publisherRate", 100.0);
+	this->cmdTimeout = this->SdfParamDouble(_sdf, "cmdTimeout", 1.0);
+
+	// Parse joint publisher update rate
+  	this->publisherRate = this->SdfParamDouble(_sdf, "publisherRate", 100.0);
 
 	ROS_DEBUG_STREAM("Loading thrusters from SDF");
 
@@ -99,6 +104,11 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 				thruster.link = this->model->GetLink(linkName);
 				if(!thruster.link)
 				{
+          			thruster.link_vect = this->model->GetLinks();
+          			ROS_INFO_STREAM("Links found: ");
+         			for(int i = 0; i < thruster.link_vect.size(); i++){
+            			ROS_INFO_STREAM(thruster.link_vect[i]->GetName());
+          			}
 					ROS_ERROR_STREAM("Could not find a link by the name <" << linkName
 						<< "> in the model");
 				}
@@ -380,34 +390,3 @@ void ScThrust::RotateThruster(size_t _i, common::Time _stepTime)
 }
 
 GZ_REGISTER_MODEL_PLUGIN(ScThrust);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
