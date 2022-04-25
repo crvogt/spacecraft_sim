@@ -49,6 +49,8 @@ namespace gazebo
 		// Link where thrust force is applied
 		public: physics::LinkPtr link;
 
+    public: physics::Link_V link_vect;
+
 		// Thruster mapping (0=linear; 1=GLF, nonlinear)
 		public: int mappingType;
 
@@ -79,14 +81,11 @@ namespace gazebo
 		// Last time of angle update
 		public: common::Time lastAngleUpdateTime;
 
-		// Joint controlling the propeller
-		public: physics::JointPtr propJoint;
+		// Joint controlling the thruster 
+		public: physics::JointPtr thrusterJoint;
 
-		// Joint controlling the engine
-		public: physics::JointPtr engineJoint;
-
-		// PID for engine joint angle
-		public: common::PID engineJointPID;
+		// PID for thruster joint angle
+		public: common::PID thrusterJointPID;
 
 		// Plugin parent point - for accessing world, etc.
 		protected: ScThrust *plugin;
@@ -147,13 +146,9 @@ namespace gazebo
 																 const double _maxPos,
 																 const double _maxNeg) const;
 
-		// Rotate engine using engine joint PID
-		private: void RotateEngine(size_t _i,
+		// Rotate thruster using thruster joint PID
+		private: void RotateThruster(size_t _i,
 															 common::Time _stepTime);
-
-		// Spin a prop based on its current command
-		// _i Index of thruster whose prop wil be spun
-		private: void SpinPropeller(size_t _i);
 
 		// A mutex to protect member variables accessed during 
 		// OnThrustCmd and Update

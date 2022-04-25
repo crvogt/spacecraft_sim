@@ -6,13 +6,15 @@
 
 #include "sc_gazebo_plugins/sc_gazebo_thrust_plugin.hh"
 
+#include <iostream>
+
 using namespace gazebo;
 
 Thruster::Thruster(ScThrust *_parent)
 {
 	// Initialize fields
 	this->plugin = _parent;
-	this->engineJointPID.Init(300, 0.0, 20);
+	this->thrusterJointPID.Init(300, 0.0, 20);
 	this->currCmd = 0.0;
 	this->desiredAngle = 0.0;
 
@@ -75,7 +77,10 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 		ROS_INFO_STREAM("Thruster namespace <" << nodeNamespace << ">");
 	}
 
-	this->cmdTimeout = this->SdfParamDouble(_sdf, "publisherRate", 100.0);
+	this->cmdTimeout = this->SdfParamDouble(_sdf, "cmdTimeout", 1.0);
+
+	// Parse joint publisher update rate
+  	this->publisherRate = this->SdfParamDouble(_sdf, "publisherRate", 100.0);
 
 	ROS_DEBUG_STREAM("Loading thrusters from SDF");
 
@@ -99,6 +104,11 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 				thruster.link = this->model->GetLink(linkName);
 				if(!thruster.link)
 				{
+          			thruster.link_vect = this->model->GetLinks();
+          			ROS_INFO_STREAM("Links found: ");
+         			for(int i = 0; i < thruster.link_vect.size(); i++){
+            			ROS_INFO_STREAM(thruster.link_vect[i]->GetName());
+          			}
 					ROS_ERROR_STREAM("Could not find a link by the name <" << linkName
 						<< "> in the model");
 				}
@@ -112,49 +122,26 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 				ROS_ERROR_STREAM("Please specify a link name for each thruster");
 			}
 
-			// Parse out prop joint name
-			if(thrusterSDF->HasElement("propJointName"))
+			// Parse out thruster joint name
+			if(thrusterSDF->HasElement("jointName"))
 			{
-				std::string propName = 
-					thrusterSDF->GetElement("propJointName")->Get<std::string>();
-				thruster.propJoint = this->model->GetJoint(propName);
-				if(!thruster.propJoint)
+				std::string thrusterName = 
+					thrusterSDF->GetElement("jointName")->Get<std::string>();
+				thruster.thrusterJoint = this->model->GetJoint(thrusterName);
+				if(!thruster.thrusterJoint)
 				{
-					ROS_ERROR_STREAM("Could not find a prop joint by the name of <" 
-						<< propName << "> in the model");
+					ROS_ERROR_STREAM("Could not find a thruster joint by the name of <" <<
+						thrusterName << "> in the model!");
 				}
 				else
 				{
-					ROS_DEBUG_STREAM("Prop joint <" << propName <<
+					ROS_DEBUG_STREAM("thruster joint <" << thrusterName <<
 						"> added to thruster");
 				}
 			}
 			else
 			{
-				ROS_ERROR_STREAM("No propJointName SDF parameter for thruster #"
-					<< thrusterCounter);
-			}
-
-			// Parse out engine joint name
-			if(thrusterSDF->HasElement("engineJointName"))
-			{
-				std::string engineName = 
-					thrusterSDF->GetElement("engineJointName")->Get<std::string>();
-				thruster.engineJoint = this->model->GetJoint(engineName);
-				if(!thruster.engineJoint)
-				{
-					ROS_ERROR_STREAM("Could not find an engine joint by the name of <" <<
-						engineName << "> in the model!");
-				}
-				else
-				{
-					ROS_DEBUG_STREAM("Engine joint <" << engineName <<
-						"> added to thruster");
-				}
-			}
-			else
-			{
-				ROS_ERROR_STREAM("No engineJointName SDF parameter for thruster #"
+				ROS_ERROR_STREAM("No thrusterJointName SDF parameter for thruster #"
 					<< thrusterCounter);
 			}
 
@@ -234,7 +221,7 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 		this->prevUpdateTime = this->world->GetSimTime();
 	#endif
 
-	// Advertise joint state publisher to view engines and propellers in rviz
+	// Advertise joint state publisher to view thruster and propellers in rviz
 	// Consider throttling joint_state_pub for performance
 	// every onupdate() may be too frequent
 	this->jointStatePub = 
@@ -246,10 +233,8 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 
 	for(size_t i = 0; i < this->thrusters.size(); ++i)
 	{
-		// Prefill the joint state message with the engine and prop joint
-		this->jointStateMsg.name[2 * i] = this->thrusters[i].engineJoint->GetName();
-		this->jointStateMsg.name[2 * i + 1] = 
-			this->thrusters[i].propJoint->GetName();
+		// Prefill the joint state message with the thruster joint
+		this->jointStateMsg.name[2 * i] = this->thrusters[i].thrusterJoint->GetName();
 
 		// Sub to commands for each thrusters
 		this->thrusters[i].cmdSub = this->rosnode->subscribe(
@@ -331,8 +316,8 @@ void ScThrust::Update()
         ROS_DEBUG_STREAM_THROTTLE(1.0, "[" << i << "] Cmd Timeout");
       }
 
-      // Adjust thruster engine joint angle with PID
-      this->RotateEngine(i, now - this->thrusters[i].lastAngleUpdateTime);
+      // Adjust thruster thruster joint angle with PID
+      this->RotateThruster(i, now - this->thrusters[i].lastAngleUpdateTime);
 
       // Apply the thrust mapping
       ignition::math::Vector3d tforcev(0, 0, 0);
@@ -359,9 +344,6 @@ void ScThrust::Update()
 
       // Apply force for each thruster
       this->thrusters[i].link->AddLinkForce(tforcev);
-
-      // Spin the props
-      this->SpinPropeller(i);
     }
   }
 
@@ -375,95 +357,36 @@ void ScThrust::Update()
   }
 }
 
-void ScThrust::RotateEngine(size_t _i, common::Time _stepTime)
+void ScThrust::RotateThruster(size_t _i, common::Time _stepTime)
 {
   // Calculate angleError for PID calculation
   double desiredAngle = this->thrusters[_i].desiredAngle;
   #if GAZEBO_MAJOR_VERSION >= 8
-    double currAngle = this->thrusters[_i].engineJoint->Position(0);
+    double currAngle = this->thrusters[_i].thrusterJoint->Position(0);
   #else
-    double currAngle = this->thrusters[_i].engineJoint->GetAngle(0).Radian();
+    double currAngle = this->thrusters[_i].thrusterJoint->GetAngle(0).Radian();
   #endif
   double angleError = currAngle - desiredAngle;
 
-  double effort = this->thrusters[_i].engineJointPID.Update(angleError, 
+  double effort = this->thrusters[_i].thrusterJointPID.Update(angleError, 
                                                             _stepTime);
-  this->thrusters[_i].engineJoint->SetForce(0, effort);
+  this->thrusters[_i].thrusterJoint->SetForce(0, effort);
 
   // Set position, velocity, and effort of joint from gazebo
   #if GAZEBO_MAJOR_VERSION >= 8
     ignition::math::Angle position = 
-      this->thrusters[_i].engineJoint->Position(0);
+      this->thrusters[_i].thrusterJoint->Position(0);
   #else
-    gazebo::math::Angle position = this->thrusters[_i].engineJoint->GetAngle(0);
+    gazebo::math::Angle position = this->thrusters[_i].thrusterJoint->GetAngle(0);
   #endif
   position.Normalize();
   this->jointStateMsg.position[2 * _i] = position.Radian();
   this->jointStateMsg.velocity[2 * _i] = 
-    this->thrusters[_i].engineJoint->GetVelocity(0);
+    this->thrusters[_i].thrusterJoint->GetVelocity(0);
   this->jointStateMsg.effort[2 * _i] = effort;
 
   //Store last update time
   this->thrusters[_i].lastAngleUpdateTime += _stepTime;
 }
 
-void ScThrust::SpinPropeller(size_t _i)
-{
-  const double kMinInput = 0.1;
-  const double kMaxEffort = 2.0;
-  double effort = 0.0;
-
-  physics::JointPtr propeller = this->thrusters[_i].propJoint;
-
-  //Calculate effort on prop joint
-  if(std::abs(this->thrusters[_i].currCmd/
-              this->thrusters[_i].maxCmd) > kMinInput)
-    effort = (this->thrusters[_i].currCmd/
-              this->thrusters[_i].maxCmd) * kMaxEffort;
-
-  propeller->SetForce(0, effort);
-
-  // Set position, velocity, and effort of joint from Gazebo
-  #if GAZEBO_MAJOR_VERSION >= 8
-    ignition::math::Angle position = propeller->Position(0);
-  #else
-    gazebo::math::Angle position = propeller->GetAngle(0);
-  #endif
-  position.Normalize();
-  this->jointStateMsg.position[2 * _i + 1] = position.Radian();
-  this->jointStateMsg.velocity[2 * _i + 1] = propeller->GetVelocity(0);
-  this->jointStateMsg.effort[2 * _i + 1] = effort;
-}
-
 GZ_REGISTER_MODEL_PLUGIN(ScThrust);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
