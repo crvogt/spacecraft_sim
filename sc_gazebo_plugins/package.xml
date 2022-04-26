@@ -23,5 +23,6 @@
   <depend>std_msgs</depend>
   <depend>eigen</depend>
   <depend>xacro</depend>
+  <depend>sc_gazebo_plugins_msgs</depend>
   <exec_depend>message_runtime</exec_depend>
 </package>

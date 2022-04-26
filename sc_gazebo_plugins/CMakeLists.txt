@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   message_generation 
+  sc_gazebo_plugins_msgs
   xacro)
 find_package(Eigen3 REQUIRED)
 find_package(Protobuf REQUIRED)
@@ -41,6 +42,7 @@ catkin_package(
     gazebo_plugins
     roscpp 
     sensor_msgs
+    sc_gazebo_plugins_msgs
     geometry_msgs
     std_msgs
 )

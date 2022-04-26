@@ -21,7 +21,7 @@
 #include <sc_gazebo_plugins/Common.hh>
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
-// #include <uuv_sensor_ros_plugins_msgs/ChangeSensorState.h>
+#include <sc_gazebo_plugins_msgs/ChangeSensorState.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <gazebo/sensors/Noise.hh>
 #include <boost/shared_ptr.hpp>
