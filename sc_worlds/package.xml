@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>worlds</name>
+  <name>sc_worlds</name>
   <version>3.1.1</version>
   <description>The worlds package</description>
   <author email="crvogt@nps.edu">Carson Vogt</author>
@@ -12,7 +12,7 @@
   <depend>gazebo_ros</depend>
 
   <export>
-    <gazebo_ros gazebo_media_path="${prefix}/worlds"/>
+    <gazebo_ros gazebo_media_path="${prefix}/sc_worlds"/>
   </export>
 
 </package>

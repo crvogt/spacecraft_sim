@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(worlds)
+project(sc_worlds)
 
 if(NOT "${CMAKE_VERSION}" VERSION_LESS "3.16")
     set(CMAKE_CXX_STANDARD 17)
@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 catkin_package()
 
-install(DIRECTORY worlds
+install(DIRECTORY sc_worlds
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
         PATTERN "*~" EXCLUDE)
 
