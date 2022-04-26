@@ -93,6 +93,17 @@
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="11">
       <origin xyz="-0.5 0 -0.5" rpy="3.1415926535 0 0"/>
+    </xacro:thruster_macro>
 
-  </xacro:macro>
+    <xacro:arg name="inertial_reference_frame" default="world"/>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
+    <!-- IMU  -->
+    <xacro:default_imu_macro
+      namespace="$(arg namespace)"
+      parent_link="$(arg namespace)/base_link"
+      inertial_reference_frame="$(arg inertial_reference_frame)">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:default_imu_macro>
+   </xacro:macro>
 </robot>

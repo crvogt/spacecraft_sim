@@ -2,9 +2,12 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="polysat">
   <xacro:arg name="namespace" default="polysat"/>
   <xacro:arg name="debug" default="false"/>
+  <xacro:arg name="inertial_reference_frame" default="world"/>
 
   <xacro:include filename="$(find polysat_description)/urdf/polysat_base.xacro"/>
   <xacro:polysat_base namespace="$(arg namespace)"/>
+
+  <!--xacro:include filename="$(find polysat_description)/urdf/polysat_sensors.xacro"/-->
 
 </robot>
 

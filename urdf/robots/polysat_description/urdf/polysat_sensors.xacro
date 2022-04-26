@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
+
+  <!-- IMU  -->
+  <xacro:default_imu_macro
+    namespace="${namespace}"
+    parent_link="${namespace}/base_link"
+    inertial_reference_frame="${inertial_reference_frame}">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:default_imu_macro>
+
+</robot>
