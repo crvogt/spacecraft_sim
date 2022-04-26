@@ -36,6 +36,8 @@ file(GLOB msgs msgs/*.proto)
 
 catkin_package(
   INCLUDE_DIRS include
+  LIBRARIES
+    sc_imu_gazebo_plugin
   CATKIN_DEPENDS 
     message_runtime 
     gazebo_dev 
@@ -81,6 +83,8 @@ install(TARGETS sc_gazebo_thrust_plugin
 
 add_library(sc_imu_gazebo_plugin
   src/sc_imu_gazebo_plugin.cc
+  src/ROSBasePlugin.cc
+  src/ROSBaseModelPlugin.cc
 )
 target_link_libraries(sc_imu_gazebo_plugin
   ${catkin_LIBRARIES} 
@@ -89,6 +93,12 @@ target_link_libraries(sc_imu_gazebo_plugin
 add_dependencies(sc_imu_gazebo_plugin 
   sc_sensor_gazebo_msgs
   ${catkin_EXPORTED_TARGETS}
+)
+
+install(TARGETS sc_imu_gazebo_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
 )
 
 set(XACRO_INORDER)
