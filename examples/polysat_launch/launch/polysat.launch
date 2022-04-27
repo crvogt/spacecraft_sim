@@ -2,7 +2,7 @@
 <launch>
   <arg name="gui" default="true"/>
   <arg name="paused" default="false"/>
-  <arg name="world_name" default="$(find gazebo_ros)/launch/empty_world.launch"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/basic_space.world"/>
   <arg name="namespace" default="polysat"/>
   <arg name="joy_id" default="0"/>
   <arg name="debug" default="false"/>
