@@ -41,13 +41,6 @@
       <child link="$(arg namespace)/polysat_link"/>
     </joint>
 
-    <gazebo reference="$(arg namespace)/base_link">
-      <gravity>0</gravity>
-    </gazebo>
-    <gazebo reference="$(arg namespace)/polysat_link">
-      <gravity>0</gravity>
-    </gazebo>
-
     <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>$(arg namespace)</robotNamespace>

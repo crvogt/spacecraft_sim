@@ -38,9 +38,6 @@
       </plugin>
     </gazebo>
 
-   <gazebo reference="${namespace}/thruster_${thruster_id}">
-    <gravity>0</gravity>
-  </gazebo>
   </xacro:macro>
 
   <xacro:macro name="box_inertial" params="x y z mass *origin">
