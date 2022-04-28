@@ -316,7 +316,7 @@ void ScThrust::Update()
         ROS_DEBUG_STREAM_THROTTLE(1.0, "[" << i << "] Cmd Timeout");
       }
 
-      // Adjust thruster thruster joint angle with PID
+      // Adjust thruster joint angle with PID
       this->RotateThruster(i, now - this->thrusters[i].lastAngleUpdateTime);
 
       // Apply the thrust mapping
