@@ -3,11 +3,37 @@
   <xacro:arg name="namespace" default="polysat"/>
   <xacro:arg name="debug" default="false"/>
   <xacro:arg name="inertial_reference_frame" default="world"/>
+  <xacro:arg name="controller_type" default="effort"/>
+  <xacro:property name="controller" value="$(arg controller_type)"/>
 
   <xacro:include filename="$(find polysat_description)/urdf/polysat_base.xacro"/>
   <xacro:polysat_base namespace="$(arg namespace)"/>
 
   <!--xacro:include filename="$(find polysat_description)/urdf/polysat_sensors.xacro"/-->
+
+  <!-- oberon7 -->
+  <xacro:include filename="$(find oberon7_description)/urdf/oberon7.urdf.xacro"/>
+  
+  <xacro:if value="${controller == 'position'}">
+    <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+  </xacro:if>
+  <xacro:if value="${controller == 'effort'}">
+    <xacro:arg name="transmission_hw_interface" default="hardware_interface/EffortJointInterface"/>
+  </xacro:if>
+
+  <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_r"/>
+  <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_l"/>
+
+  <joint name="oberon7_r_anchor" type="fixed">
+    <parent link="$(arg namespace)/base_link"/>
+    <child link="oberon7_r/base"/>
+    <origin rpy="-1.5707963268 0 0" xyz="0 1.5 0"/>
+  </joint>
+  <joint name="oberon7_l_anchor" type="fixed">
+    <parent link="$(arg namespace)/base_link"/>
+    <child link="oberon7_l/base"/>
+    <origin rpy="1.5707963268 0 0" xyz="0 -1.5 0"/>
+  </joint>
 
 </robot>
 
