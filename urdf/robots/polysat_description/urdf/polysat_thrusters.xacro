@@ -24,6 +24,8 @@
       <xacro:insert_block name="origin"/>
       <parent link="${namespace}/base_link"/>
       <child link="${namespace}/thruster_${thruster_id}"/>
+      <axis xyz="1 0 0"/>
+      <limit effort="0" lower="0" upper="0" velocity="0"/>
     </joint>
 
     <gazebo>
@@ -36,6 +38,10 @@
           <enableAngle>false</enableAngle>
         </thruster>
       </plugin>
+    </gazebo>
+
+    <gazebo reference="${namespace}/thruster_${thruster_id}">
+      <selfCollide>false</selfCollide>
     </gazebo>
 
   </xacro:macro>

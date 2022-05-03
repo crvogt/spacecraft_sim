@@ -120,8 +120,7 @@ namespace gazebo
 		// return Value scaled and saturated
 		private: double ScaleThrustCmd(const double _cmd,
 																	 const double _max_cmd,
-																	 const double _max_pos,
-																	 const double _max_neg) const;
+																	 const double _max_pos) const;
 
 		// Generalized ligistic function (GLF) used for non-linear
 		// thrust model
@@ -143,8 +142,7 @@ namespace gazebo
 		// Uses GLF function to map thrust command to thruster force 
 		// in newtons
 		private: double GlfThrustCmd(const double _cmd,
-																 const double _maxPos,
-																 const double _maxNeg) const;
+																 const double _maxVal) const;
 
 		// Rotate thruster using thruster joint PID
 		private: void RotateThruster(size_t _i,

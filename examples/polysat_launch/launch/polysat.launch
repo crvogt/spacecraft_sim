@@ -40,4 +40,8 @@
     <remap from="robot_description" to="$(arg namespace)/polysat"/>
   </node>
 
+  <node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/>
+
+  <include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>
+
 </launch>

@@ -254,7 +254,7 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 }
 
 double ScThrust::ScaleThrustCmd(const double _cmd, const double _maxCmd,
-	const double _maxPos, const double _maxNeg) const
+	const double _maxPos) const
 {
 	double val = 0.0;
 	if(_cmd >= 0.0)
@@ -262,12 +262,10 @@ double ScThrust::ScaleThrustCmd(const double _cmd, const double _maxCmd,
 		val = _cmd / _maxCmd * _maxPos;
 		val = std::min(val, _maxPos);
 	}
-	else
-	{
-		double absMaxNeg = std::abs(_maxNeg);
-		val = _cmd / _maxCmd * absMaxNeg;
-		val = std::max(val, -1.0 * absMaxNeg);
-	}
+  else
+  {
+    val = 0;
+  }
 	return val;
 }
 
@@ -278,8 +276,7 @@ double ScThrust::Glf(const double _x, const float _A, const float _K,
 }
 
 double ScThrust::GlfThrustCmd(const double _cmd,
-															const double _maxPos,
-															const double _maxNeg) const
+															const double _maxPos) const
 {
 	double val = 0.0;
 	if(_cmd > 0.01)
@@ -287,11 +284,10 @@ double ScThrust::GlfThrustCmd(const double _cmd,
 		val = this->Glf(_cmd, 0.01f, 59.82f, 5.0f, 0.38f, 0.56f, 0.28f);
 		val = std::min(val, _maxPos);
 	}
-	else if(_cmd < 0.01)
-	{
-		val = this->Glf(_cmd, -199.13f, -0.09f, 9.94f, 5.34f, 0.99f, -0.57f);
-		val = std::max(val, _maxNeg);
-	}
+  else if(_cmd < 0.01)
+  {
+    val = 0;
+  }
 	return val;
 }				
 
@@ -327,14 +323,12 @@ void ScThrust::Update()
           tforcev.X() = this->ScaleThrustCmd(this->thrusters[i].currCmd/
                                              this->thrusters[i].maxCmd,
                                              this->thrusters[i].maxCmd,
-                                             this->thrusters[i].maxForceFwd,
-                                             this->thrusters[i].maxForceRev);
+                                             this->thrusters[i].maxForceFwd);
           break;
         case 1:
           tforcev.X() = this->GlfThrustCmd(this->thrusters[i].currCmd/
                                            this->thrusters[i].maxCmd,
-                                           this->thrusters[i].maxForceFwd,
-                                           this->thrusters[i].maxForceRev);
+                                           this->thrusters[i].maxForceFwd);
           break;
         default:
           ROS_FATAL_STREAM("Cannot use mappingType=" <<

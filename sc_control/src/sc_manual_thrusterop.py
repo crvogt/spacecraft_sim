@@ -9,15 +9,24 @@ class ThrustTeleop:
     def __init__(self, namespace="polysat"):
 
         self.gain_dict = dict()
-        self.gain_dict[0] = [100.0, 100.0, 100.0, 100.0]
+        # left/right
+        self.gain_dict[0] = [1.0, 1.0, -1.0, -1.0]
+        # up/down
+        self.gain_dict[1] = [1.0, 1.0, -1.0, -1.0]
 
         self.joy2thrust = dict()
+
         # left/right
         self.joy2thrust[0] = [rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 0), Float32, queue_size=1),
                               rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 1), Float32, queue_size=1),
                               rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 2), Float32, queue_size=1),
                               rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 3), Float32, queue_size=1)]
 
+        # up/down 
+        self.joy2thrust[1] = [rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 4), Float32, queue_size=1),
+                              rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 5), Float32, queue_size=1),
+                              rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 6), Float32, queue_size=1),
+                              rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 7), Float32, queue_size=1)]
         self.joy_sub = rospy.Subscriber('joy', Joy, self.joy_callback)
 
         rate = rospy.Rate(10)

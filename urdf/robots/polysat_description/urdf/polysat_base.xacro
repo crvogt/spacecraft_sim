@@ -53,39 +53,39 @@
       <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="1">
-      <origin xyz="-0.5 0 0.5" rpy="0 0 3.1415926535"/>
+      <origin xyz="0.5 0 -0.5" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="2">
-      <origin xyz="0.5 0 -0.5" rpy="0 0 0"/>
+      <origin xyz="-0.5 0 0.5" rpy="0 0 3.1415926535"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="3">
       <origin xyz="-0.5 0 -0.5" rpy="0 0 3.1415926535"/>
     </xacro:thruster_macro>
     
     <xacro:thruster_macro namespace="${namespace}" thruster_id="4">
-      <origin xyz="0 0.5 0.5" rpy="0 0 0"/>
+      <origin xyz="0 0.5 0.5" rpy="0 -1.5707963268 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="5">
-      <origin xyz="0 -0.5 0.5" rpy="0 3.1415926535 0"/>
+      <origin xyz="0 -0.5 0.5" rpy="0 -1.5707963268 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="6">
-      <origin xyz="0 0.5 -0.5" rpy="0 0 0"/>
+      <origin xyz="0 0.5 -0.5" rpy="0 1.5707963268 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="7">
-      <origin xyz="0 -0.5 -0.5" rpy="0 3.1415926535 0"/>
+      <origin xyz="0 -0.5 -0.5" rpy="0 1.5707963268 0"/>
     </xacro:thruster_macro>
-   
+     
     <xacro:thruster_macro namespace="${namespace}" thruster_id="8">
-      <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
+      <origin xyz="0.5 0.5 0" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="9">
-      <origin xyz="0.5 0 -0.5" rpy="3.1415926535 0 0"/>
+      <origin xyz="0.5 -0.5 0" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="10">
-      <origin xyz="-0.5 0 0.5" rpy="0 0 0"/>
+      <origin xyz="-0.5 0.5 0" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="11">
-      <origin xyz="-0.5 0 -0.5" rpy="3.1415926535 0 0"/>
+      <origin xyz="-0.5 -0.5 0" rpy="0 0 0"/>
     </xacro:thruster_macro>
 
     <xacro:arg name="inertial_reference_frame" default="world"/>
@@ -97,6 +97,6 @@
       parent_link="$(arg namespace)/base_link"
       inertial_reference_frame="$(arg inertial_reference_frame)">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:default_imu_macro>
+    </xacro:default_imu_macro> 
    </xacro:macro>
 </robot>
