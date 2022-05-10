@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sc_control</name>
+  <version>3.1.1</version>
+  <description>Nodes for spacecraft control</description>
+  <maintainer email="crvogt@nps.edu">Carson Vogt</maintainer>
+  <license>Apache2</license>
+  <author email="crvogt@nps.edu">Carson Vogt</author> -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
