@@ -88,6 +88,13 @@
       <origin xyz="-0.5 -0.5 0" rpy="0 0 3.1415926535"/>
     </xacro:thruster_macro>
 
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="12">
+      <origin xyz="0 0.5 0" rpy="0 0 1.5707963268"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="13">
+      <origin xyz="0 -0.5 0" rpy="0 0 -1.5707963268"/>
+    </xacro:thruster_macro>
+
     <xacro:arg name="inertial_reference_frame" default="world"/>
 
     <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>

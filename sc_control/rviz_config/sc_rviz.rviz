@@ -8,10 +8,6 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
-        - /RobotModel1/Links1/polysat/thruster_101
-        - /RobotModel1/Links1/polysat/thruster_111
-        - /RobotModel1/Links1/polysat/thruster_81
-        - /RobotModel1/Links1/polysat/thruster_91
         - /Axes1
       Splitter Ratio: 0.5
     Tree Height: 734
@@ -194,12 +190,12 @@ Visualization Manager:
           Value: true
         polysat/thruster_0:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_1:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_10:
@@ -212,14 +208,24 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_12:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_13:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
         polysat/thruster_2:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_3:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_4:
@@ -295,7 +301,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.1922483444213867
+      Distance: 3.4947733879089355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -311,9 +317,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3252025246620178
+      Pitch: 0.47020119428634644
       Target Frame: <Fixed Frame>
-      Yaw: 2.0054023265838623
+      Yaw: 5.738602161407471
     Saved: ~
 Window Geometry:
   Displays:
