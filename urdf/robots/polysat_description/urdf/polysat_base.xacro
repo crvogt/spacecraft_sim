@@ -76,16 +76,16 @@
     </xacro:thruster_macro>
      
     <xacro:thruster_macro namespace="${namespace}" thruster_id="8">
-      <origin xyz="0.5 0.5 0" rpy="0 0 0"/>
+      <origin xyz="0.5 0.5 0" rpy="0 0 0"/> 
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="9">
       <origin xyz="0.5 -0.5 0" rpy="0 0 0"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="10">
-      <origin xyz="-0.5 0.5 0" rpy="0 0 0"/>
+      <origin xyz="-0.5 0.5 0" rpy="0 0 3.1415926535"/>
     </xacro:thruster_macro>
     <xacro:thruster_macro namespace="${namespace}" thruster_id="11">
-      <origin xyz="-0.5 -0.5 0" rpy="0 0 0"/>
+      <origin xyz="-0.5 -0.5 0" rpy="0 0 3.1415926535"/>
     </xacro:thruster_macro>
 
     <xacro:arg name="inertial_reference_frame" default="world"/>

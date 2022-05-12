@@ -8,6 +8,10 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
+        - /RobotModel1/Links1/polysat/thruster_101
+        - /RobotModel1/Links1/polysat/thruster_111
+        - /RobotModel1/Links1/polysat/thruster_81
+        - /RobotModel1/Links1/polysat/thruster_91
         - /Axes1
       Splitter Ratio: 0.5
     Tree Height: 734
@@ -200,12 +204,12 @@ Visualization Manager:
           Value: true
         polysat/thruster_10:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_11:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_2:
@@ -240,12 +244,12 @@ Visualization Manager:
           Value: true
         polysat/thruster_8:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_9:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -307,9 +311,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3952026069164276
+      Pitch: 0.3252025246620178
       Target Frame: <Fixed Frame>
-      Yaw: 0.4704025983810425
+      Yaw: 2.0054023265838623
     Saved: ~
 Window Geometry:
   Displays:
