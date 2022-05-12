@@ -190,32 +190,42 @@ Visualization Manager:
           Value: true
         polysat/thruster_0:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_1:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_10:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_11:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_12:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_13:
+          Alpha: 1
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_2:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_3:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_4:
@@ -240,12 +250,12 @@ Visualization Manager:
           Value: true
         polysat/thruster_8:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         polysat/thruster_9:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -291,7 +301,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.1922483444213867
+      Distance: 3.4947733879089355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -307,9 +317,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3952026069164276
+      Pitch: 0.47020119428634644
       Target Frame: <Fixed Frame>
-      Yaw: 0.4704025983810425
+      Yaw: 5.738602161407471
     Saved: ~
 Window Geometry:
   Displays:
