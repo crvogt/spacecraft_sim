@@ -39,6 +39,25 @@
         </thruster>
       </plugin>
     </gazebo>
+    <!-- <gazebo>
+      <plugin name="${namespace}_${thruster_id}_thruster_model" filename="libLedPlugin.so">
+        <light>
+          <id>${namespace}/thruster_${thruster_id}/light</id>
+          <block>
+            <duration>1</duration>
+            <interval>1</interval>
+            <color>1 0.5 0.5</color>
+          </block>
+          <enable>true</enable>
+        </light>
+      </plugin>
+    </gazebo> -->
+
+    <!--gazebo reference="${namespace}/thruster_${thruster_id}">
+      <xacro:led_stripe name="light_${thruster_id}" range="30" linear="0.2" constant="0.1" quadratic="0.0025"
+        inner_angle="2.8" outer_angle="2.9" 
+        pose="0 0 0 0 0 0"/>
+    </gazebo-->
 
     <gazebo reference="${namespace}/thruster_${thruster_id}">
       <selfCollide>false</selfCollide>
@@ -54,5 +73,26 @@
                iyy="${0.0833333 * mass * (x*x + z*z)}" iyz="0.0"
                izz="${0.0833333 * mass * (x*x + y*y)}"/>
     </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="led_stripe" params="name pose range linear:=1 constant:=0 quadratic:=0 inner_angle outer_angle">
+    <light name="${name}" type="spot">
+      <pose>${pose}</pose>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>${range}</range>
+        <linear>${linear}</linear>
+        <constant>${constant}</constant>
+        <quadratic>${quadratic}</quadratic>
+      </attenuation>
+      <diffuse>0.8 0.8 0.5 1</diffuse>
+      <specular>0.8 0.8 0.5 1</specular>
+      <spot>
+        <inner_angle>${inner_angle}</inner_angle>
+        <outer_angle>${outer_angle}</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+      <direction>1 0 0</direction>
+    </light>
   </xacro:macro>
 </robot>
