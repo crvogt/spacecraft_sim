@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.1.1)
 project(sc_control)
 find_package(catkin REQUIRED)
 
+catkin_python_setup()
+
 if(NOT "${CMAKE_VERSION}" VERSION_LESS "3.16")
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,7 +11,8 @@ else()
     add_compile_options(-std=c++11)
 endif()
 
-find_package(catkin REQUIRED COMPONENTS)
+find_package(catkin REQUIRED COMPONENTS
+  )
 
 find_package(gazebo REQUIRED)
 find_package(roscpp REQUIRED)
@@ -44,6 +47,6 @@ install(DIRECTORY config
 
 # for Python scripts
 catkin_install_python(PROGRAMS
-  src/pid_controller_base.py
-  src/sc_manual_thrusterop.py
+  scripts/sc_manual_thrusterop.py
+  scripts/position_control.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
