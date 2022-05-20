@@ -15,13 +15,14 @@ class PositionControllerNode:
         print("PositionControllerNode: initializing node")
 
         # Set information variables
+        self.namespace = namespace
         self.getStateMsg = ModelStates()
         self.getImuMsg = Imu()
         self.getPosCmd = PoseStamped() 
         self.poseVal = PoseStamped()
         self.t_val = 0
         self.num_thrusters = 14
-        self.msg_vals = np.asarray([0] * self.num_thrusters)
+        self.msg_vals = np.asarray([0.0] * self.num_thrusters)
         
         # Set PID values
         # Simple split
@@ -73,21 +74,23 @@ class PositionControllerNode:
             self.control_pose()
 
     def control_pose(self):
-        # Need to map output to each thruster
-        self.getPosCmd
-        self.poseVal
-
         # Angular error
         # could get the quat diff, then get the angle from the quaternion...
-        cmd_angles = trans.euler_from_quaternion(self.getPosCmd.pose.quaternion)
-        cur_angles = trans.euler_from_quaternion(self.poseVal.pose.quaternion)
+        cmd_angles = trans.euler_from_quaternion([self.getPosCmd.pose.orientation.x,
+                                                  self.getPosCmd.pose.orientation.y,
+                                                  self.getPosCmd.pose.orientation.z, 
+                                                  self.getPosCmd.pose.orientation.w])
+        cur_angles = trans.euler_from_quaternion([self.poseVal.pose.orientation.x,
+                                                  self.poseVal.pose.orientation.y,
+                                                  self.poseVal.pose.orientation.z,
+                                                  self.poseVal.pose.orientation.w])
         Rol_err = cmd_angles[0] - cur_angles[0] 
         Pit_err = cmd_angles[1] - cur_angles[1] 
         Yaw_err = cmd_angles[2] - cur_angles[2] 
 
         # Spatial error
         cmd_pose = self.getPosCmd.pose.position
-        cur_pose = self.poseVal.pos.position
+        cur_pose = self.poseVal.pose.position
         x_err = cmd_pose.x - cur_pose.x 
         y_err = cmd_pose.y - cur_pose.y  
         z_err = cmd_pose.z - cur_pose.z  
@@ -111,20 +114,20 @@ class PositionControllerNode:
             thruster.publish(self.thrust_msg)
 
     def thruster_pubs(self):
-        self.thrust_list = [rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 0), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 1), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 2), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 3), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 4), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 5), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 6), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 7), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 8), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 9), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 10), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 11), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 12), Float32, queue_size=1),
-                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(namespace, 13), Float32, queue_size=1)]
+        self.thrust_list = [rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 0), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 1), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 2), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 3), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 4), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 5), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 6), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 7), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 8), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 9), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 10), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 11), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 12), Float32, queue_size=1),
+                           rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 13), Float32, queue_size=1)]
 
     def set_pid_vals(self):
         for ii in range(6):
@@ -138,7 +141,7 @@ if __name__=="__main__":
     rospy.init_node('position_control')
 
     try:
-        node = PositionControllerNode()
+        node = PositionControllerNode(namespace='polysat')
         rospy.spin()
     except rospy.ROSInterruptException:
         print('Caught an exception')
