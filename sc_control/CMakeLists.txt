@@ -49,4 +49,5 @@ install(DIRECTORY config
 catkin_install_python(PROGRAMS
   scripts/sc_manual_thrusterop.py
   scripts/position_control.py
+  scripts/position_command.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

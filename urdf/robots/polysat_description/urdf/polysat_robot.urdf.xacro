@@ -21,6 +21,7 @@
     <xacro:arg name="transmission_hw_interface" default="hardware_interface/EffortJointInterface"/>
   </xacro:if>
 
+  <!--
   <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_r"/>
   <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_l"/>
 
@@ -34,6 +35,7 @@
     <child link="oberon7_l/base"/>
     <origin rpy="1.5707963268 0 0" xyz="0 -1.5 0"/>
   </joint>
+  -->
 
 </robot>
 
