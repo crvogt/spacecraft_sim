@@ -27,7 +27,7 @@ class PositionControllerNode:
         # Set PID values
         # Simple split
         # R, P, Y, x, y, z
-        self.p_vals = np.array([0, 0, 0, 1, 0, 0])
+        self.p_vals = np.array([0, 0, 0, 0, 1.0, 0])
         self.i_vals = np.array([0, 0, 0, 0, 0, 0])
         self.d_vals = np.array([0, 0, 0, 0, 0, 0])
         self.sat_vals = np.array([1, 1, 1, 1, 1, 1])
@@ -91,7 +91,7 @@ class PositionControllerNode:
         # Spatial error
         cmd_pose = self.getPosCmd.pose.position
         cur_pose = self.poseVal.pose.position
-        x_err = cmd_pose.x - cur_pose.x 
+        x_err = cmd_pose.x - cur_pose.x
         y_err = cmd_pose.y - cur_pose.y  
         z_err = cmd_pose.z - cur_pose.z  
 
@@ -106,6 +106,8 @@ class PositionControllerNode:
 
     def publish_vals(self):
         # multiply gains 
+        for ii in range(len(self.msg_vals)):
+            self.msg_vals[ii] = 0.0
         for ii, pid_val in enumerate(self.pid_out):
             self.msg_vals += self.gain_dict[ii] * pid_val
 
@@ -130,6 +132,7 @@ class PositionControllerNode:
                            rospy.Publisher('/%s/thrusters/thruster_%d/'%(self.namespace, 13), Float32, queue_size=1)]
 
     def set_pid_vals(self):
+        print("Initializing PID values per DoF")
         for ii in range(6):
             self.pid_list[ii] = PIDControllerBase(self.p_vals[ii],
                                              self.i_vals[ii],

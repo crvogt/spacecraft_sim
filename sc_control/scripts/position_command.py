@@ -8,8 +8,8 @@ class PositionCommandNode:
         print("PositionCommandNode: initializing node")
 
         self.cmd_val = PoseStamped()
-        self.cmd_val.pose.position.x = 1.0
-        self.cmd_val.pose.position.y = 0.0
+        self.cmd_val.pose.position.x = 0.0
+        self.cmd_val.pose.position.y = 0.1
         self.cmd_val.pose.position.z = 2.0
         self.cmd_val.pose.orientation.x = 0.0
         self.cmd_val.pose.orientation.y = 0.0
