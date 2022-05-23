@@ -27,9 +27,9 @@ class PositionControllerNode:
         # Set PID values
         # Simple split
         # R, P, Y, x, y, z
-        self.p_vals = np.array([0, 0, 0, 0, 1.0, 0])
-        self.i_vals = np.array([0, 0, 0, 0, 0, 0])
-        self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        self.p_vals = np.array([0, 0, 0, 0, 5.0, 0])
+        self.i_vals = np.array([0, 0, 0, 0, 25.0, 0])
+        self.d_vals = np.array([0, 0, 0, 0, 2.0, 0])
         self.sat_vals = np.array([1, 1, 1, 1, 1, 1])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
