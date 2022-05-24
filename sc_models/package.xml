@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>sc_object_models</name>
+  <name>sc_models</name>
   <version>3.1.1</version>
-  <description>The sc_object_models package</description>
+  <description>The sc_models package</description>
   <maintainer email="crvogt@nps.edu">Carson Vogt</maintainer>
   <license>Apache 2.0</license>
 

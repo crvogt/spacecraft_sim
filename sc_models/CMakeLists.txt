@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(sc_object_models)
+project(sc_models)
 
 if(NOT "${CMAKE_VERSION}" VERSION_LESS "3.16")
     set(CMAKE_CXX_STANDARD 17)

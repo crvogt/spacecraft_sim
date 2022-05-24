@@ -23,6 +23,16 @@
 
     <plugin name="sc_interface" filename="libuuv_sc_ros_interface_plugin.so"/>
 
+    <include>
+      <uri>model://m_to_f_plug</uri>
+      <pose>1 0 5 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://f_to_m_plug</uri>
+      <pose>1 2 5 0 0 0</pose>
+    </include>
+
     <gui fullscreen="0">
       <camera name="user_camera">
         <pose frame=''>9.62 8.51 5.9 0 0.292 -2.36</pose>
