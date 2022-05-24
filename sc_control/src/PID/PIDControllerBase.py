@@ -8,7 +8,7 @@ class PIDControllerBase():
         self.Ki = _d
         self.sat = _sat
 
-        self.integral = 0
+        self.integral = 0 
         self.prev_err = 0
         self.prev_t = -1.0
     

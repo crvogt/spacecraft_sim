@@ -14,7 +14,7 @@
     <link name="$(arg namespace)/polysat_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="100.0"/>
+        <mass value="50.0"/>
         <inertia
           ixx="10.0" ixy="0.0" ixz="0.0"
           iyy="10.0" iyz="0.0"
