@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/plugin_space.world"/>
+  <arg name="namespace" default="polysat"/>
+  <arg name="joy_id" default="0"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="x" default="3"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="5"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="3.14159265"/>
+
+  <!-- World details -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+
+  <include file="$(find polysat_description)/launch/upload_polysat.launch"/>
+  
+  <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+      args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param $(arg namespace)/polysat"/>
+
+  <!-- Start the state publisher --> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <remap from="robot_description" to="$(arg namespace)/polysat"/>
+  </node>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
+    <remap from="robot_description" to="$(arg namespace)/polysat"/>
+  </node>
+
+  <node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/> 
+
+  <include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>
+
+  <include file="$(find plug_and_socket_description)/launch/upload_socket_platform.launch"/>
+  <node name="spawn_socket" pkg="gazebo_ros" type="spawn_model"
+        args="-urdf -param socket_platform -model socket_platform -x 0 -y 0 -z 5 -Y -1.57079632679" respawn="false" output="screen" />
+
+</launch>

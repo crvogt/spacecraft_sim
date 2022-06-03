@@ -81,6 +81,20 @@ install(TARGETS sc_gazebo_thrust_plugin
   RUNTIME DESTINATION bin
 )
 
+add_library(sc_plug_and_socket_plugin
+  SHARED
+  src/sc_plug_and_socket_plugin.cc
+)
+target_link_libraries(sc_plug_and_socket_plugin
+  ${catkin_LIBRARIES}
+  ${Eigen_LIBRARIES}
+)
+install(TARGETS sc_plug_and_socket_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 add_library(sc_imu_gazebo_plugin
   src/sc_imu_gazebo_plugin.cc
   src/ROSBasePlugin.cc
