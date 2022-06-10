@@ -53,11 +53,11 @@
       </plugin>
     </gazebo> -->
 
-    <!--gazebo reference="${namespace}/thruster_${thruster_id}">
-      <xacro:led_stripe name="light_${thruster_id}" range="30" linear="0.2" constant="0.1" quadratic="0.0025"
+    <gazebo reference="${namespace}/thruster_${thruster_id}">
+      <xacro:led_stripe name="light_${thruster_id}" range="1" linear="0.2" constant="0.1" quadratic="0.0025"
         inner_angle="2.8" outer_angle="2.9" 
         pose="0 0 0 0 0 0"/>
-    </gazebo-->
+    </gazebo>
 
     <gazebo reference="${namespace}/thruster_${thruster_id}">
       <selfCollide>false</selfCollide>

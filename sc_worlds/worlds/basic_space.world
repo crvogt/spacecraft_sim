@@ -22,6 +22,51 @@
     <!-- Sun-like light source -->
     <!-- TODO -->
 
+    <model name="flashy">
+      <static>true</static>
+      <pose>0 0 5 0 0 0</pose>
+      <link name="flashy_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyx>0</iyx>
+            <iyz>0</iyz>
+            <izz>1</izz>
+            <izx>0</izx>
+            <izy>0</izy>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="flashy_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="flashy_vis">
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <plugin name="blink" filename="libBlinkVisualPlugin.so">
+            <color_a>1 0 0 1</color_a>
+            <color_b>1 0 0 0</color_b>
+            <period>10</period>
+          </plugin>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+
     <gui fullscreen="0">
       <camera name="user_camera">
         <pose frame=''>9.62 8.51 5.9 0 0.292 -2.36</pose>

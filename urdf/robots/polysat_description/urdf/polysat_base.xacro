@@ -25,6 +25,14 @@
         <geometry>
           <box size="1.0 1.0 1.0"/>
         </geometry>
+        <material name="sat_mat">
+          <color rgba="1 0 1 1"/>
+        </material>
+        <!--plugin name="blink" filename="libsc_led_visual_plugin.so">
+          <color_a>1 0 0 1</color_a>
+          <color_b>1 0 0 0</color_b>
+          <period>1</period>
+        </plugin-->
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -105,5 +113,12 @@
       inertial_reference_frame="$(arg inertial_reference_frame)">
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:default_imu_macro> 
+    <gazebo reference="$(arg namespace)/polysat_link">
+      <plugin name="blink" filename="libsc_led_visual_plugin.so">
+        <color_a>1 0 0 1</color_a>
+        <color_b>1 0 0 0</color_b>
+        <period>1</period>
+      </plugin>
+    </gazebo>
    </xacro:macro>
 </robot>
