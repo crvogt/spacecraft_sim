@@ -194,7 +194,7 @@ void ScThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 
 			thruster.maxCmd = this->SdfParamDouble(thrusterSDF, "maxCmd", 1.0);
 			thruster.maxForceFwd = 
-				this->SdfParamDouble(thrusterSDF, "maxForceFwd", 250.0);
+				this->SdfParamDouble(thrusterSDF, "maxForceFwd", 500.0);
 			thruster.maxForceRev = 
 				this->SdfParamDouble(thrusterSDF, "maxForceRev", -100.0);
 			thruster.maxAngle = this->SdfParamDouble(thrusterSDF, "maxAngle", 

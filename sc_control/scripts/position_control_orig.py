@@ -28,10 +28,10 @@ class PositionControllerNode:
         # Simple split
         # R, P, Y, x, y, z
         # y becomes unstable at p=10 so we set it to 10/2
-        self.p_vals = np.array([0, 0, 0, 0, 0.16, 0])
-        self.i_vals = np.array([0, 0, 0, 0, 0.08, 0])
-        self.d_vals = np.array([0, 0, 0, 0, 0.006, 0])
-        self.sat_vals = np.array([1, 1, 1, 1, 500, 1])
+        self.p_vals = np.array([0, 0, 0, 0, 5500.0, 0])
+        self.i_vals = np.array([0, 0, 0, 0, 11000.0, 0])
+        self.d_vals = np.array([0, 0, 0, 0, 10.0, 0])
+        self.sat_vals = np.array([1, 1, 1, 1, 250, 1])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
         self.pid_out = [0] * 6
@@ -66,7 +66,6 @@ class PositionControllerNode:
 
     def odometry_callback(self, _msg):
         self.getImuMsg = _msg
-        self.t_val = _msg.header.stamp.to_sec()
         if self.use_imu:
             self.control_pose()
 
@@ -104,8 +103,8 @@ class PositionControllerNode:
         # Send values to regulator
         for ii, pid_reg in enumerate(self.pid_list):
             self.t_val = rospy.Time.now().to_sec()
-            self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val, ii)
-    
+            self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val)
+
         self.publish_vals()
 
     def publish_vals(self):

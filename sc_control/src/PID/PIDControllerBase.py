@@ -12,13 +12,21 @@ class PIDControllerBase():
         self.prev_err = 0
         self.prev_t = -1.0
     
-    def regulate(self, _err, _t):
+    def regulate(self, _err, _t, id_val):
         derr_dt = 0.0
         dt = _t - self.prev_t
         if self.prev_t > 0.0 and dt > 0.0:
             derr_dt = (_err - self.prev_err) / dt
             self.integral += 0.5 * (_err + self.prev_err) * dt
 
+        '''
+        if id_val == 4:
+            print("_err ", _err)
+            print("kp_err", self.Kp*_err)
+            print("derr_dt", derr_dt)
+            print("integral", self.integral)
+            print()
+        '''
         u = self.Kp * _err + self.Kd * derr_dt + self.Ki * self.integral
 
         self.prev_err = _err
