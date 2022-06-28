@@ -19,10 +19,6 @@ class PIDControllerBase():
             derr_dt = (_err - self.prev_err) / dt
             self.integral += 0.5 * (_err + self.prev_err) * dt
 
-        #print("_err ", _err)
-        if id_val == 5:
-            print("_err ", _err)
-        
         u = self.Kp * _err + self.Kd * derr_dt + self.Ki * self.integral
 
         self.prev_err = _err

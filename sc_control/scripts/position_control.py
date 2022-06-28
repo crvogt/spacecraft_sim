@@ -27,25 +27,9 @@ class PositionControllerNode:
         # Set PID values
         # Simple split
         # R, P, Y, x, y, z
-        # y becomes unstable at p=10 so we set it to 10/2
-        #self.p_vals = np.array([0, 0, 0, 0, 5.0, 0])
-        #self.i_vals = np.array([0, 0, 0, 0, 2.50, 0])
-        #self.d_vals = np.array([0, 0, 0, 0, 0.0, 0])
-        #self.p_vals = np.array([0, 0, 0, 2.5, 0, 0])
-        #self.i_vals = np.array([0, 0, 0, 1.25, 0, 0])
-        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
-        #self.p_vals = np.array([0, 0, 0.3, 0, 0, 0])
-        #self.i_vals = np.array([0, 0, 0.15, 0, 0, 0])
-        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
-        #self.p_vals = np.array([0, 0.3, 0, 0, 0, 0])
-        #self.i_vals = np.array([0, 0.15, 0, 0, 0, 0])
-        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
-        #self.p_vals = np.array([0, 0, 0, 0, 0, 2.50])
-        #self.i_vals = np.array([0, 0, 0, 0, 0, 1.25])
-        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
-        self.p_vals = np.array([0.6, 0.6, 0.6, 2, 2, 2.0])
-        self.i_vals = np.array([0.3, 0.3, 0.3, 1, 1, 1.0])
-        self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        self.p_vals = np.array([0.6, 0.6, 0.6, 2.0, 2.0, 2.0])
+        self.i_vals = np.array([0.3, 0.3, 0.3, 1.0, 1.0, 1.0])
+        self.d_vals = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
         self.sat_vals = np.array([500, 500, 500, 500, 500, 500])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
@@ -62,8 +46,6 @@ class PositionControllerNode:
         
         # Set flags
         self.initialized = False
-        # Set this to false till we can determine 3D pose
-        self.use_imu = False
 
         # Add thruster pubs
         self.thruster_pubs()
@@ -78,7 +60,6 @@ class PositionControllerNode:
         # Store the desired pose
         self.getPosCmd = _msg
         self.t_val = _msg.header.stamp.to_sec()
-        #print(self.t_val)
 
     def pose_callback(self, _msg):
         self.getPoseMsg = _msg
@@ -113,8 +94,6 @@ class PositionControllerNode:
 
         # Send values to regulator
         for ii, pid_reg in enumerate(self.pid_list):
-            if ii == 0:
-                print(error_list[ii])
             self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val, ii)
             self.publish_vals()
 
