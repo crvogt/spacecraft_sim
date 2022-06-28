@@ -14,7 +14,7 @@
     <link name="$(arg namespace)/polysat_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="100.0"/>
+        <mass value="50.0"/>
         <inertia
           ixx="10.0" ixy="0.0" ixz="0.0"
           iyy="10.0" iyz="0.0"
@@ -98,12 +98,18 @@
     <xacro:arg name="inertial_reference_frame" default="world"/>
 
     <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
-    <!-- IMU  -->
     <xacro:default_imu_macro
       namespace="$(arg namespace)"
       parent_link="$(arg namespace)/base_link"
       inertial_reference_frame="$(arg inertial_reference_frame)">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:default_imu_macro> 
+    </xacro:default_imu_macro>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/pose_3d.xacro"/>
+    <xacro:default_pose_3d
+      namespace="$(arg namespace)"
+      parent_link="$(arg namespace)/base_link">
+    </xacro:default_pose_3d>
+
    </xacro:macro>
 </robot>

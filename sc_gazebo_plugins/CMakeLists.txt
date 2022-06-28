@@ -108,8 +108,20 @@ add_dependencies(sc_imu_gazebo_plugin
   sc_sensor_gazebo_msgs
   ${catkin_EXPORTED_TARGETS}
 )
-
 install(TARGETS sc_imu_gazebo_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+add_library(sc_pose_gt_plugin
+  src/sc_pose_gt_plugin.cc
+)
+target_link_libraries(sc_pose_gt_plugin
+  ${catkin_LIBRARIES}
+  ${GAZEBO_LIBRARIES}
+)
+install(TARGETS sc_pose_gt_plugin
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
