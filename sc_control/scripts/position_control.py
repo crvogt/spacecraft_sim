@@ -28,34 +28,51 @@ class PositionControllerNode:
         # Simple split
         # R, P, Y, x, y, z
         # y becomes unstable at p=10 so we set it to 10/2
-        self.p_vals = np.array([0, 0, 0, 0, 0.8, 0])
-        self.i_vals = np.array([0, 0, 0, 0, 0.7, 0])
-        self.d_vals = np.array([0, 0, 0, 0, 0.01, 0])
-        self.sat_vals = np.array([1, 1, 1, 1, 500, 1])
+        #self.p_vals = np.array([0, 0, 0, 0, 5.0, 0])
+        #self.i_vals = np.array([0, 0, 0, 0, 2.50, 0])
+        #self.d_vals = np.array([0, 0, 0, 0, 0.0, 0])
+        #self.p_vals = np.array([0, 0, 0, 2.5, 0, 0])
+        #self.i_vals = np.array([0, 0, 0, 1.25, 0, 0])
+        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        #self.p_vals = np.array([0, 0, 0.3, 0, 0, 0])
+        #self.i_vals = np.array([0, 0, 0.15, 0, 0, 0])
+        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        #self.p_vals = np.array([0, 0.3, 0, 0, 0, 0])
+        #self.i_vals = np.array([0, 0.15, 0, 0, 0, 0])
+        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        #self.p_vals = np.array([0, 0, 0, 0, 0, 2.50])
+        #self.i_vals = np.array([0, 0, 0, 0, 0, 1.25])
+        #self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        self.p_vals = np.array([0.6, 0.6, 0.6, 2, 2, 2.0])
+        self.i_vals = np.array([0.3, 0.3, 0.3, 1, 1, 1.0])
+        self.d_vals = np.array([0, 0, 0, 0, 0, 0])
+        self.sat_vals = np.array([500, 500, 500, 500, 500, 500])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
         self.pid_out = [0] * 6
 
         # Putting gain dicts here...
         self.gain_dict = dict()
-        self.gain_dict[0] = np.asarray([0, 0, 0, 0, -1.0, 1.0, 1.0, -1.0, 0, 0, 0, 0, 0, 0])
+        self.gain_dict[0] = np.asarray([0, 0, 0, 0, 1.0, -1.0, -1.0, 1.0, 0, 0, 0, 0, 0, 0])
         self.gain_dict[1] = np.asarray([1.0, -1.0, -1.0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.gain_dict[2] = np.asarray([0, 0, 0, 0, 0, 0, 0, 0, -1.0, 1.0, 1.0, -1.0, 0, 0])
         self.gain_dict[3] = np.asarray([1.0, 1.0, -1.0, -1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.gain_dict[4] = np.asarray([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, -1.0])
-        self.gain_dict[5] = np.asarray([0, 0, 0, 0, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0])
+        self.gain_dict[5] = np.asarray([0, 0, 0, 0, 0.5, 0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0])
         
         # Set flags
         self.initialized = False
         # Set this to false till we can determine 3D pose
         self.use_imu = False
 
+        # Add thruster pubs
+        self.thruster_pubs()
+        print("Setting up thruster publishers...")
+        rospy.sleep(1)
         # ROS
         self.thrust_msg = Float32()
         self.sub_cmd_pose = rospy.Subscriber('cmd_pose', PoseStamped, self.cmd_pose_callback)
         self.pose_gt_sub = rospy.Subscriber('/polysat/pose_gt', Odometry, self.pose_callback)
-        # Add thruster subs
-        self.thruster_pubs()
 
     def cmd_pose_callback(self, _msg):
         # Store the desired pose
@@ -96,8 +113,9 @@ class PositionControllerNode:
 
         # Send values to regulator
         for ii, pid_reg in enumerate(self.pid_list):
+            if ii == 0:
+                print(error_list[ii])
             self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val, ii)
-            #self.pid_out[4] = self.pid_list[4].regulate(error_list[4], self.t_val, 4)
             self.publish_vals()
 
     def publish_vals(self):
