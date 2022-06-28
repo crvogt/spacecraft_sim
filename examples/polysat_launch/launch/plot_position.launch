@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node name="position_plot" pkg = "rqt_plot" type="rqt_plot" args="/polysat/pose_gt/pose/pose/position/y">
+  </node>
+</launch>

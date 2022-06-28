@@ -9,6 +9,7 @@ from std_msgs.msg import Float32
 from PID import PIDControllerBase 
 
 from gazebo_msgs.msg import ModelStates
+from nav_msgs.msg import Odometry
 
 class PositionControllerNode:
     def __init__(self, namespace="polysat"):
@@ -16,8 +17,7 @@ class PositionControllerNode:
 
         # Set information variables
         self.namespace = namespace
-        self.getStateMsg = ModelStates()
-        self.getImuMsg = Imu()
+        self.getPoseMsg = Odometry()
         self.getPosCmd = PoseStamped() 
         self.poseVal = PoseStamped()
         self.t_val = 0
@@ -28,9 +28,9 @@ class PositionControllerNode:
         # Simple split
         # R, P, Y, x, y, z
         # y becomes unstable at p=10 so we set it to 10/2
-        self.p_vals = np.array([0, 0, 0, 0, 0.16, 0])
-        self.i_vals = np.array([0, 0, 0, 0, 0.08, 0])
-        self.d_vals = np.array([0, 0, 0, 0, 0.006, 0])
+        self.p_vals = np.array([0, 0, 0, 0, 0.8, 0])
+        self.i_vals = np.array([0, 0, 0, 0, 0.7, 0])
+        self.d_vals = np.array([0, 0, 0, 0, 0.01, 0])
         self.sat_vals = np.array([1, 1, 1, 1, 500, 1])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
@@ -53,8 +53,7 @@ class PositionControllerNode:
         # ROS
         self.thrust_msg = Float32()
         self.sub_cmd_pose = rospy.Subscriber('cmd_pose', PoseStamped, self.cmd_pose_callback)
-        self.position_sub = rospy.Subscriber('polysat/imu', Imu, self.odometry_callback)
-        self.model_state_sub = rospy.Subscriber('gazebo/model_states', ModelStates, self.state_callback)
+        self.pose_gt_sub = rospy.Subscriber('/polysat/pose_gt', Odometry, self.pose_callback)
         # Add thruster subs
         self.thruster_pubs()
 
@@ -64,17 +63,11 @@ class PositionControllerNode:
         self.t_val = _msg.header.stamp.to_sec()
         #print(self.t_val)
 
-    def odometry_callback(self, _msg):
-        self.getImuMsg = _msg
+    def pose_callback(self, _msg):
+        self.getPoseMsg = _msg
+        self.poseVal.pose = self.getPoseMsg.pose.pose
         self.t_val = _msg.header.stamp.to_sec()
-        if self.use_imu:
-            self.control_pose()
-
-    def state_callback(self, _msg):
-        self.getStateMsg = _msg
-        if not self.use_imu:
-            self.poseVal.pose = self.getStateMsg.pose[-1]
-            self.control_pose()
+        self.control_pose()
 
     def control_pose(self):
         # Angular error
@@ -87,9 +80,9 @@ class PositionControllerNode:
                                                   self.poseVal.pose.orientation.y,
                                                   self.poseVal.pose.orientation.z,
                                                   self.poseVal.pose.orientation.w])
-        Rol_err = cmd_angles[0] - cur_angles[0] 
-        Pit_err = cmd_angles[1] - cur_angles[1] 
-        Yaw_err = cmd_angles[2] - cur_angles[2] 
+        Rol_err =  cmd_angles[0] - cur_angles[0] 
+        Pit_err =  cmd_angles[1] - cur_angles[1] 
+        Yaw_err =  cmd_angles[2] - cur_angles[2] 
 
         # Spatial error
         cmd_pose = self.getPosCmd.pose.position
@@ -103,10 +96,9 @@ class PositionControllerNode:
 
         # Send values to regulator
         for ii, pid_reg in enumerate(self.pid_list):
-            self.t_val = rospy.Time.now().to_sec()
             self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val, ii)
-    
-        self.publish_vals()
+            #self.pid_out[4] = self.pid_list[4].regulate(error_list[4], self.t_val, 4)
+            self.publish_vals()
 
     def publish_vals(self):
         # multiply gains 
@@ -152,5 +144,5 @@ if __name__=="__main__":
         rospy.spin()
     except rospy.ROSInterruptException:
         print('Caught an exception')
-    print('exciting')
+    print('exiting')
         

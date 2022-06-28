@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="2.0"?>
 
 <launch>
   <node name="thrusters_plot" pkg = "rqt_plot" type="rqt_plot" args="/polysat/thrusters/thruster_12 /polysat/thrusters/thruster_13">
