@@ -50,5 +50,4 @@ catkin_install_python(PROGRAMS
   scripts/sc_manual_thrusterop.py
   scripts/position_control.py
   scripts/position_command.py
-  scripts/velocity_control.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
