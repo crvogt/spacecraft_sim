@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/basic_space.world"/>
+  <arg name="namespace" default="polysat"/>
+  <arg name="joy_id" default="0"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="2"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+  <!-- World details -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+
+  <param name="$(arg namespace)/polysat" textfile="$(find polysat_description)/urdf/polysat_robot.urdf"/>
+
+  <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+      args="-urdf -param $(arg namespace)/polysat -model polysat -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
+    <remap from="robot_description" to="$(arg namespace)/polysat"/>
+  </node>
+
+  <node name="position_command" pkg="sc_control" type="position_command.py">
+  </node>
+
+  <!-- <node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/> -->
+
+  <!--<include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>-->
+
+</launch>
