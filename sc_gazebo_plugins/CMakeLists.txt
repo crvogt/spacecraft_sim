@@ -68,6 +68,19 @@ add_library(sc_sensor_gazebo_msgs SHARED ${PROTO_SRCS})
 target_link_libraries(sc_sensor_gazebo_msgs ${PROTOBUF_LIBRARY} ${GAZEBO_LIBRARIES})
 
 ## Declare a C++ library
+add_library(sc_led_visual_plugin
+  src/sc_led_visual_plugin.cc
+)
+target_link_libraries(sc_led_visual_plugin
+  ${catkin_LIBRARIES}
+  ${Eigen_LIBRARIES}
+)
+install(TARGETS sc_led_visual_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 add_library(sc_gazebo_thrust_plugin
   src/sc_gazebo_thrust_plugin.cc
 )

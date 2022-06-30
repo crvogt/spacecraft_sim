@@ -28,6 +28,11 @@
             <size>1 1 1</size>
           </box>
         </geometry>
+        <plugin name="blink" filename="libsc_led_visual_plugin.so">
+          <color_a>1 0 0 1</color_a>
+          <color_b>1 0 0 0</color_b>
+          <period>1</period>
+        </plugin>
       </visual>
     </link>
     <joint name='polysat/imu_joint' type='revolute'>
