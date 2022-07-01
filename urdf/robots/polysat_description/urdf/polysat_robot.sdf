@@ -28,7 +28,7 @@
             <size>1 1 1</size>
           </box>
         </geometry>
-        <plugin name="blink" filename="libsc_led_visual_plugin.so">
+        <plugin filename="libsc_led_visual_plugin.so" name="blink">
           <color_a>1 0 0 1</color_a>
           <color_b>1 0 0 0</color_b>
           <period>1</period>

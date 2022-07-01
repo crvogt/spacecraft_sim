@@ -46,7 +46,6 @@ GZ_REGISTER_VISUAL_PLUGIN(ScLedPlugin)
 
 ScLedPlugin::ScLedPlugin() : dataPtr(new ScLedPluginPrivate)
 {
-  std::cout << "\n\n\n\n\n\nInit!\n\n\n\n\n\n\n";
 }
 
 ScLedPlugin::~ScLedPlugin()
@@ -58,7 +57,6 @@ ScLedPlugin::~ScLedPlugin()
 
 void ScLedPlugin::Load(rendering::VisualPtr _visual, sdf::ElementPtr _sdf)
 {
-  ROS_INFO_STREAM("\n\n\n\n\n\nATTEMPTING TO LOAD\n\n\n\n\n\n\n");
   if(!_visual || !_sdf)
   {
     gzerr << "No visual or SDF element specified. Plugin won't load." << std::endl;
@@ -107,8 +105,6 @@ void ScLedPlugin::Load(rendering::VisualPtr _visual, sdf::ElementPtr _sdf)
 
 void ScLedPlugin::Update()
 {
-  std::cout << "\n\n\n\n\n\nUpdating\n\n\n\n\n\n\n";
-  ROS_INFO_STREAM("Updating");
   std::lock_guard<std::mutex> lock(this->dataPtr->mutex);
 
   if(!this->dataPtr->visual)
