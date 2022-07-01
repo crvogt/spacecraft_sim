@@ -50,7 +50,7 @@ class PositionControllerNode:
         # Add thruster pubs
         self.thruster_pubs()
         print("Setting up thruster publishers...")
-        rospy.sleep(1)
+        rospy.sleep(2)
         # ROS
         self.thrust_msg = Float32()
         self.sub_cmd_pose = rospy.Subscriber('cmd_pose', PoseStamped, self.cmd_pose_callback)
