@@ -25,6 +25,11 @@
         <geometry>
           <box size="1.0 1.0 1.0"/>
         </geometry>
+        <plugin name="blink" filename="libsc_led_visual_plugin.so">
+          <color_a>1 0 0 1</color_a>
+          <color_b>1 0 0 0</color_b>
+          <period>1</period>
+        </plugin>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
