@@ -2,31 +2,72 @@
   <model name='polysat'>
     <link name='polysat/base_link'>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>50</mass>
+        <pose>1e-06 0 2e-06 0 -0 0</pose>
+        <mass>50.0002</mass>
         <inertia>
-          <ixx>10</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>10</iyy>
-          <iyz>0</iyz>
+          <ixx>10.0001</ixx>
+          <ixy>-1.70999e-06</ixy>
+          <ixz>-3.23249e-05</ixz>
+          <iyy>10.0001</iyy>
+          <iyz>-5.32498e-06</iyz>
           <izz>10</izz>
         </inertia>
       </inertial>
       <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
         <geometry>
-          <box>
-            <size>1 1 1</size>
-          </box>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_collision_1'>
+        <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_2'>
+        <pose>0.355 -0.075 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
         <geometry>
-          <box>
-            <size>1 1 1</size>
-          </box>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_1'>
+				<plugin filename= "libsc_thrust_visual_plugin.so" name="thrust_visual"> 
+					<thrust_color>1 0 0 1</thrust_color> 
+				</plugin>
+        <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_2'>
+        <pose>0.355 -0.075 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+          </mesh>
         </geometry>
         <!-- plugin filename="libsc_led_visual_plugin.so" name="blink">
           <color_a>1 0 0 1</color_a>
