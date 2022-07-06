@@ -21,15 +21,15 @@
           izz="10.0"/>
       </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <box size="1.0 1.0 1.0"/>
+          <mesh filename="file://$(find polysat_description)/meshes/Base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <box size="1.0 1.0 1.0"/>
+          <mesh filename="file://$(find polysat_description)/meshes/Base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>

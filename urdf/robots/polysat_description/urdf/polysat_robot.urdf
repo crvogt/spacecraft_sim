@@ -14,15 +14,15 @@
       <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="1.570796326794 0 0" xyz="-0.5 1.0 -0.5"/>
       <geometry>
-        <box size="1.0 1.0 1.0"/>
+        <mesh filename="file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="1.570796326794 0 0" xyz="-0.5 1.0 -0.5"/>
       <geometry>
-        <box size="1.0 1.0 1.0"/>
+        <mesh filename="file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>

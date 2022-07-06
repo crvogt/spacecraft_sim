@@ -14,19 +14,24 @@
         </inertia>
       </inertial>
       <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
         <geometry>
-          <box>
-            <size>1 1 1</size>
-          </box>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+				<plugin filename= "libsc_thrust_visual_plugin.so" name="thrust_visual"> 
+					<thrust_color>1 0 0 1</thrust_color> 
+				</plugin>
+        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
         <geometry>
-          <box>
-            <size>1 1 1</size>
-          </box>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl</uri>
+          </mesh>
         </geometry>
       </visual>
     </link>
