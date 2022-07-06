@@ -5,6 +5,7 @@
   <xacro:arg name="namespace" default="polysat"/>
 
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thrusters.xacro"/>
+  <xacro:include filename="$(find polysat_description)/urdf/polysat_thruster_visuals.xacro"/>
 
   <xacro:macro name="polysat_base" params="namespace">
     <!-- "Dummy base link to eliminate root link inertia warning -->
@@ -23,18 +24,21 @@
       <visual>
         <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <mesh filename="file://$(find polysat_description)/meshes/Base.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="file://$(find polysat_description)/meshes/base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <mesh filename="file://$(find polysat_description)/meshes/Base.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="file://$(find polysat_description)/meshes/base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
 
-    <!-- Add thruster meshes -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="0" x="${0.5-0.145}" y="${-0.15/2}" z="0.5" R="0" P="0" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="0" x="${0.5-0.235}" y="0.165" z="0.55" R="${pi/2}" P="0" Y="0"/>
+
+    <!-- Add thruster meshes >
     <link name="$(arg namespace)/thruster__visual_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -59,10 +63,10 @@
     </link>
         
     <joint name="$(arg namespace)/thruster__visual_joint" type="fixed">
-      <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
+      <origin xyz="${0.5-0.15} ${-0.15/2} 0.5" rpy="0 0 0"/>
       <parent link="$(arg namespace)/base_link"/>
       <child link="$(arg namespace)/thruster__visual_link"/>
-    </joint>
+    </joint-->
 
     <!-- Connect dummy link to main link -->
     <joint name="$(arg namespace)/polysat_base_joint" type="fixed">
