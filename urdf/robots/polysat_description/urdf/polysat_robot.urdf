@@ -26,6 +26,31 @@
       </geometry>
     </collision>
   </link>
+  <!-- Add thruster meshes -->
+  <link name="polysat/thruster__visual_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="polysat/thruster__visual_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.5 0 0.5"/>
+    <parent link="polysat/base_link"/>
+    <child link="polysat/thruster__visual_link"/>
+  </joint>
   <!-- Connect dummy link to main link -->
   <joint name="polysat/polysat_base_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>

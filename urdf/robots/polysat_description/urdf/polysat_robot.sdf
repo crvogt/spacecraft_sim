@@ -5,12 +5,12 @@
         <pose>0 0 0 0 -0 0</pose>
         <mass>50</mass>
         <inertia>
-          <ixx>10</ixx>
+          <ixx>10.0001</ixx>
           <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>10</iyy>
+          <ixz>-2.5e-06</ixz>
+          <iyy>10.0001</iyy>
           <iyz>0</iyz>
-          <izz>10</izz>
+          <izz>10.0001</izz>
         </inertia>
       </inertial>
       <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision'>
@@ -19,6 +19,15 @@
           <mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster__visual_link_collision_1'>
+        <pose>0.5 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -31,6 +40,15 @@
           <mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/Base.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster__visual_link_visual_1'>
+        <pose>0.5 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
       </visual>
