@@ -48,6 +48,15 @@ void ScThrustVisualPlugin::Load(rendering::VisualPtr _visual,
   else
     gzerr << "No thrust_color specified" << std::endl;
 
+  // Get the thruster number
+  if(_sdf->HasElement("thruster_number"))
+  {
+    this->dataPtr->thrusterNum = 
+      _sdf->Get<std::string>("thruster_number");
+  }
+  else
+    gzerr << "No thruster_number specified" << std::endl;
+
   this->dataPtr->period.Set(1);
   if(_sdf->HasElement("period"))
     this->dataPtr->period = _sdf->Get<double>("period");
@@ -64,14 +73,13 @@ void ScThrustVisualPlugin::Load(rendering::VisualPtr _visual,
       "~/pose/local/info", &ScThrustVisualPlugin::OnInfo, this);
 
   // Ros node 
+  std::string thrustSubTopic = "/polysat/thrusters/thruster_" + 
+    this->dataPtr->thrusterNum;
   this->rosnode.reset(new ros::NodeHandle("thrust_visual_node"));
   this->dataPtr->thrustSub = this->rosnode->subscribe(
-      "/polysat/thrusters/thruster_12", 1, 
+      thrustSubTopic, 1, 
       &ScThrustVisualPlugin::OnThrustInfo, 
       this);
- /* this->dataPtr->thrustSub = this->dataPtr->node->Subscribe(
-      "~/polysat/thrusters/thruster_8", &ScThrustVisualPlugin::OnThrustInfo,
-      this);*/
 }
 
 void ScThrustVisualPlugin::Update()

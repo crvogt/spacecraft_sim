@@ -37,11 +37,15 @@
         <geometry>
           <mesh filename="file://$(find polysat_description)/meshes/thrust_plume.stl" scale="0.001 0.001 0.001"/>
         </geometry>
+        <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_${thruster_id}">
+          <thrust_color>1 0 0 1</thrust_color>
+          <thruster_number>${thruster_id}</thruster_number>
+        </plugin>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find polysat_description)/meshes/thrust_plume.stl" scale="0.001 0.001 0.001"/>
+          <box size="0.0001 0.0001 0.0001"/>
         </geometry>
       </collision>
     </link>

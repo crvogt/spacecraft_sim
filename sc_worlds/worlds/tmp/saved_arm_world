@@ -1,4 +1,40 @@
-<sdf version="1.7">
+<sdf version='1.7'>
+  <world name='basic_space'>
+    <physics name='default_physics' default='1' type='ode'>
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>500</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.5 0.5 0.5 1</ambient>
+      <shadows>1</shadows>
+      <sky>
+        <time>24</time>
+        <clouds>
+          <mean_size>0.001</mean_size>
+        </clouds>
+      </sky>
+      <grid>0</grid>
+      <background>0.7 0.7 0.7 1</background>
+    </scene>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>9.62 8.51 5.9 0 0.292 -2.36</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <gravity>0 0 0</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
     <model name='polysat'>
       <link name='polysat/base_link'>
         <inertial>
@@ -2804,4 +2840,237 @@
       </plugin>
       <pose>0 0 2 0 -0 0</pose>
     </model>
+    <state world_name='basic_space'>
+      <sim_time>45 132000000</sim_time>
+      <real_time>46 125191302</real_time>
+      <wall_time>1657151431 201142405</wall_time>
+      <iterations>22566</iterations>
+      <model name='polysat'>
+        <pose>1.9e-05 -0 2 4e-06 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='oberon7_l/elbow_link'>
+          <pose>0.625725 -1.5029 2.00015 -3.14158 -1.4e-05 0.00015</pose>
+          <velocity>0 4e-06 0 0 -0 3e-06</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/end_effector'>
+          <pose>0.760537 -0.800254 2.00016 3.14158 -1.5e-05 1.57086</pose>
+          <velocity>-2e-06 4e-06 0 0 -0 1e-06</velocity>
+          <acceleration>-0 0 0 0.001284 -7.3e-05 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/finger_left'>
+          <pose>0.799672 -0.755824 2.00017 3.14158 -1.5e-05 1.57069</pose>
+          <velocity>-2e-06 4e-06 0 0 -0 -2e-06</velocity>
+          <acceleration>-0 0 0 -0 -0 -0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/finger_right'>
+          <pose>0.721396 -0.755829 2.00016 3.14158 -1.5e-05 1.57086</pose>
+          <velocity>-2e-06 4e-06 0 0 -0 1e-06</velocity>
+          <acceleration>-0 0 0 0.011706 0.001435 -0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/finger_tip_left'>
+          <pose>0.799679 -0.691514 2.00017 -1.5e-05 -1.5e-05 1.57069</pose>
+          <velocity>-2e-06 4e-06 0 0 -0 -2e-06</velocity>
+          <acceleration>-0 0 0 0 -0 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/finger_tip_right'>
+          <pose>0.721392 -0.691519 2.00016 3.14158 -1.5e-05 1.57086</pose>
+          <velocity>-2e-06 4e-06 0 0 -0 1e-06</velocity>
+          <acceleration>-0 0 0 0 -0 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/forearm'>
+          <pose>0.760597 -1.30925 2.00016 -1.57078 -1.4e-05 0.00015</pose>
+          <velocity>-0 4e-06 0 0 -0 3e-06</velocity>
+          <acceleration>-0 0 0 -0 -0 -6.7e-05</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/shoulder_link'>
+          <pose>1.9e-05 -1.5 1.99999 1.5708 -1.4e-05 0</pose>
+          <velocity>0 -0 -0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 -0 -3.9e-05 0.000285</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/upper_arm'>
+          <pose>0.069569 -1.51536 2.00014 -3.14158 -1.4e-05 0.000309</pose>
+          <velocity>0 -0 -0 0 -0 7e-06</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_l/wrist_link'>
+          <pose>0.76055 -0.993294 2.00016 3.14158 -1.5e-05 1.57086</pose>
+          <velocity>-1e-06 4e-06 0 0 -0 1e-06</velocity>
+          <acceleration>-0 0 0 0 -0 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/elbow_link'>
+          <pose>0.625725 1.5029 1.99985 4e-06 1.4e-05 -0.000146</pose>
+          <velocity>0 -4e-06 -0 0 0 -3e-06</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/end_effector'>
+          <pose>0.76054 0.800255 1.99984 -1.8e-05 8e-06 -1.57086</pose>
+          <velocity>-2e-06 -4e-06 -0 0 0 -1e-06</velocity>
+          <acceleration>-0 -0 0 0.001285 3.8e-05 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/finger_left'>
+          <pose>0.799675 0.755825 1.99984 -1.8e-05 8e-06 -1.57068</pose>
+          <velocity>-2e-06 -4e-06 -0 0 -0 3e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/finger_right'>
+          <pose>0.721399 0.75583 1.99984 -1.8e-05 8e-06 -1.57086</pose>
+          <velocity>-2e-06 -4e-06 -0 0 0 -1e-06</velocity>
+          <acceleration>0 -0 0 0.011723 -0.000736 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/finger_tip_left'>
+          <pose>0.799682 0.691515 1.99984 3.14158 8e-06 -1.57068</pose>
+          <velocity>-1e-06 -4e-06 -0 0 -0 3e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/finger_tip_right'>
+          <pose>0.721395 0.69152 1.99984 -1.8e-05 8e-06 -1.57086</pose>
+          <velocity>-2e-06 -4e-06 -0 0 0 -1e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/forearm'>
+          <pose>0.760598 1.30925 1.99985 1.5708 1.4e-05 -0.000146</pose>
+          <velocity>-0 -4e-06 -0 0 0 -3e-06</velocity>
+          <acceleration>-0 -0 0 0 -0 6.8e-05</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/shoulder_link'>
+          <pose>1.9e-05 1.5 2.00001 -1.5708 1.4e-05 0</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 -0 3.9e-05 -0.000282</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/upper_arm'>
+          <pose>0.069569 1.51536 1.99985 4e-06 1.4e-05 -0.000306</pose>
+          <velocity>0 -0 0 0 0 -7e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='oberon7_r/wrist_link'>
+          <pose>0.760552 0.993295 1.99984 -1.8e-05 8e-06 -1.57086</pose>
+          <velocity>-1e-06 -4e-06 -0 0 0 -1e-06</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/base_link'>
+          <pose>1.9e-05 -0 2 4e-06 -0 0</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/imu_link'>
+          <pose>1.9e-05 -0 2 4e-06 -0 0</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/pose_sensor_link_default'>
+          <pose>1.9e-05 -0 2 4e-06 -0 0</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_0'>
+          <pose>0.500019 -2e-06 2.5 0 -0 0</pose>
+          <velocity>0 -0 0 -0 -0 -0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_1'>
+          <pose>0.500019 2e-06 1.5 0 -0 0</pose>
+          <velocity>0 0 0 -0 -0 -0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_10'>
+          <pose>-0.499981 0.5 2 0 -0 3.14159</pose>
+          <velocity>0 -0 0 -0 -0 -0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_11'>
+          <pose>-0.499981 -0.5 2 0 -0 3.14159</pose>
+          <velocity>0 -0 -0 -0 -0 -0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_12'>
+          <pose>1.9e-05 0.5 2 -0 -4e-06 1.5708</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 -0 -0 -0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_13'>
+          <pose>1.9e-05 -0.5 2 -0 4e-06 -1.5708</pose>
+          <velocity>0 -0 -0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_2'>
+          <pose>-0.499981 -2e-06 2.5 0 -0 3.14159</pose>
+          <velocity>0 -0 -0 -0 -0 -0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_3'>
+          <pose>-0.499981 2e-06 1.5 0 -0 3.14159</pose>
+          <velocity>0 0 -0 -0 -0 -0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_4'>
+          <pose>1.9e-05 0.499998 2.5 2.30872 -1.57079 -2.30872</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_5'>
+          <pose>1.9e-05 -0.500002 2.5 2.30872 -1.57079 -2.30872</pose>
+          <velocity>0 -0 -0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_6'>
+          <pose>1.9e-05 0.500002 1.5 2.301 1.57079 2.301</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_7'>
+          <pose>1.9e-05 -0.499998 1.5 2.301 1.57079 2.301</pose>
+          <velocity>0 0 -0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_8'>
+          <pose>0.500019 0.5 2 0 -0 0</pose>
+          <velocity>0 -0 0 -0 -0 -0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='polysat/thruster_9'>
+          <pose>0.500019 -0.5 2 0 -0 0</pose>
+          <velocity>0 -0 -0 -0 -0 -0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+  </world>
 </sdf>
