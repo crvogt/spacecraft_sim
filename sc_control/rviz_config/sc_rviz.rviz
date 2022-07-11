@@ -188,9 +188,88 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        polysat/pose_sensor_link_default:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        polysat/thrust_plume_0_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_10_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_11_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_12_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_13_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_1_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_2_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_3_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_4_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_5_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_6_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_7_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_8_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thrust_plume_9_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_0:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_0_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_1:
@@ -203,9 +282,19 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_10_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_11:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_11_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_12:
@@ -213,9 +302,24 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_12_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_13:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_13_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        polysat/thruster_1_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_2:
@@ -223,9 +327,19 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_2_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_3:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_3_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_4:
@@ -233,9 +347,19 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_4_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_5:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_5_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_6:
@@ -243,9 +367,19 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_6_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_7:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_7_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         polysat/thruster_8:
@@ -253,9 +387,19 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        polysat/thruster_8_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         polysat/thruster_9:
           Alpha: 1
           Show Axes: true
+          Show Trail: false
+          Value: true
+        polysat/thruster_9_visual:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -301,7 +445,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.4947733879089355
+      Distance: 5.230954170227051
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -309,17 +453,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.15292204916477203
-        Y: 0.2564137876033783
-        Z: 0.011964762583374977
+        X: -0.2578200101852417
+        Y: 0.6081218123435974
+        Z: -0.1237465888261795
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.47020119428634644
+      Pitch: 0.1302015483379364
       Target Frame: <Fixed Frame>
-      Yaw: 5.738602161407471
+      Yaw: 6.161792278289795
     Saved: ~
 Window Geometry:
   Displays:
