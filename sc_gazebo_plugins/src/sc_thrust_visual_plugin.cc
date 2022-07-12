@@ -95,7 +95,7 @@ void ScThrustVisualPlugin::Update()
   common::Time currentTime;
   currentTime = this->dataPtr->currentSimTime;
   
-  double alpha = this->dataPtr->thrustVal / 10.0;
+  double alpha = this->dataPtr->thrustVal / 5.0;
   if(alpha > 1.0)
     alpha = 1.0;
   // TODO change thruster output to only ever be positive...

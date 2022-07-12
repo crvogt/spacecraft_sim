@@ -2,19 +2,19 @@
     <model name='polysat'>
       <link name='polysat/base_link'>
         <inertial>
-          <pose>-0.028342 -1e-06 -2e-06 0 -0 0</pose>
+          <pose>0.111158 -1e-06 -0.069752 0 -0 0</pose>
           <mass>69.3522</mass>
           <inertia>
-            <ixx>53.9959</ixx>
-            <ixy>-7.25495e-05</ixy>
-            <ixz>-2.62588e-05</ixz>
-            <iyy>12.0609</iyy>
-            <iyz>-0.0396074</iyz>
-            <izz>54.7899</izz>
+            <ixx>33.2392</ixx>
+            <ixy>-8.09195e-05</ixy>
+            <ixz>1.38953</ixz>
+            <iyy>15.0034</iyy>
+            <iyz>-0.0279309</iyz>
+            <izz>35.2319</izz>
           </inertia>
         </inertial>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_l/base_collision'>
-          <pose>0 -1.5 0 1.5708 -0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -36,7 +36,7 @@
           <max_contacts>1</max_contacts>
         </collision>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_r/base_collision_1'>
-          <pose>0 1.5 0 -1.5708 0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -682,7 +682,7 @@
           </surface>
         </collision>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_l/base_visual'>
-          <pose>0 -1.5 0 1.5708 -0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -691,7 +691,7 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_r/base_visual_1'>
-          <pose>0 1.5 0 -1.5708 0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -967,7 +967,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_l/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0 -1.5 0 1.5708 -0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 -1.06 -0.25 1.5708 -0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_l/shoulder_link</child>
         <axis>
@@ -1688,7 +1688,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_r/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0 1.5 0 -1.5708 0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 1.06 -0.25 -1.5708 0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_r/shoulder_link</child>
         <axis>

@@ -2,19 +2,19 @@
     <model name='polysat'>
       <link name='polysat/base_link'>
         <inertial>
-          <pose>-0.028342 -1e-06 -2e-06 0 -0 0</pose>
+          <pose>0.111158 -1e-06 -0.069752 0 -0 0</pose>
           <mass>69.3522</mass>
           <inertia>
-            <ixx>53.9959</ixx>
-            <ixy>-7.25495e-05</ixy>
-            <ixz>-2.62588e-05</ixz>
-            <iyy>12.0609</iyy>
-            <iyz>-0.0396074</iyz>
-            <izz>54.7899</izz>
+            <ixx>33.2392</ixx>
+            <ixy>-8.09195e-05</ixy>
+            <ixz>1.38953</ixz>
+            <iyy>15.0034</iyy>
+            <iyz>-0.0279309</iyz>
+            <izz>35.2319</izz>
           </inertia>
         </inertial>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_l/base_collision'>
-          <pose>0 -1.5 0 1.5708 -0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -36,7 +36,7 @@
           <max_contacts>1</max_contacts>
         </collision>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_r/base_collision_1'>
-          <pose>0 1.5 0 -1.5708 0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -682,7 +682,7 @@
           </surface>
         </collision>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_l/base_visual'>
-          <pose>0 -1.5 0 1.5708 -0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -691,7 +691,7 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_r/base_visual_1'>
-          <pose>0 1.5 0 -1.5708 0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -709,10 +709,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_3'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_0_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>0</thruster_number>
-          </plugin>
           <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
           <geometry>
             <mesh>
@@ -722,10 +718,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_visual_4'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_10_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>10</thruster_number>
-          </plugin>
           <pose>-0.55 0.76 -0.16 0 -0 1.5708</pose>
           <geometry>
             <mesh>
@@ -735,10 +727,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_visual_5'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_11_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>11</thruster_number>
-          </plugin>
           <pose>-0.55 -1.095 -0.17 0 -0 1.5708</pose>
           <geometry>
             <mesh>
@@ -748,10 +736,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_visual_6'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_12_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>12</thruster_number>
-          </plugin>
           <pose>0.17 -1.05 -0.17 0 -0 3.14159</pose>
           <geometry>
             <mesh>
@@ -761,10 +745,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_visual_7'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_13_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>13</thruster_number>
-          </plugin>
           <pose>0.17 1.05 0.17 3.14159 -0 3.14159</pose>
           <geometry>
             <mesh>
@@ -774,10 +754,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_visual_8'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_1_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>1</thruster_number>
-          </plugin>
           <pose>0.55 0.17 -0.59 0 0 -1.5708</pose>
           <geometry>
             <mesh>
@@ -787,10 +763,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_visual_9'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_2_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>2</thruster_number>
-          </plugin>
           <pose>-0.55 -0.17 0.26 0 -0 1.5708</pose>
           <geometry>
             <mesh>
@@ -800,10 +772,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_visual_10'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_3_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>3</thruster_number>
-          </plugin>
           <pose>-0.55 -0.17 -0.59 0 -0 1.5708</pose>
           <geometry>
             <mesh>
@@ -813,10 +781,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_visual_11'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_4_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>4</thruster_number>
-          </plugin>
           <pose>-0.17 -0.755 0.55 1.5708 -0 0</pose>
           <geometry>
             <mesh>
@@ -826,10 +790,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_visual_12'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_5_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>5</thruster_number>
-          </plugin>
           <pose>-0.17 1.095 0.55 1.5708 -0 0</pose>
           <geometry>
             <mesh>
@@ -839,10 +799,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_visual_13'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_6_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>6</thruster_number>
-          </plugin>
           <pose>-0.17 0.755 -0.55 -1.5708 0 0</pose>
           <geometry>
             <mesh>
@@ -852,10 +808,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_visual_14'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_7_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>7</thruster_number>
-          </plugin>
           <pose>-0.17 -1.095 -0.55 -1.5708 0 0</pose>
           <geometry>
             <mesh>
@@ -865,10 +817,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_visual_15'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_8_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>8</thruster_number>
-          </plugin>
           <pose>0.55 1.095 -0.16 0 0 -1.5708</pose>
           <geometry>
             <mesh>
@@ -878,10 +826,6 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_visual_16'>
-          <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_plume_9_visual">
-            <thrust_color>1 0 0 1</thrust_color>
-            <thruster_number>9</thruster_number>
-          </plugin>
           <pose>0.55 -0.76 -0.17 0 0 -1.5708</pose>
           <geometry>
             <mesh>
@@ -1023,7 +967,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_l/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0 -1.5 0 1.5708 -0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 -1.06 -0.25 1.5708 -0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_l/shoulder_link</child>
         <axis>
@@ -1744,7 +1688,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_r/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0 1.5 0 -1.5708 0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 1.06 -0.25 -1.5708 0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_r/shoulder_link</child>
         <axis>
