@@ -94,44 +94,13 @@ void ScThrustVisualPlugin::Update()
 
   common::Time currentTime;
   currentTime = this->dataPtr->currentSimTime;
-/*
-  if(this->dataPtr->cycleStartTime == common::Time::Zero || 
-      this->dataPtr->cycleStartTime > currentTime)
-  {
-    this->dataPtr->cycleStartTime = currentTime;
-  }
-
-  auto elapsed = currentTime - this->dataPtr->cycleStartTime;
-
-  //Restart cycle
-  if(elapsed >= this->dataPtr->period) 
-    this->dataPtr->cycleStartTime = currentTime;
-
-  ignition::math::Color from;
-  ignition::math::Color to;
-  // 1 is the period here
-  if(elapsed < this->dataPtr->period*0.5)
-  {
-    from = this->dataPtr->thrustColor;
-    to = this->dataPtr->emptyColor;
-  }
-  else
-  {
-    from = this->dataPtr->emptyColor;
-    to = this->dataPtr->thrustColor;
-    elapsed -= this->dataPtr->period*0.5;
-  }
-
-  // interpolate each color component
-  double pos = (elapsed/(this->dataPtr->period*0.5)).Double();
-*/
-  // double alpha = from.A() + (to.A() - from.A()) * pos; 
-  double alpha = this->dataPtr->thrustVal / 15.0 + 0.2;
+  
+  double alpha = this->dataPtr->thrustVal / 10.0;
   if(alpha > 1.0)
     alpha = 1.0;
   // TODO change thruster output to only ever be positive...
-  else if(alpha < 0.2)
-    alpha = 0.2;
+  else if(alpha < 0.0)
+    alpha = 0.0;
   double red = this->dataPtr->thrustColor.R();
   double blue = this->dataPtr->thrustColor.B();
   double green = this->dataPtr->thrustColor.G();

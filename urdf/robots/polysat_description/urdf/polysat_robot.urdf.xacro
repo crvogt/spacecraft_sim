@@ -27,12 +27,12 @@
   <joint name="oberon7_r_anchor" type="fixed">
     <parent link="$(arg namespace)/base_link"/>
     <child link="oberon7_r/base"/>
-    <origin rpy="-1.5707963268 0 0" xyz="0 1.5 0"/>
+    <origin rpy="-1.5707963268 0 0" xyz="0.5 1.06 -0.25"/>
   </joint>
   <joint name="oberon7_l_anchor" type="fixed">
     <parent link="$(arg namespace)/base_link"/>
     <child link="oberon7_l/base"/>
-    <origin rpy="1.5707963268 0 0" xyz="0 -1.5 0"/>
+    <origin rpy="1.5707963268 0 0" xyz="0.5 -1.06 -0.25"/>
   </joint>
 
 </robot>

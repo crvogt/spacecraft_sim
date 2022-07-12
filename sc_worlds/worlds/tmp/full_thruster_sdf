@@ -1,16 +1,16 @@
-<sdf version="1.7">
+<sdf version='1.7'>
     <model name='polysat'>
       <link name='polysat/base_link'>
         <inertial>
-          <pose>-0.028341 0 2e-06 0 -0 0</pose>
-          <mass>69.3496</mass>
+          <pose>-0.028342 -1e-06 -2e-06 0 -0 0</pose>
+          <mass>69.3522</mass>
           <inertia>
-            <ixx>53.9937</ixx>
-            <ixy>-1.96507e-06</ixy>
-            <ixz>-3.53008e-05</ixz>
-            <iyy>12.0601</iyy>
-            <iyz>-0.0395378</iyz>
-            <izz>54.7877</izz>
+            <ixx>53.9959</ixx>
+            <ixy>-7.25495e-05</ixy>
+            <ixz>-2.62588e-05</ixz>
+            <iyy>12.0609</iyy>
+            <iyz>-0.0396074</iyz>
+            <izz>54.7899</izz>
           </inertia>
         </inertial>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_l/base_collision'>
@@ -80,11 +80,305 @@
           </surface>
         </collision>
         <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_collision_3'>
-          <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
+          <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_collision_4'>
+          <pose>-0.55 0.76 -0.16 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_collision_5'>
+          <pose>-0.55 -1.095 -0.17 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_collision_6'>
+          <pose>0.17 -1.05 -0.17 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_collision_7'>
+          <pose>0.17 1.05 0.17 3.14159 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_collision_8'>
+          <pose>0.55 0.17 -0.59 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_collision_9'>
+          <pose>-0.55 -0.17 0.26 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_collision_10'>
+          <pose>-0.55 -0.17 -0.59 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_collision_11'>
+          <pose>-0.17 -0.755 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_collision_12'>
+          <pose>-0.17 1.095 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_collision_13'>
+          <pose>-0.17 0.755 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_collision_14'>
+          <pose>-0.17 -1.095 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_collision_15'>
+          <pose>0.55 1.095 -0.16 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_collision_16'>
+          <pose>0.55 -0.76 -0.17 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_17'>
+          <pose>0.5 -0.075 0.5 3.14159 1.57079 3.14159</pose>
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -101,8 +395,272 @@
             </friction>
           </surface>
         </collision>
-        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_4'>
-          <pose>0.355 -0.075 0.5 0 -0 0</pose>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_collision_18'>
+          <pose>-0.5 0.85 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_collision_19'>
+          <pose>-0.5 -1 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_collision_20'>
+          <pose>-0.075 -1 -0.075 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_collision_21'>
+          <pose>-0.075 1 0.075 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_collision_22'>
+          <pose>0.5 -0.075 -0.35 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_collision_23'>
+          <pose>-0.5 -0.075 0.35 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_collision_24'>
+          <pose>-0.5 -0.075 -0.5 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_collision_25'>
+          <pose>-0.075 -1 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_collision_26'>
+          <pose>-0.075 0.85 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_collision_27'>
+          <pose>-0.075 1 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_collision_28'>
+          <pose>-0.075 -0.85 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_collision_29'>
+          <pose>0.5 0.85 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_collision_30'>
+          <pose>0.5 -1 0.075 3.14159 1.57079 3.14159</pose>
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
@@ -151,7 +709,7 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_3'>
-          <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
+          <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
@@ -159,8 +717,242 @@
             </mesh>
           </geometry>
         </visual>
-        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_4'>
-          <pose>0.355 -0.075 0.5 0 -0 0</pose>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_visual_4'>
+          <pose>-0.55 0.76 -0.16 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_visual_5'>
+          <pose>-0.55 -1.095 -0.17 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_visual_6'>
+          <pose>0.17 -1.05 -0.17 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_visual_7'>
+          <pose>0.17 1.05 0.17 3.14159 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_visual_8'>
+          <pose>0.55 0.17 -0.59 0 0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_visual_9'>
+          <pose>-0.55 -0.17 0.26 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_visual_10'>
+          <pose>-0.55 -0.17 -0.59 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_visual_11'>
+          <pose>-0.17 -0.755 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_visual_12'>
+          <pose>-0.17 1.095 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_visual_13'>
+          <pose>-0.17 0.755 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_visual_14'>
+          <pose>-0.17 -1.095 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_visual_15'>
+          <pose>0.55 1.095 -0.16 0 0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_visual_16'>
+          <pose>0.55 -0.76 -0.17 0 0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_17'>
+          <pose>0.5 -0.075 0.5 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_visual_18'>
+          <pose>-0.5 0.85 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_visual_19'>
+          <pose>-0.5 -1 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_visual_20'>
+          <pose>-0.075 -1 -0.075 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_visual_21'>
+          <pose>-0.075 1 0.075 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_visual_22'>
+          <pose>0.5 -0.075 -0.35 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_visual_23'>
+          <pose>-0.5 -0.075 0.35 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_visual_24'>
+          <pose>-0.5 -0.075 -0.5 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_visual_25'>
+          <pose>-0.075 -1 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_visual_26'>
+          <pose>-0.075 0.85 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_visual_27'>
+          <pose>-0.075 1 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_visual_28'>
+          <pose>-0.075 -0.85 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_visual_29'>
+          <pose>0.5 0.85 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_visual_30'>
+          <pose>0.5 -1 0.075 3.14159 1.57079 3.14159</pose>
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
@@ -2626,10 +3418,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>polysat</robotNamespace>
-        <robotParam>polysat</robotParam>
-      </plugin>
       <plugin name='polysat_0_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
         <thruster>
           <linkName>polysat/thruster_0</linkName>
@@ -2769,6 +3557,10 @@
           <enableAngle>0</enableAngle>
         </thruster>
         <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>polysat</robotNamespace>
+        <robotParam>polysat</robotParam>
       </plugin>
       <plugin name='libsc_imu_gazebo_plugin' filename='libsc_imu_gazebo_plugin.so'>
         <robot_namespace>polysat</robot_namespace>
