@@ -3,13 +3,9 @@
 
   <xacro:macro name="thruster_macro" params="namespace thruster_id *origin">
     <link name="${namespace}/thruster_${thruster_id}">
-      <inertial>
+      <xacro:box_inertial x="0.001" y="0.001" z="0.001" mass="0.0001">
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.001"/>
-        <inertia ixx="0.001" ixy="0.0" ixz="0.0"
-                 iyy="0.001" iyz="0.0"
-                 izz="0.001"/>
-      </inertial>
+      </xacro:box_inertial>
       <visual>
         <geometry>
           <cylinder length="0.000001" radius="0.0000001"/>
@@ -47,5 +43,15 @@
     <gazebo reference="${namespace}/thruster_${thruster_id}">
       <selfCollide>false</selfCollide>
     </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="box_inertial" params="x y z mass *origin">
+    <inertial>
+      <mass value="${mass}"/>
+      <xacro:insert_block name="origin"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0"
+               izz="0.00001"/>
+    </inertial>
   </xacro:macro>
 </robot>
