@@ -14,12 +14,12 @@
   <!-- oberon7 -->
   <xacro:include filename="$(find oberon7_description)/urdf/oberon7.urdf.xacro"/>
   
-  <xacro:if value="${controller == 'position'}">
+  <!--<xacro:if value="${controller == 'position'}">
     <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
   </xacro:if>
-  <xacro:if value="${controller == 'effort'}">
+  <xacro:if value="${controller == 'effort'}">-->
     <xacro:arg name="transmission_hw_interface" default="hardware_interface/EffortJointInterface"/>
-  </xacro:if>
+    <!-- </xacro:if> -->
 
   <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_r"/>
   <xacro:oberon7_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="oberon7_l"/>

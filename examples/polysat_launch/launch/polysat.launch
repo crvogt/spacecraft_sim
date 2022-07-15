@@ -31,7 +31,7 @@
   
   <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
       respawn="false" output="screen"
-      args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param $(arg namespace)/polysat"/>
+      args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description"/>
 
   <!-- Start the state publisher --> 
   <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">

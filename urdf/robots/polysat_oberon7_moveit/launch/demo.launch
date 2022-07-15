@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 
   <!-- specify the planning pipeline -->
@@ -24,8 +25,6 @@
   <arg name="use_rviz" default="true" />
 
   <!-- If needed, broadcast static tf for robot root -->
-
-
 
   <group if="$(eval arg('moveit_controller_manager') == 'fake')">
     <!-- We do not have a real robot connected, so publish fake joint states via a joint_state_publisher
