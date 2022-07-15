@@ -1,1149 +1,3655 @@
 <sdf version='1.7'>
-  <model name='polysat'>
-    <link name='polysat/base_link'>
-      <inertial>
-        <pose>1e-06 0 2e-06 0 -0 0</pose>
-        <mass>50.0002</mass>
-        <inertia>
-          <ixx>10.0001</ixx>
-          <ixy>-1.70999e-06</ixy>
-          <ixz>-3.23249e-05</ixz>
-          <iyy>10.0001</iyy>
-          <iyz>-5.32498e-06</iyz>
-          <izz>10</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision'>
-        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_collision_1'>
-        <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_2'>
-        <pose>0.355 -0.075 0.5 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_visual'>
-        <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_1'>
-				<plugin filename= "libsc_thrust_visual_plugin.so" name="thrust_visual"> 
-					<thrust_color>1 0 0 1</thrust_color> 
-				</plugin>
-        <pose>0.265 0.165 0.55 1.5708 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_2'>
-        <pose>0.355 -0.075 0.5 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
-          </mesh>
-        </geometry>
-        <!-- plugin filename="libsc_led_visual_plugin.so" name="blink">
-          <color_a>1 0 0 1</color_a>
-          <color_b>1 0 0 0</color_b>
-          <period>1</period>
-        </plugin-->
-        <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual">
-          <thrust_color>1 0 0 1</thrust_color>
-        </plugin>
-      </visual>
-    </link>
-    <joint name='polysat/imu_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/imu_link</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/imu_link'>
-      <pose relative_to='polysat/imu_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.015</mass>
-        <inertia>
-          <ixx>1e-05</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1e-05</iyy>
-          <iyz>0</iyz>
-          <izz>1e-05</izz>
-        </inertia>
-      </inertial>
-    </link>
-    <joint name='polysat/pose_sensor_default_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/pose_sensor_link_default</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/pose_sensor_link_default'>
-      <pose relative_to='polysat/pose_sensor_default_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.001</mass>
-        <inertia>
-          <ixx>1e-05</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1e-05</iyy>
-          <iyz>0</iyz>
-          <izz>1e-05</izz>
-        </inertia>
-      </inertial>
-    </link>
-    <joint name='polysat/thruster_0_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0.5 0 0.5 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_0</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_0'>
-      <pose relative_to='polysat/thruster_0_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_0_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_0_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_10_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>-0.5 0.5 0 0 -0 3.14159</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_10</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_10'>
-      <pose relative_to='polysat/thruster_10_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_10_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_10_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_11_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>-0.5 -0.5 0 0 -0 3.14159</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_11</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_11'>
-      <pose relative_to='polysat/thruster_11_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_11_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_11_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_12_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 0.5 0 0 -0 1.5708</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_12</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_12'>
-      <pose relative_to='polysat/thruster_12_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_12_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_12_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_13_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 -0.5 0 0 0 -1.5708</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_13</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_13'>
-      <pose relative_to='polysat/thruster_13_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_13_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_13_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_1_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0.5 0 -0.5 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_1</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_1'>
-      <pose relative_to='polysat/thruster_1_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_1_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_1_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_2_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>-0.5 0 0.5 0 -0 3.14159</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_2</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_2'>
-      <pose relative_to='polysat/thruster_2_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_2_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_2_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_3_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>-0.5 0 -0.5 0 -0 3.14159</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_3</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_3'>
-      <pose relative_to='polysat/thruster_3_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_3_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_3_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_4_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 0.5 0.5 0 -1.5708 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_4</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_4'>
-      <pose relative_to='polysat/thruster_4_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_4_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_4_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_5_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 -0.5 0.5 0 -1.5708 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_5</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_5'>
-      <pose relative_to='polysat/thruster_5_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_5_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_5_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_6_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 0.5 -0.5 0 1.5708 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_6</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_6'>
-      <pose relative_to='polysat/thruster_6_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_6_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_6_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_7_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0 -0.5 -0.5 0 1.5708 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_7</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_7'>
-      <pose relative_to='polysat/thruster_7_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_7_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_7_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_8_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0.5 0.5 0 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_8</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_8'>
-      <pose relative_to='polysat/thruster_8_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_8_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_8_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='polysat/thruster_9_joint' type='revolute'>
-      <pose relative_to='polysat/base_link'>0.5 -0.5 0 0 -0 0</pose>
-      <parent>polysat/base_link</parent>
-      <child>polysat/thruster_9</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <effort>0</effort>
-          <velocity>0</velocity>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='polysat/thruster_9'>
-      <pose relative_to='polysat/thruster_9_joint'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>0.0001</mass>
-        <inertia>
-          <ixx>1.66667e-11</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1.66667e-11</iyy>
-          <iyz>0</iyz>
-          <izz>1.66667e-11</izz>
-        </inertia>
-      </inertial>
-      <collision name='polysat/thruster_9_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-07</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='polysat/thruster_9_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>1e-06</length>
-            <radius>1e-07</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <self_collide>0</self_collide>
-    </link>
-    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-      <robotNamespace>polysat</robotNamespace>
-      <robotParam>polysat</robotParam>
-    </plugin>
-    <plugin name='polysat_0_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_0</linkName>
-        <jointName>polysat/thruster_0_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_0</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_0_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_1_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_1</linkName>
-        <jointName>polysat/thruster_1_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_1</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_1_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_2_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_2</linkName>
-        <jointName>polysat/thruster_2_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_2</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_2_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_3_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_3</linkName>
-        <jointName>polysat/thruster_3_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_3</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_3_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_4_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_4</linkName>
-        <jointName>polysat/thruster_4_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_4</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_4_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_5_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_5</linkName>
-        <jointName>polysat/thruster_5_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_5</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_5_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_6_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_6</linkName>
-        <jointName>polysat/thruster_6_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_6</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_6_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_7_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_7</linkName>
-        <jointName>polysat/thruster_7_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_7</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_7_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_8_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_8</linkName>
-        <jointName>polysat/thruster_8_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_8</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_8_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_9_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_9</linkName>
-        <jointName>polysat/thruster_9_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_9</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_9_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_10_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_10</linkName>
-        <jointName>polysat/thruster_10_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_10</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_10_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_11_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_11</linkName>
-        <jointName>polysat/thruster_11_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_11</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_11_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_12_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_12</linkName>
-        <jointName>polysat/thruster_12_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_12</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_12_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='polysat_13_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
-      <thruster>
-        <linkName>polysat/thruster_13</linkName>
-        <jointName>polysat/thruster_13_joint</jointName>
-        <cmdTopic>polysat/thrusters/thruster_13</cmdTopic>
-        <angleTopic>polysat/thrusters/thruster_13_angle</angleTopic>
-        <enableAngle>0</enableAngle>
-      </thruster>
-    </plugin>
-    <plugin name='libsc_imu_gazebo_plugin' filename='libsc_imu_gazebo_plugin.so'>
-      <robot_namespace>polysat</robot_namespace>
-      <link_name>polysat/imu_link</link_name>
-      <sensor_topic>imu</sensor_topic>
-      <gyroscope_noise_density>0.0003394</gyroscope_noise_density>
-      <gyroscope_random_walk>3.8785e-05</gyroscope_random_walk>
-      <gyroscope_bias_correlation_time>1000.0</gyroscope_bias_correlation_time>
-      <gyroscope_turn_on_bias_sigma>0.0087</gyroscope_turn_on_bias_sigma>
-      <accelerometer_noise_density>0.004</accelerometer_noise_density>
-      <accelerometer_random_walk>0.006</accelerometer_random_walk>
-      <accelerometer_bias_correlation_time>300.0</accelerometer_bias_correlation_time>
-      <accelerometer_turn_on_bias_sigma>0.196</accelerometer_turn_on_bias_sigma>
-      <orientation_noise>0.01</orientation_noise>
-      <update_rate>50</update_rate>
-      <enable_gazebo_messages>0</enable_gazebo_messages>
-      <enable_local_ned_frame>0</enable_local_ned_frame>
-      <static_reference_frame>world</static_reference_frame>
-    </plugin>
-    <static>0</static>
-    <plugin name='pose_3d_plugin' filename='libsc_pose_gt_plugin.so'>
-      <robot_namespace>polysat</robot_namespace>
-      <link_name>polysat/base_link</link_name>
-      <sensor_topic>pose_gt</sensor_topic>
-      <static_reference_frame>world</static_reference_frame>
-      <noise_sigma>0.0</noise_sigma>
-      <noise_amplitude>0.0</noise_amplitude>
-      <update_rate>20</update_rate>
-      <enable_gazebo_messages>0</enable_gazebo_messages>
-      <publish_ned_odom>0</publish_ned_odom>
-    </plugin>
-  </model>
+    <model name='polysat'>
+      <link name='polysat/base_link'>
+        <inertial>
+          <pose>0.111158 -1e-06 -0.069752 0 -0 0</pose>
+          <mass>69.3522</mass>
+          <inertia>
+            <ixx>33.2392</ixx>
+            <ixy>-8.09195e-05</ixy>
+            <ixz>1.38953</ixz>
+            <iyy>15.0034</iyy>
+            <iyz>-0.0279309</iyz>
+            <izz>35.2319</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/base_link_fixed_joint_lump__oberon7_l/base_collision'>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__oberon7_r/base_collision_1'>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision_2'>
+          <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_collision_3'>
+          <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_collision_4'>
+          <pose>-0.55 0.76 -0.16 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_collision_5'>
+          <pose>-0.55 -1.095 -0.17 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_collision_6'>
+          <pose>0.17 -1.05 -0.17 0 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_collision_7'>
+          <pose>0.17 1.05 0.17 3.14159 -0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_collision_8'>
+          <pose>0.55 0.17 -0.59 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_collision_9'>
+          <pose>-0.55 -0.17 0.26 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_collision_10'>
+          <pose>-0.55 -0.17 -0.59 0 -0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_collision_11'>
+          <pose>-0.17 -0.755 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_collision_12'>
+          <pose>-0.17 1.095 0.55 1.5708 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_collision_13'>
+          <pose>-0.17 0.755 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_collision_14'>
+          <pose>-0.17 -1.095 -0.55 -1.5708 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_collision_15'>
+          <pose>0.55 1.095 -0.16 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_collision_16'>
+          <pose>0.55 -0.76 -0.17 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.0001 0.0001 0.0001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_17'>
+          <pose>0.5 -0.075 0.5 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_collision_18'>
+          <pose>-0.5 0.85 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_collision_19'>
+          <pose>-0.5 -1 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_collision_20'>
+          <pose>-0.075 -1 -0.075 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_collision_21'>
+          <pose>-0.075 1 0.075 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_collision_22'>
+          <pose>0.5 -0.075 -0.35 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_collision_23'>
+          <pose>-0.5 -0.075 0.35 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_collision_24'>
+          <pose>-0.5 -0.075 -0.5 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_collision_25'>
+          <pose>-0.075 -1 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_collision_26'>
+          <pose>-0.075 0.85 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_collision_27'>
+          <pose>-0.075 1 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_collision_28'>
+          <pose>-0.075 -0.85 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_collision_29'>
+          <pose>0.5 0.85 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_collision_30'>
+          <pose>0.5 -1 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='polysat/base_link_fixed_joint_lump__oberon7_l/base_visual'>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__oberon7_r/base_visual_1'>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_visual_2'>
+          <pose>-0.5 1 -0.5 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_3'>
+          <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_visual_4'>
+          <pose>-0.55 0.76 -0.16 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_10">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>10</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_visual_5'>
+          <pose>-0.55 -1.095 -0.17 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_11">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>11</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_visual_6'>
+          <pose>0.17 -1.05 -0.17 0 -0 3.14159</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_12">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>12</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_visual_7'>
+          <pose>0.17 1.05 0.17 3.14159 -0 3.14159</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_13">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>13</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_visual_8'>
+          <pose>0.55 0.17 -0.59 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_1">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>1</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_visual_9'>
+          <pose>-0.55 -0.17 0.26 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_2">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>2</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_visual_10'>
+          <pose>-0.55 -0.17 -0.59 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_3">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>3</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_visual_11'>
+          <pose>-0.17 -0.755 0.55 1.5708 -0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_4">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>4</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_visual_12'>
+          <pose>-0.17 1.095 0.55 1.5708 -0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_5">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>5</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_visual_13'>
+          <pose>-0.17 0.755 -0.55 -1.5708 0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_6">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>6</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_visual_14'>
+          <pose>-0.17 -1.095 -0.55 -1.5708 0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_7">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>7</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_visual_15'>
+          <pose>0.55 1.095 -0.16 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_8">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>8</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_visual_16'>
+          <pose>0.55 -0.76 -0.17 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_9">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>9</thruster_number>
+					</plugin>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_17'>
+          <pose>0.5 -0.075 0.5 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_visual_18'>
+          <pose>-0.5 0.85 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_visual_19'>
+          <pose>-0.5 -1 -0.075 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_visual_20'>
+          <pose>-0.075 -1 -0.075 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_visual_21'>
+          <pose>-0.075 1 0.075 -1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_visual_22'>
+          <pose>0.5 -0.075 -0.35 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_visual_23'>
+          <pose>-0.5 -0.075 0.35 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_visual_24'>
+          <pose>-0.5 -0.075 -0.5 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_visual_25'>
+          <pose>-0.075 -1 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_visual_26'>
+          <pose>-0.075 0.85 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_visual_27'>
+          <pose>-0.075 1 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_visual_28'>
+          <pose>-0.075 -0.85 -0.5 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_visual_29'>
+          <pose>0.5 0.85 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_visual_30'>
+          <pose>0.5 -1 0.075 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/azimuth' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>oberon7_l/shoulder_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.0472</lower>
+            <upper>1.0472</upper>
+            <effort>200</effort>
+            <velocity>0.17</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/shoulder_link'>
+        <pose relative_to='oberon7_l/azimuth'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.03967 0.005441 0.017383 0 -0 0</pose>
+          <mass>6.72225</mass>
+          <inertia>
+            <ixx>0.42584</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.513258</iyy>
+            <iyz>0</iyz>
+            <izz>0.295765</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/shoulder_link_collision'>
+          <pose>0.03967 0.005441 0.017383 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.239627</length>
+              <radius>0.068184</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/shoulder_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/shoulder' type='revolute'>
+        <pose relative_to='oberon7_l/shoulder_link'>0.06955 0.00015 0.01536 1.5708 -0 0</pose>
+        <parent>oberon7_l/shoulder_link</parent>
+        <child>oberon7_l/upper_arm</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-0.8591</lower>
+            <upper>0.6856</upper>
+            <effort>5000</effort>
+            <velocity>0.17</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/upper_arm'>
+        <pose relative_to='oberon7_l/shoulder'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.312501 0.017478 -2e-06 0 -0 0</pose>
+          <mass>12.4444</mass>
+          <inertia>
+            <ixx>0.378234</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>4.11488</iyy>
+            <iyz>0</iyz>
+            <izz>4.15421</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/upper_arm_collision'>
+          <pose>0.312501 0.017478 -2e-06 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.616809</length>
+              <radius>0.0709445</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/upper_arm_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/elbow' type='revolute'>
+        <pose relative_to='oberon7_l/upper_arm'>0.55616 -0.01229 0 0 -0 0</pose>
+        <parent>oberon7_l/upper_arm</parent>
+        <child>oberon7_l/elbow_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.4839</lower>
+            <upper>1.0472</upper>
+            <effort>300</effort>
+            <velocity>0.13</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/elbow_link'>
+        <pose relative_to='oberon7_l/elbow'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.125269 -0.074675 0 0 -0 0</pose>
+          <mass>10.3145</mass>
+          <inertia>
+            <ixx>0.717198</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.724091</iyy>
+            <iyz>0</iyz>
+            <izz>1.02762</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/elbow_link_collision'>
+          <pose>0.125269 -0.074675 0 1.57079 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.245312</length>
+              <radius>0.077562</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/elbow_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/roll' type='revolute'>
+        <pose relative_to='oberon7_l/elbow_link'>0.134901 -0.193627 0 1.5708 -0 0</pose>
+        <parent>oberon7_l/elbow_link</parent>
+        <child>oberon7_l/forearm</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-2.35619</lower>
+            <upper>2.35619</upper>
+            <effort>200</effort>
+            <velocity>0.085</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/forearm'>
+        <pose relative_to='oberon7_l/roll'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.157979 0 -0 0</pose>
+          <mass>8.54626</mass>
+          <inertia>
+            <ixx>0.961794</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.961902</iyy>
+            <iyz>0</iyz>
+            <izz>0.32684</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/forearm_collision'>
+          <pose>0 0 0.157979 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.334827</length>
+              <radius>0.0757275</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/forearm_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/pitch' type='revolute'>
+        <pose relative_to='oberon7_l/forearm'>0 0 0.315958 1.57079 -1.57079 3.14159</pose>
+        <parent>oberon7_l/forearm</parent>
+        <child>oberon7_l/wrist_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+            <effort>200</effort>
+            <velocity>0.26</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/wrist_link'>
+        <pose relative_to='oberon7_l/pitch'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.104016 0.003308 -2.7e-05 0 -0 0</pose>
+          <mass>3.90242</mass>
+          <inertia>
+            <ixx>0.104282</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.211537</iyy>
+            <iyz>0</iyz>
+            <izz>0.205267</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/wrist_link_collision'>
+          <pose>0.104016 0.003308 -2.7e-05 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.219204</length>
+              <radius>0.065187</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/wrist_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/wrist' type='revolute'>
+        <pose relative_to='oberon7_l/wrist_link'>0.19304 0 0 0 -0 0</pose>
+        <parent>oberon7_l/wrist_link</parent>
+        <child>oberon7_l/end_effector</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>10</damping>
+            <friction>5</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/end_effector'>
+        <pose relative_to='oberon7_l/wrist'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.024426 0 -1.4e-05 0 -0 0</pose>
+          <mass>3.46115</mass>
+          <inertia>
+            <ixx>0.0774522</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0536143</iyy>
+            <iyz>0</iyz>
+            <izz>0.0557056</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/end_effector_collision'>
+          <pose>0.024426 0 -1.4e-05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.074326 0.117427 0.114298</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/end_effector_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/finger_left_joint' type='revolute'>
+        <pose relative_to='oberon7_l/end_effector'>0.044427 0.039138 0 0 -0 0</pose>
+        <parent>oberon7_l/end_effector</parent>
+        <child>oberon7_l/finger_left</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.04709</upper>
+            <effort>3000</effort>
+            <velocity>0.15</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/finger_left'>
+        <pose relative_to='oberon7_l/finger_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.025268 -0.001931 -7.9e-05 0 -0 0</pose>
+          <mass>0.879771</mass>
+          <inertia>
+            <ixx>0.00378331</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00886148</iyy>
+            <iyz>0</iyz>
+            <izz>0.00919231</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/finger_left_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/finger_left_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/finger_tip_left_joint' type='revolute'>
+        <pose relative_to='oberon7_l/finger_left'>0.06431 0 0 -3.14159 0 0</pose>
+        <parent>oberon7_l/finger_left</parent>
+        <child>oberon7_l/finger_tip_left</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/finger_tip_left'>
+        <pose relative_to='oberon7_l/finger_tip_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.027744 0.017278 0 0 -0 0</pose>
+          <mass>1.12551</mass>
+          <inertia>
+            <ixx>0.00611047</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0134903</iyy>
+            <iyz>0</iyz>
+            <izz>0.0121556</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/finger_tip_left_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>3</max_contacts>
+        </collision>
+        <visual name='oberon7_l/finger_tip_left_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/finger_right_joint' type='revolute'>
+        <pose relative_to='oberon7_l/end_effector'>0.044427 -0.039138 0 0 -0 0</pose>
+        <parent>oberon7_l/end_effector</parent>
+        <child>oberon7_l/finger_right</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.04709</upper>
+            <effort>3000</effort>
+            <velocity>0.15</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/finger_right'>
+        <pose relative_to='oberon7_l/finger_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.025268 -0.001931 -7.9e-05 0 -0 0</pose>
+          <mass>0.879771</mass>
+          <inertia>
+            <ixx>0.00378331</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00886148</iyy>
+            <iyz>0</iyz>
+            <izz>0.00919231</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/finger_right_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_l/finger_right_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_l/finger_tip_right_joint' type='revolute'>
+        <pose relative_to='oberon7_l/finger_right'>0.06431 0 0 0 -0 0</pose>
+        <parent>oberon7_l/finger_right</parent>
+        <child>oberon7_l/finger_tip_right</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_l/finger_tip_right'>
+        <pose relative_to='oberon7_l/finger_tip_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.027744 0.017278 0 0 -0 0</pose>
+          <mass>1.12551</mass>
+          <inertia>
+            <ixx>0.00611047</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0134903</iyy>
+            <iyz>0</iyz>
+            <izz>0.0121556</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_l/finger_tip_right_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>3</max_contacts>
+        </collision>
+        <visual name='oberon7_l/finger_tip_right_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/azimuth' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 1.06 -0.25 -1.5708 0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>oberon7_r/shoulder_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.0472</lower>
+            <upper>1.0472</upper>
+            <effort>200</effort>
+            <velocity>0.17</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/shoulder_link'>
+        <pose relative_to='oberon7_r/azimuth'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.03967 0.005441 0.017383 0 -0 0</pose>
+          <mass>6.72225</mass>
+          <inertia>
+            <ixx>0.42584</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.513258</iyy>
+            <iyz>0</iyz>
+            <izz>0.295765</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/shoulder_link_collision'>
+          <pose>0.03967 0.005441 0.017383 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.239627</length>
+              <radius>0.068184</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/shoulder_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/shoulder' type='revolute'>
+        <pose relative_to='oberon7_r/shoulder_link'>0.06955 0.00015 0.01536 1.5708 -0 0</pose>
+        <parent>oberon7_r/shoulder_link</parent>
+        <child>oberon7_r/upper_arm</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-0.8591</lower>
+            <upper>0.6856</upper>
+            <effort>5000</effort>
+            <velocity>0.17</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/upper_arm'>
+        <pose relative_to='oberon7_r/shoulder'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.312501 0.017478 -2e-06 0 -0 0</pose>
+          <mass>12.4444</mass>
+          <inertia>
+            <ixx>0.378234</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>4.11488</iyy>
+            <iyz>0</iyz>
+            <izz>4.15421</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/upper_arm_collision'>
+          <pose>0.312501 0.017478 -2e-06 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.616809</length>
+              <radius>0.0709445</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/upper_arm_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/elbow' type='revolute'>
+        <pose relative_to='oberon7_r/upper_arm'>0.55616 -0.01229 0 0 -0 0</pose>
+        <parent>oberon7_r/upper_arm</parent>
+        <child>oberon7_r/elbow_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.4839</lower>
+            <upper>1.0472</upper>
+            <effort>300</effort>
+            <velocity>0.13</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/elbow_link'>
+        <pose relative_to='oberon7_r/elbow'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.125269 -0.074675 0 0 -0 0</pose>
+          <mass>10.3145</mass>
+          <inertia>
+            <ixx>0.717198</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.724091</iyy>
+            <iyz>0</iyz>
+            <izz>1.02762</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/elbow_link_collision'>
+          <pose>0.125269 -0.074675 0 1.57079 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.245312</length>
+              <radius>0.077562</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/elbow_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/roll' type='revolute'>
+        <pose relative_to='oberon7_r/elbow_link'>0.134901 -0.193627 0 1.5708 -0 0</pose>
+        <parent>oberon7_r/elbow_link</parent>
+        <child>oberon7_r/forearm</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-2.35619</lower>
+            <upper>2.35619</upper>
+            <effort>200</effort>
+            <velocity>0.085</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/forearm'>
+        <pose relative_to='oberon7_r/roll'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.157979 0 -0 0</pose>
+          <mass>8.54626</mass>
+          <inertia>
+            <ixx>0.961794</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.961902</iyy>
+            <iyz>0</iyz>
+            <izz>0.32684</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/forearm_collision'>
+          <pose>0 0 0.157979 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.334827</length>
+              <radius>0.0757275</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/forearm_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/pitch' type='revolute'>
+        <pose relative_to='oberon7_r/forearm'>0 0 0.315958 1.57079 -1.57079 3.14159</pose>
+        <parent>oberon7_r/forearm</parent>
+        <child>oberon7_r/wrist_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+            <effort>200</effort>
+            <velocity>0.26</velocity>
+          </limit>
+          <dynamics>
+            <damping>50</damping>
+            <friction>120</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/wrist_link'>
+        <pose relative_to='oberon7_r/pitch'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.104016 0.003308 -2.7e-05 0 -0 0</pose>
+          <mass>3.90242</mass>
+          <inertia>
+            <ixx>0.104282</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.211537</iyy>
+            <iyz>0</iyz>
+            <izz>0.205267</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/wrist_link_collision'>
+          <pose>0.104016 0.003308 -2.7e-05 3.14159 1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.219204</length>
+              <radius>0.065187</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/wrist_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/wrist' type='revolute'>
+        <pose relative_to='oberon7_r/wrist_link'>0.19304 0 0 0 -0 0</pose>
+        <parent>oberon7_r/wrist_link</parent>
+        <child>oberon7_r/end_effector</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>10</damping>
+            <friction>5</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/end_effector'>
+        <pose relative_to='oberon7_r/wrist'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.024426 0 -1.4e-05 0 -0 0</pose>
+          <mass>3.46115</mass>
+          <inertia>
+            <ixx>0.0774522</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0536143</iyy>
+            <iyz>0</iyz>
+            <izz>0.0557056</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/end_effector_collision'>
+          <pose>0.024426 0 -1.4e-05 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.074326 0.117427 0.114298</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/end_effector_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/finger_left_joint' type='revolute'>
+        <pose relative_to='oberon7_r/end_effector'>0.044427 0.039138 0 0 -0 0</pose>
+        <parent>oberon7_r/end_effector</parent>
+        <child>oberon7_r/finger_left</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.04709</upper>
+            <effort>3000</effort>
+            <velocity>0.15</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/finger_left'>
+        <pose relative_to='oberon7_r/finger_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.025268 -0.001931 -7.9e-05 0 -0 0</pose>
+          <mass>0.879771</mass>
+          <inertia>
+            <ixx>0.00378331</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00886148</iyy>
+            <iyz>0</iyz>
+            <izz>0.00919231</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/finger_left_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/finger_left_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/finger_tip_left_joint' type='revolute'>
+        <pose relative_to='oberon7_r/finger_left'>0.06431 0 0 -3.14159 0 0</pose>
+        <parent>oberon7_r/finger_left</parent>
+        <child>oberon7_r/finger_tip_left</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/finger_tip_left'>
+        <pose relative_to='oberon7_r/finger_tip_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.027744 0.017278 0 0 -0 0</pose>
+          <mass>1.12551</mass>
+          <inertia>
+            <ixx>0.00611047</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0134903</iyy>
+            <iyz>0</iyz>
+            <izz>0.0121556</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/finger_tip_left_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>3</max_contacts>
+        </collision>
+        <visual name='oberon7_r/finger_tip_left_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/finger_right_joint' type='revolute'>
+        <pose relative_to='oberon7_r/end_effector'>0.044427 -0.039138 0 0 -0 0</pose>
+        <parent>oberon7_r/end_effector</parent>
+        <child>oberon7_r/finger_right</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.04709</upper>
+            <effort>3000</effort>
+            <velocity>0.15</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/finger_right'>
+        <pose relative_to='oberon7_r/finger_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.025268 -0.001931 -7.9e-05 0 -0 0</pose>
+          <mass>0.879771</mass>
+          <inertia>
+            <ixx>0.00378331</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00886148</iyy>
+            <iyz>0</iyz>
+            <izz>0.00919231</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/finger_right_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>1</max_contacts>
+        </collision>
+        <visual name='oberon7_r/finger_right_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='oberon7_r/finger_tip_right_joint' type='revolute'>
+        <pose relative_to='oberon7_r/finger_right'>0.06431 0 0 0 -0 0</pose>
+        <parent>oberon7_r/finger_right</parent>
+        <child>oberon7_r/finger_tip_right</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>10</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='oberon7_r/finger_tip_right'>
+        <pose relative_to='oberon7_r/finger_tip_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.027744 0.017278 0 0 -0 0</pose>
+          <mass>1.12551</mass>
+          <inertia>
+            <ixx>0.00611047</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0134903</iyy>
+            <iyz>0</iyz>
+            <izz>0.0121556</izz>
+          </inertia>
+        </inertial>
+        <collision name='oberon7_r/finger_tip_right_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>3</max_contacts>
+        </collision>
+        <visual name='oberon7_r/finger_tip_right_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/imu_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/imu_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/imu_link'>
+        <pose relative_to='polysat/imu_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.015</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1e-05</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/pose_sensor_default_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/pose_sensor_link_default</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/pose_sensor_link_default'>
+        <pose relative_to='polysat/pose_sensor_default_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1e-05</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_0_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 0 0.5 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_0</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_0'>
+        <pose relative_to='polysat/thruster_0_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_0_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_0_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_10_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>-0.5 0.5 0 0 -0 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_10</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_10'>
+        <pose relative_to='polysat/thruster_10_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_10_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_10_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_11_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>-0.5 -0.5 0 0 -0 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_11</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_11'>
+        <pose relative_to='polysat/thruster_11_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_11_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_11_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_12_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 0.5 0 0 -0 1.5708</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_12</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_12'>
+        <pose relative_to='polysat/thruster_12_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_12_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_12_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_13_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 -0.5 0 0 0 -1.5708</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_13</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_13'>
+        <pose relative_to='polysat/thruster_13_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_13_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_13_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_1_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 0 -0.5 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_1</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_1'>
+        <pose relative_to='polysat/thruster_1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_1_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_1_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_2_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>-0.5 0 0.5 0 -0 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_2</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_2'>
+        <pose relative_to='polysat/thruster_2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_2_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_2_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_3_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>-0.5 0 -0.5 0 -0 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_3</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_3'>
+        <pose relative_to='polysat/thruster_3_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_3_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_3_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_4_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 0.5 0.5 3.14159 -1.57079 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_4</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_4'>
+        <pose relative_to='polysat/thruster_4_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_4_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_4_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_5_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 -0.5 0.5 3.14159 -1.57079 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_5</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_5'>
+        <pose relative_to='polysat/thruster_5_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_5_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_5_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_6_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 0.5 -0.5 3.14159 1.57079 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_6</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_6'>
+        <pose relative_to='polysat/thruster_6_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_6_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_6_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_7_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0 -0.5 -0.5 3.14159 1.57079 3.14159</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_7</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_7'>
+        <pose relative_to='polysat/thruster_7_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_7_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_7_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_8_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 0.5 0 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_8</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_8'>
+        <pose relative_to='polysat/thruster_8_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_8_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_8_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='polysat/thruster_9_joint' type='revolute'>
+        <pose relative_to='polysat/base_link'>0.5 -0.5 0 0 -0 0</pose>
+        <parent>polysat/base_link</parent>
+        <child>polysat/thruster_9</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>0</effort>
+            <velocity>0</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='polysat/thruster_9'>
+        <pose relative_to='polysat/thruster_9_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0001</mass>
+          <inertia>
+            <ixx>1.66667e-11</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667e-11</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-11</izz>
+          </inertia>
+        </inertial>
+        <collision name='polysat/thruster_9_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-07</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='polysat/thruster_9_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>1e-06</length>
+              <radius>1e-07</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='polysat_0_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_0</linkName>
+          <jointName>polysat/thruster_0_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_0</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_0_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_1_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_1</linkName>
+          <jointName>polysat/thruster_1_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_1</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_1_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_2_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_2</linkName>
+          <jointName>polysat/thruster_2_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_2</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_2_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_3_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_3</linkName>
+          <jointName>polysat/thruster_3_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_3</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_3_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_4_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_4</linkName>
+          <jointName>polysat/thruster_4_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_4</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_4_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_5_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_5</linkName>
+          <jointName>polysat/thruster_5_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_5</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_5_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_6_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_6</linkName>
+          <jointName>polysat/thruster_6_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_6</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_6_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_7_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_7</linkName>
+          <jointName>polysat/thruster_7_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_7</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_7_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_8_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_8</linkName>
+          <jointName>polysat/thruster_8_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_8</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_8_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_9_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_9</linkName>
+          <jointName>polysat/thruster_9_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_9</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_9_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_10_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_10</linkName>
+          <jointName>polysat/thruster_10_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_10</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_10_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_11_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_11</linkName>
+          <jointName>polysat/thruster_11_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_11</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_11_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_12_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_12</linkName>
+          <jointName>polysat/thruster_12_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_12</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_12_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='polysat_13_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+        <thruster>
+          <linkName>polysat/thruster_13</linkName>
+          <jointName>polysat/thruster_13_joint</jointName>
+          <cmdTopic>polysat/thrusters/thruster_13</cmdTopic>
+          <angleTopic>polysat/thrusters/thruster_13_angle</angleTopic>
+          <enableAngle>0</enableAngle>
+        </thruster>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>polysat</robotNamespace>
+        <robotParam>polysat</robotParam>
+      </plugin>
+      <plugin name='libsc_imu_gazebo_plugin' filename='libsc_imu_gazebo_plugin.so'>
+        <robot_namespace>polysat</robot_namespace>
+        <link_name>polysat/imu_link</link_name>
+        <sensor_topic>imu</sensor_topic>
+        <gyroscope_noise_density>0.0003394</gyroscope_noise_density>
+        <gyroscope_random_walk>3.8785e-05</gyroscope_random_walk>
+        <gyroscope_bias_correlation_time>1000.0</gyroscope_bias_correlation_time>
+        <gyroscope_turn_on_bias_sigma>0.0087</gyroscope_turn_on_bias_sigma>
+        <accelerometer_noise_density>0.004</accelerometer_noise_density>
+        <accelerometer_random_walk>0.006</accelerometer_random_walk>
+        <accelerometer_bias_correlation_time>300.0</accelerometer_bias_correlation_time>
+        <accelerometer_turn_on_bias_sigma>0.196</accelerometer_turn_on_bias_sigma>
+        <orientation_noise>0.01</orientation_noise>
+        <update_rate>50</update_rate>
+        <enable_gazebo_messages>0</enable_gazebo_messages>
+        <enable_local_ned_frame>0</enable_local_ned_frame>
+        <static_reference_frame>world</static_reference_frame>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='pose_3d_plugin' filename='libsc_pose_gt_plugin.so'>
+        <robot_namespace>polysat</robot_namespace>
+        <link_name>polysat/base_link</link_name>
+        <sensor_topic>pose_gt</sensor_topic>
+        <static_reference_frame>world</static_reference_frame>
+        <noise_sigma>0.0</noise_sigma>
+        <noise_amplitude>0.0</noise_amplitude>
+        <update_rate>20</update_rate>
+        <enable_gazebo_messages>0</enable_gazebo_messages>
+        <publish_ned_odom>0</publish_ned_odom>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose>0 0 2 0 -0 0</pose>
+    </model>
 </sdf>

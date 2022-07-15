@@ -341,11 +341,11 @@ void ScThrust::Update()
     }
   }
 
-  // Publish the propeller joint state
+  // Publish the joint state
   if(now - this->prevUpdateTime >= (1 / this->publisherRate))
   {
     this->jointStateMsg.header.stamp = ros::Time::now();
-    this->jointStatePub.publish(this->jointStateMsg);
+    //this->jointStatePub.publish(this->jointStateMsg);
 
     this->prevUpdateTime = now;
   }

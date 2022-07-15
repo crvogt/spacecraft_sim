@@ -13,6 +13,7 @@
   <arg name="roll" default="0"/>
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
+  <arg name="polysat_urdf" default="$(find polysat_description)/urdf/polysat_robot.urdf"/>
 
   <!-- World details -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -25,6 +26,7 @@
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
 
+  <param name="robot_description" command="$(find xacro)/xacro $(arg polysat_urdf)"/>
   <param name="$(arg namespace)/polysat" textfile="$(find polysat_description)/urdf/polysat_robot.sdf"/>
 
   <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
@@ -34,7 +36,15 @@
   <node name="position_command" pkg="sc_control" type="position_command.py">
   </node>
 
-  <!-- <node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/> -->
+  <!-- Load general controllers -->
+  <include file="$(find oberon7_gazebo)/launch/controller_utils.launch"/>
+
+  <rosparam file="$(find oberon7_gazebo)/controller/oberon7_controllers.yaml" command="load"/>
+
+  <!-- Load chosen controller types -->
+  <node name="controllers_spawner" pkg="controller_manager" type="spawner" args="hand_effort_r hand_effort_l arm_effort_l arm_effort_r" respawn="false" output="screen"/>
+
+  <!--node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/--> 
 
   <!--<include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>-->
 

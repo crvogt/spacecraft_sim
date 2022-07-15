@@ -62,6 +62,8 @@ namespace gazebo
 
     public: std::mutex mutex;
 
+    public: std::string thrusterNum;
+
     public: transport::SubscriberPtr infoSub;
     
     public: ros::Subscriber thrustSub;

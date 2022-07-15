@@ -27,10 +27,15 @@ chmod 664 $SDF_FILE
 
 # This is dumb. Learn "sed -i"
 echo "Adding plugin text to $SDF_FILE..."
-awk '/polysat_link_visual/ { print; print "\t\t\t\t<plugin filename=\
- \"libsc_thrust_visual_plugin.so\" name=\"thrust_visual\">\
+for i in {0..13}
+do
+awk '/thrust_plume_$i_visual/ { print; print "\t\t\t\t<plugin filename=\
+ \"libsc_thrust_visual_plugin.so\" name=\"thrust_visual_$i\">\
  \n\t\t\t\t\t<thrust_color>1 0 0 1</thrust_color>\
+ \n\t\t\t\t\t<thruster_number>$i</thruster_number>
  \n\t\t\t\t</plugin>"; next }1' $SDF_FILE >> $SDF_TMP
+done
+
 
 rm $SDF_FILE; mv $SDF_TMP ./$SDF_FILE
 chmod 664 $SDF_FILE

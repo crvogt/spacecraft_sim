@@ -48,6 +48,15 @@ void ScThrustVisualPlugin::Load(rendering::VisualPtr _visual,
   else
     gzerr << "No thrust_color specified" << std::endl;
 
+  // Get the thruster number
+  if(_sdf->HasElement("thruster_number"))
+  {
+    this->dataPtr->thrusterNum = 
+      _sdf->Get<std::string>("thruster_number");
+  }
+  else
+    gzerr << "No thruster_number specified" << std::endl;
+
   this->dataPtr->period.Set(1);
   if(_sdf->HasElement("period"))
     this->dataPtr->period = _sdf->Get<double>("period");
@@ -64,14 +73,13 @@ void ScThrustVisualPlugin::Load(rendering::VisualPtr _visual,
       "~/pose/local/info", &ScThrustVisualPlugin::OnInfo, this);
 
   // Ros node 
+  std::string thrustSubTopic = "/polysat/thrusters/thruster_" + 
+    this->dataPtr->thrusterNum;
   this->rosnode.reset(new ros::NodeHandle("thrust_visual_node"));
   this->dataPtr->thrustSub = this->rosnode->subscribe(
-      "/polysat/thrusters/thruster_12", 1, 
+      thrustSubTopic, 1, 
       &ScThrustVisualPlugin::OnThrustInfo, 
       this);
- /* this->dataPtr->thrustSub = this->dataPtr->node->Subscribe(
-      "~/polysat/thrusters/thruster_8", &ScThrustVisualPlugin::OnThrustInfo,
-      this);*/
 }
 
 void ScThrustVisualPlugin::Update()
@@ -86,44 +94,13 @@ void ScThrustVisualPlugin::Update()
 
   common::Time currentTime;
   currentTime = this->dataPtr->currentSimTime;
-/*
-  if(this->dataPtr->cycleStartTime == common::Time::Zero || 
-      this->dataPtr->cycleStartTime > currentTime)
-  {
-    this->dataPtr->cycleStartTime = currentTime;
-  }
-
-  auto elapsed = currentTime - this->dataPtr->cycleStartTime;
-
-  //Restart cycle
-  if(elapsed >= this->dataPtr->period) 
-    this->dataPtr->cycleStartTime = currentTime;
-
-  ignition::math::Color from;
-  ignition::math::Color to;
-  // 1 is the period here
-  if(elapsed < this->dataPtr->period*0.5)
-  {
-    from = this->dataPtr->thrustColor;
-    to = this->dataPtr->emptyColor;
-  }
-  else
-  {
-    from = this->dataPtr->emptyColor;
-    to = this->dataPtr->thrustColor;
-    elapsed -= this->dataPtr->period*0.5;
-  }
-
-  // interpolate each color component
-  double pos = (elapsed/(this->dataPtr->period*0.5)).Double();
-*/
-  // double alpha = from.A() + (to.A() - from.A()) * pos; 
-  double alpha = this->dataPtr->thrustVal / 15.0 + 0.2;
+  
+  double alpha = this->dataPtr->thrustVal / 5.0;
   if(alpha > 1.0)
     alpha = 1.0;
   // TODO change thruster output to only ever be positive...
-  else if(alpha < 0.2)
-    alpha = 0.2;
+  else if(alpha < 0.0)
+    alpha = 0.0;
   double red = this->dataPtr->thrustColor.R();
   double blue = this->dataPtr->thrustColor.B();
   double green = this->dataPtr->thrustColor.G();
