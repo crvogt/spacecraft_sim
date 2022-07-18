@@ -708,6 +708,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>1.0 0.84 0 1</ambient>
+            <diffuse>0.1 0.1 0 1</diffuse>
+            <specular>0.5 0.4 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_3'>
           <pose>0.55 0.17 0.26 0 0 -1.5708</pose>
@@ -899,6 +905,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_visual_18'>
           <pose>-0.5 0.85 -0.075 3.14159 -1.57079 3.14159</pose>
@@ -908,6 +920,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_visual_19'>
           <pose>-0.5 -1 -0.075 3.14159 -1.57079 3.14159</pose>
@@ -917,6 +935,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_visual_20'>
           <pose>-0.075 -1 -0.075 1.5708 -0 0</pose>
@@ -926,6 +950,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_visual_21'>
           <pose>-0.075 1 0.075 -1.5708 0 0</pose>
@@ -935,6 +965,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_visual_22'>
           <pose>0.5 -0.075 -0.35 3.14159 1.57079 3.14159</pose>
@@ -944,6 +980,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_visual_23'>
           <pose>-0.5 -0.075 0.35 3.14159 -1.57079 3.14159</pose>
@@ -953,6 +995,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_visual_24'>
           <pose>-0.5 -0.075 -0.5 3.14159 -1.57079 3.14159</pose>
@@ -962,6 +1010,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_visual_25'>
           <pose>-0.075 -1 0.5 0 -0 0</pose>
@@ -971,6 +1025,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_visual_26'>
           <pose>-0.075 0.85 0.5 0 -0 0</pose>
@@ -980,6 +1040,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_visual_27'>
           <pose>-0.075 1 -0.5 3.14159 -0 0</pose>
@@ -989,6 +1055,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_visual_28'>
           <pose>-0.075 -0.85 -0.5 3.14159 -0 0</pose>
@@ -998,6 +1070,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_visual_29'>
           <pose>0.5 0.85 0.075 3.14159 1.57079 3.14159</pose>
@@ -1007,6 +1085,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_visual_30'>
           <pose>0.5 -1 0.075 3.14159 1.57079 3.14159</pose>
@@ -1016,6 +1100,12 @@
               <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
         </visual>
         <gravity>1</gravity>
         <self_collide>0</self_collide>
