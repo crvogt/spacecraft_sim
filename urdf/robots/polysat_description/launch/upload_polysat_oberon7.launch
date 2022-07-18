@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="polysat"/>
+  <arg name="debug" default="false"/>
+  <arg name="controller_type" default="effort"/>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="2"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find polysat_description)/urdf/polysat_robot.urdf.xacro' controller_type:=$(arg controller_type)"/>
+
+  <node name="urdf_spawner" pkg="
