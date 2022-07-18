@@ -1,5 +1,16 @@
 <?xml version="1.0"?> 
 <launch>
-  <param name="socket_platform"
-         command="$(find xacro)/xacro $(find plug_and_socket_description)/urdf/socket_platform.xacro" />
+  <arg name="x" default="5"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="5"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="1.57079632679"/>
+
+  <param name="socket_platform" command="$(find xacro)/xacro $(find plug_and_socket_description)/urdf/socket_platform.xacro"/>
+  <param name="socket_sdf" textfile="$(find plug_and_socket_description)/urdf/socket_platform.sdf"/>
+
+  <node name="spawn_socket_platform" pkg="gazebo_ros" type="spawn_model"
+    respawn="false" output="screen"
+    args="-sdf -param socket_sdf -model socket_platform -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 </launch>
