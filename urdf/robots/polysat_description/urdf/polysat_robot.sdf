@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <sdf version='1.7'>
     <model name='polysat'>
       <link name='polysat/base_link'>
@@ -5,16 +6,16 @@
           <pose>0.111158 -1e-06 -0.069752 0 -0 0</pose>
           <mass>69.3522</mass>
           <inertia>
-            <ixx>33.2392</ixx>
+            <ixx>33.2395</ixx>
             <ixy>-8.09195e-05</ixy>
             <ixz>1.38953</ixz>
-            <iyy>15.0034</iyy>
+            <iyy>15.0037</iyy>
             <iyz>-0.0279309</iyz>
-            <izz>35.2319</izz>
+            <izz>35.2322</izz>
           </inertia>
         </inertial>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_l/base_collision'>
-          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -36,7 +37,7 @@
           <max_contacts>1</max_contacts>
         </collision>
         <collision name='polysat/base_link_fixed_joint_lump__oberon7_r/base_collision_1'>
-          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -682,7 +683,7 @@
           </surface>
         </collision>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_l/base_visual'>
-          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -691,7 +692,7 @@
           </geometry>
         </visual>
         <visual name='polysat/base_link_fixed_joint_lump__oberon7_r/base_visual_1'>
-          <pose>0.5 1.06 -0.25 -1.5708 0 0</pose>
+          <pose>0.5 -1.06 -0.25 1.5708 -0 0</pose>
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
@@ -1023,7 +1024,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_l/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0.5 -1.06 -0.25 1.5708 -0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 1.06 -0.25 -1.5708 0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_l/shoulder_link</child>
         <axis>
@@ -1744,7 +1745,7 @@
         <kinematic>0</kinematic>
       </link>
       <joint name='oberon7_r/azimuth' type='revolute'>
-        <pose relative_to='polysat/base_link'>0.5 1.06 -0.25 -1.5708 0 0</pose>
+        <pose relative_to='polysat/base_link'>0.5 -1.06 -0.25 1.5708 -0 0</pose>
         <parent>polysat/base_link</parent>
         <child>oberon7_r/shoulder_link</child>
         <axis>
@@ -2560,12 +2561,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_0_collision'>
@@ -2627,12 +2628,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_10_collision'>
@@ -2694,12 +2695,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_11_collision'>
@@ -2761,12 +2762,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_12_collision'>
@@ -2828,12 +2829,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_13_collision'>
@@ -2895,12 +2896,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_1_collision'>
@@ -2962,12 +2963,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_2_collision'>
@@ -3029,12 +3030,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_3_collision'>
@@ -3096,12 +3097,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_4_collision'>
@@ -3163,12 +3164,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_5_collision'>
@@ -3230,12 +3231,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_6_collision'>
@@ -3297,12 +3298,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_7_collision'>
@@ -3364,12 +3365,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_8_collision'>
@@ -3431,12 +3432,12 @@
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.0001</mass>
           <inertia>
-            <ixx>1.66667e-11</ixx>
+            <ixx>1e-05</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>1.66667e-11</iyy>
+            <iyy>1e-05</iyy>
             <iyz>0</iyz>
-            <izz>1.66667e-11</izz>
+            <izz>1e-05</izz>
           </inertia>
         </inertial>
         <collision name='polysat/thruster_9_collision'>
@@ -3615,8 +3616,7 @@
         <robotNamespace>/</robotNamespace>
       </plugin>
       <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>polysat</robotNamespace>
-        <robotParam>polysat</robotParam>
+        <robotNamespace>/</robotNamespace>
       </plugin>
       <plugin name='libsc_imu_gazebo_plugin' filename='libsc_imu_gazebo_plugin.so'>
         <robot_namespace>polysat</robot_namespace>
