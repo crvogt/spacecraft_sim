@@ -3740,6 +3740,6 @@
         <publish_ned_odom>0</publish_ned_odom>
         <robotNamespace>/</robotNamespace>
       </plugin>
-      <pose>0 0 2 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </model>
 </sdf>
