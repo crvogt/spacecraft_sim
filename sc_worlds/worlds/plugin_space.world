@@ -21,9 +21,14 @@
 
     <!-- Global light source -->
     <light type="point" name="sun_point">
-      <pose>3 5 5 0 0 0</pose>
-      <diffuse>1.0 1.0 1.0 1</diffuse>
-      <specular>0 0 0 1</specular>
+      <pose>3 10 3 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <constant>0.5</constant>
+        <linear>0.1</linear>
+        <range>20</range>
+      </attenuation>
       <cast_shadows>true</cast_shadows>
     </light>
 
