@@ -19,7 +19,13 @@
       <grid>0</grid>
     </scene>
 
-    <!-- Sun-like light source -->
+    <!-- Global light source -->
+    <light type="point" name="sun_point">
+      <pose>3 5 5 0 0 0</pose>
+      <diffuse>1.0 1.0 1.0 1</diffuse>
+      <specular>0 0 0 1</specular>
+      <cast_shadows>true</cast_shadows>
+    </light>
 
     <plugin name="sc_interface" filename="libuuv_sc_ros_interface_plugin.so"/>
 
