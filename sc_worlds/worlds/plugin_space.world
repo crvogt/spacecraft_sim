@@ -36,12 +36,12 @@
 
     <include>
       <uri>model://m_to_f_plug</uri>
-      <pose>1 0 5 0 0 0</pose>
+      <pose>5 3 5 0 3.14 0</pose>
     </include>
 
     <include>
       <uri>model://f_to_m_plug</uri>
-      <pose>1 2 5 0 0 0</pose>
+      <pose>5 2 5 0 3.14 0</pose>
     </include>
 
     <gui fullscreen="0">
