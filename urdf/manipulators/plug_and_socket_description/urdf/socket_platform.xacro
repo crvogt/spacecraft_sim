@@ -15,18 +15,14 @@
       </inertial>
       <visual name="socket_platform_visual">
         <geometry>
-          <!--mesh filename="package://sc_models/models/electrical_panel/meshes/Underwater-Frame.dae" scale="1 1 1"/-->
           <cylinder radius="0.5" length="3.0"/>
         </geometry>
-        <!--origin xyz="0 0 0" rpy="0 0 ${pi}"/-->
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </visual>
       <collision name="socket_platform_collision">
         <geometry>
-          <!--mesh filename="package://sc_models/models/electrical_panel/meshes/COLLISION-Underwater-Frame.dae" scale="1 1 1"/-->
           <cylinder radius="0.5" length="3.0"/>
         </geometry>
-        <!--origin xyz="0 0 0" rpy="0 0 ${pi}"/-->
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </collision>
   </link>

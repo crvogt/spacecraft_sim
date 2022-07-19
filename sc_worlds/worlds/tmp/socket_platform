@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+    <model name='socket_platform'>
+      <link name='socket_platform_link'>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>500</mass>
+          <inertia>
+            <ixx>750</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>195</iyy>
+            <iyz>0</iyz>
+            <izz>750</izz>
+          </inertia>
+        </inertial>
+        <collision name='socket_platform_link_fixed_joint_lump__socket_platform_collision_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>3</length>
+              <radius>0.5</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='socket_platform_link_fixed_joint_lump__socket_platform_visual_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>3</length>
+              <radius>0.5</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='receptacle1_joint' type='revolute'>
+        <pose relative_to='socket_platform_link'>0 0.5 -1.315 0 -0 1.5708</pose>
+        <parent>socket_platform_link</parent>
+        <child>receptacle1_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='receptacle1_link'>
+        <pose relative_to='receptacle1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='receptacle1_link_collision'>
+          <pose>0 0 0 1.5708 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.365 0.375 0.375</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='receptacle1_link_visual'>
+          <pose>0 0 0 1.5708 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.365 0.375 0.375</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='receptacle1_sensor_joint' type='revolute'>
+        <pose relative_to='receptacle1_link'>0 0 0 0 -0 0</pose>
+        <parent>receptacle1_link</parent>
+        <child>receptacle1_sensor_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='receptacle1_sensor_link'>
+        <pose relative_to='receptacle1_sensor_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 3.14159 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>1e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-07</iyy>
+            <iyz>0</iyz>
+            <izz>3e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='receptacle1_sensor_link_collision'>
+          <pose>0.01 0 0 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.06</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='receptacle3_joint' type='revolute'>
+        <pose relative_to='socket_platform_link'>0 0.5 0 0 -0 1.5708</pose>
+        <parent>socket_platform_link</parent>
+        <child>receptacle3_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='receptacle3_link'>
+        <pose relative_to='receptacle3_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='receptacle3_link_collision'>
+          <pose>0 0 0 1.5708 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.365 0.375 0.375</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='receptacle3_link_visual'>
+          <pose>0 0 0 1.5708 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.365 0.375 0.375</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='receptacle3_sensor_joint' type='revolute'>
+        <pose relative_to='receptacle3_link'>0 0 0 0 -0 0</pose>
+        <parent>receptacle3_link</parent>
+        <child>receptacle3_sensor_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='receptacle3_sensor_link'>
+        <pose relative_to='receptacle3_sensor_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 3.14159 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>1e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-07</iyy>
+            <iyz>0</iyz>
+            <izz>3e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='receptacle3_sensor_link_collision'>
+          <pose>0.01 0 0 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.06</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='socket2_joint' type='revolute'>
+        <pose relative_to='socket_platform_link'>0 0.625 1.315 0 -0 1.5708</pose>
+        <parent>socket_platform_link</parent>
+        <child>socket2_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='socket2_link'>
+        <pose relative_to='socket2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='socket2_link_collision'>
+          <pose>0 0 0 0 0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.12 0.12 0.12</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='socket2_link_visual'>
+          <pose>0 0 0 0 0 -1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.12 0.12 0.12</scale>
+              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='socket2_sensor_joint' type='revolute'>
+        <pose relative_to='socket2_link'>0 0 0 0 -0 0</pose>
+        <parent>socket2_link</parent>
+        <child>socket2_sensor_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>1</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='socket2_sensor_link'>
+        <pose relative_to='socket2_sensor_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 3.14159 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>1e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-07</iyy>
+            <iyz>0</iyz>
+            <izz>3e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='socket2_sensor_link_collision'>
+          <pose>0.01 0 0 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.06</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='receptacle1_plugin' filename='libplugAndSocketPlugin.so'>
+        <socketTubeLink>receptacle1_link</socketTubeLink>
+        <sensorPlateLink>receptacle1_sensor_link</sensorPlateLink>
+        <plugModel>f_to_m_plug</plugModel>
+        <plugLink>f_to_m_plug</plugLink>
+        <rollAlignmentTolerance>0.3</rollAlignmentTolerance>
+        <pitchAlignmentTolerance>0.1</pitchAlignmentTolerance>
+        <yawAlignmentTolerance>0.1</yawAlignmentTolerance>
+        <matingForce>25</matingForce>
+        <unmatingForce>125</unmatingForce>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='socket2_plugin' filename='libplugAndSocketPlugin.so'>
+        <socketTubeLink>socket2_link</socketTubeLink>
+        <sensorPlateLink>socket2_sensor_link</sensorPlateLink>
+        <plugModel>m_to_f_plug</plugModel>
+        <plugLink>m_to_f_plug</plugLink>
+        <rollAlignmentTolerance>0.3</rollAlignmentTolerance>
+        <pitchAlignmentTolerance>0.3</pitchAlignmentTolerance>
+        <yawAlignmentTolerance>0.3</yawAlignmentTolerance>
+        <matingForce>25</matingForce>
+        <unmatingForce>125</unmatingForce>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='receptacle3_plugin' filename='libplugAndSocketPlugin.so'>
+        <socketTubeLink>receptacle3_link</socketTubeLink>
+        <sensorPlateLink>receptacle3_sensor_link</sensorPlateLink>
+        <plugModel>f_to_m_plug</plugModel>
+        <plugLink>f_to_m_plug</plugLink>
+        <rollAlignmentTolerance>0.3</rollAlignmentTolerance>
+        <pitchAlignmentTolerance>0.1</pitchAlignmentTolerance>
+        <yawAlignmentTolerance>0.1</yawAlignmentTolerance>
+        <matingForce>25</matingForce>
+        <unmatingForce>125</unmatingForce>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose>5 0 5 0 -0 1.5708</pose>
+    </model>
+</sdf>
