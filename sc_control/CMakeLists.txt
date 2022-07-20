@@ -50,4 +50,6 @@ catkin_install_python(PROGRAMS
   scripts/sc_manual_thrusterop.py
   scripts/position_control.py
   scripts/position_command.py
+  scripts/position_manager.py
+  scripts/bimanual_simple_demo.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
