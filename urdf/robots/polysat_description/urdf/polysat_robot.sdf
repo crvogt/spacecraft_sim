@@ -19,7 +19,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -41,7 +41,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/collision/Base.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -63,7 +63,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+							<uri>model://polysat_description/meshes/base.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -379,7 +379,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -401,7 +401,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -423,7 +423,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -445,7 +445,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -467,7 +467,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -489,7 +489,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -511,7 +511,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -533,7 +533,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -555,7 +555,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -577,7 +577,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -599,7 +599,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -621,7 +621,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -643,7 +643,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -665,7 +665,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -687,7 +687,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -696,7 +696,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Base.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -705,7 +705,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/base.stl</uri>
+							<uri>model://polysat_description/meshes/base.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -724,7 +724,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -737,7 +737,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -750,7 +750,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -763,7 +763,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -776,7 +776,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -789,7 +789,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -802,7 +802,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -815,7 +815,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -828,7 +828,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -841,7 +841,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -854,7 +854,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -867,7 +867,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -880,7 +880,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -893,7 +893,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
             </mesh>
           </geometry>
         </visual>
@@ -902,7 +902,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -917,7 +917,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -932,7 +932,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -947,7 +947,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -962,7 +962,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -977,7 +977,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -992,7 +992,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1007,7 +1007,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1022,7 +1022,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1037,7 +1037,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1052,7 +1052,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1067,7 +1067,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1082,7 +1082,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1097,7 +1097,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>file:///home/carson/spaceship_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1174,7 +1174,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1244,7 +1244,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1314,7 +1314,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1384,7 +1384,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1454,7 +1454,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1521,7 +1521,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1569,7 +1569,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1598,7 +1598,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1645,7 +1645,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1674,7 +1674,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1721,7 +1721,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1750,7 +1750,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1797,7 +1797,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1826,7 +1826,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1895,7 +1895,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/ShoulderLink.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1965,7 +1965,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/UpperArm.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2035,7 +2035,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/ElbowLink.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2105,7 +2105,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Forearm.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2175,7 +2175,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
+							<uri>model://oberon7_description/meshes/serial_arm/visual/Wrist.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2242,7 +2242,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/BaseGripper.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2290,7 +2290,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -2319,7 +2319,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2366,7 +2366,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -2395,7 +2395,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2442,7 +2442,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -2471,7 +2471,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/Finger.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2518,7 +2518,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
           <surface>
@@ -2547,7 +2547,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/urdf/manipulators/oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
+							<uri>model://oberon7_description/meshes/parallel_gripper/visual/FingerTip.dae</uri>
             </mesh>
           </geometry>
         </visual>
