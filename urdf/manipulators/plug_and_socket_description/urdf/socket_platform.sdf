@@ -92,7 +92,7 @@
           <geometry>
             <mesh>
               <scale>0.365 0.375 0.375</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
+              <uri>model://sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -114,7 +114,7 @@
           <geometry>
             <mesh>
               <scale>0.365 0.375 0.375</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
+              <uri>model://sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -217,7 +217,7 @@
           <geometry>
             <mesh>
               <scale>0.365 0.375 0.375</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
+              <uri>model://sc_models/models/f_to_m_receptacle/meshes/COLLISION-Plug-Receptacle.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -239,7 +239,7 @@
           <geometry>
             <mesh>
               <scale>0.365 0.375 0.375</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
+              <uri>model://sc_models/models/f_to_m_receptacle/meshes/Plug-Receptacle.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -342,7 +342,7 @@
           <geometry>
             <mesh>
               <scale>0.12 0.12 0.12</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
+              <uri>model://sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -364,7 +364,7 @@
           <geometry>
             <mesh>
               <scale>0.12 0.12 0.12</scale>
-              <uri>/home/carson/spaceship_ws/src/spacecraft_sim/sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
+              <uri>model://sc_models/models/m_to_f_socket/meshes/Electrical-Socket.dae</uri>
             </mesh>
           </geometry>
         </visual>
