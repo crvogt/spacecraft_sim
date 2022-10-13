@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<robot name="perseus" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <xacro:macro name="perseus_arm_gazebo" params="namespace">
+    <xacro:property name="body_color" value="Gazebo/Silver" />
+    <gazebo>
+      <plugin name="control" filename="libgazebo_ros_control.so"/>
+    </gazebo>
+    <gazebo reference="base_link">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+      <gravity>true</gravity>
+    </gazebo>
+    <gazebo reference="basePlate_v18_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Stepper_v5_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link1_v12_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Dynamixel_1_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_v5_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Dynamixel_2_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_v5__1__1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Dynamixel_3_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_v5__2__1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="gripL2_v14_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="gripL1_v7_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="ModifiedDynamixel_v12_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="EETrack_rebuild_v6_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Grip_v5_1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Grip_v5__1__1">
+      <material>${body_color}</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+  </xacro:macro>
+</robot>

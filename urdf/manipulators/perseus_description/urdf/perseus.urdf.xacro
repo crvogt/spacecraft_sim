@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find perseus_description)/urdf/perseus.transmission.xacro"/>
+  <xacro:include filename="$(find perseus_description)/urdf/perseus.gazebo.xacro"/>
+
+  <xacro:macro name="perseus_arm" params="transmission_hw_interface namespace">
+    <xacro:property name="scale" value="0.001"/>
+    <xacro:property name="joint_scale" value="1"/>
+    <!-- Start of main robot body -->
+    <link name="${namespace}/base">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.009606900148155705 0.025047580656759237 0.0006409385755152207"/>
+        <mass value="0.20859614956718134"/>
+        <inertia ixx="0.000557" ixy="-1e-06" ixz="-4.8e-05" iyy="0.000924" iyz="-3e-06" izz="0.000556"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/base_link.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/base_link.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <link name="${namespace}/basePlate_v18_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.06080674862882992 0.007989157863473588 0.060697501122834334"/>
+        <mass value="0.10739714114224669"/>
+        <inertia ixx="0.000185" ixy="0.0" ixz="-0.0" iyy="0.00038" iyz="0.0" izz="0.000198"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0.060705 -0.060123 0.060773"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/basePlate_v18_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.060705 -0.060123 0.060773"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/basePlate_v18_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Stepper_v5_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="5.218509840461329e-08 -0.009658638044550236 3.7698044210816435e-07"/>
+        <mass value="0.164439959012558"/>
+        <inertia ixx="1.9e-05" ixy="-0.0" ixz="-0.0" iyy="2.7e-05" iyz="0.0" izz="2e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.067623 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Stepper_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.067623 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Stepper_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/link1_v12_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.0005835884695255211 0.011699826982647002 2.0584927118683997e-05"/>
+        <mass value="0.026558895460486103"/>
+        <inertia ixx="9e-06" ixy="0.0" ixz="-0.0" iyy="1e-05" iyz="0.0" izz="8e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.080623 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/link1_v12_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.080623 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/link1_v12_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Dynamixel_1_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="-3.990798697923084e-05 0.023425508667773945 3.9032703642453347e-07"/>
+        <mass value="0.356701544919362"/>
+        <inertia ixx="8.7e-05" ixy="0.0" ixz="0.0" iyy="5.9e-05" iyz="-0.0" izz="9.9e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.085773 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_1_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.000104 -0.085773 2.3e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_1_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Link_v5_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.019404821558247024 0.037443419960172294 3.83299057001476e-07"/>
+        <mass value="0.01662330410690611"/>
+        <inertia ixx="1e-05" ixy="-0.0" ixz="0.0" iyy="7e-06" iyz="-0.0" izz="1.5e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0.018896 -0.121024 2.2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.018896 -0.121024 2.2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Dynamixel_2_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="-3.9907986979175033e-05 0.023425071019905652 3.055729170690188e-07"/>
+        <mass value="0.356701544919362"/>
+        <inertia ixx="8.7e-05" ixy="0.0" ixz="0.0" iyy="5.9e-05" iyz="-0.0" izz="9.9e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.000504 -0.186324 2.2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_2_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.000504 -0.186324 2.2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_2_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Link_v5__1__1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.02095482155824711 0.037442982312304 2.985449376563934e-07"/>
+        <mass value="0.01662330410690611"/>
+        <inertia ixx="1e-05" ixy="-0.0" ixz="0.0" iyy="7e-06" iyz="-0.0" izz="1.5e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0.019496 -0.221575 2.1e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5__1__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.019496 -0.221575 2.1e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5__1__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Dynamixel_3_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="-3.990798697908857e-05 0.023424633372037318 2.208187977353406e-07"/>
+        <mass value="0.356701544919362"/>
+        <inertia ixx="8.7e-05" ixy="0.0" ixz="0.0" iyy="5.9e-05" iyz="-0.0" izz="9.9e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.001454 -0.286875 2.1e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_3_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.001454 -0.286875 2.1e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Dynamixel_3_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Link_v5__2__1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.02095482155824717 0.037443544664435724 2.1379081833307952e-07"/>
+        <mass value="0.01662330410690611"/>
+        <inertia ixx="1e-05" ixy="-0.0" ixz="0.0" iyy="7e-06" iyz="-0.0" izz="1.5e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0.018546 -0.322125 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5__2__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.018546 -0.322125 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Link_v5__2__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/gripL2_v14_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="5.2185256943851344e-08 0.009822354343600626 1.2271808408696706e-07"/>
+        <mass value="0.013959782041853887"/>
+        <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="2e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.387425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/gripL2_v14_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.387425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/gripL2_v14_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/gripL1_v7_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="5.2185103533147065e-08 0.009633445542812646 9.474598607199126e-05"/>
+        <mass value="0.011468373721129618"/>
+        <inertia ixx="3e-06" ixy="0.0" ixz="0.0" iyy="4e-06" iyz="0.0" izz="4e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.405425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/gripL1_v7_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.405425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/gripL1_v7_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/ModifiedDynamixel_v12_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="3.8838509168730856e-08 0.01704002455162823 0.00017511907776649003"/>
+        <mass value="0.35670154491936157"/>
+        <inertia ixx="9.9e-05" ixy="0.0" ixz="0.0" iyy="8.7e-05" iyz="-0.0" izz="5.9e-05"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.408425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/ModifiedDynamixel_v12_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.002404 -0.408425 2e-05"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/ModifiedDynamixel_v12_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/EETrack_rebuild_v6_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0005882832570395739 0.0030255190907269025 -0.007437121872838118"/>
+        <mass value="0.01274507441724117"/>
+        <inertia ixx="7e-06" ixy="0.0" ixz="-0.0" iyy="1e-05" iyz="-0.0" izz="3e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.002403 -0.445425 -0.011981"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/EETrack_rebuild_v6_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.002403 -0.445425 -0.011981"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/EETrack_rebuild_v6_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Grip_v5_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="1.3652826758372982e-07 0.013322586240661238 -0.009633875691665562"/>
+        <mass value="0.019987551824594305"/>
+        <inertia ixx="2e-06" ixy="-0.0" ixz="-0.0" iyy="6e-06" iyz="-0.0" izz="7e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.002403 -0.450625 -0.011981"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Grip_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.002403 -0.450625 -0.011981"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Grip_v5_1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${namespace}/Grip_v5__1__1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.03439086293294389 -0.4309024137593389 0.05460097586221573"/>
+        <mass value="0.019987551824594305"/>
+        <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="6e-06" iyz="0.0" izz="7e-06"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="-0.037423 -0.89485 0.031987"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Grip_v5__1__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.037423 -0.89485 0.031987"/>
+        <geometry>
+          <mesh filename="package://perseus_description/meshes/Grip_v5__1__1.stl" scale="${scale} ${scale} ${scale}"/>
+        </geometry>
+      </collision>
+    </link>
+      
+    <joint name="${namespace}/Rigid1" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*-0.060705} ${joint_scale*0.060123} ${joint_scale*-0.060773}"/>
+      <parent link="${namespace}/base"/>
+      <child link="${namespace}/basePlate_v18_1"/>
+    </joint>
+      
+    <joint name="${namespace}/Rigid2" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*0.060809} ${joint_scale*0.0075} ${joint_scale*0.06075}"/>
+      <parent link="${namespace}/basePlate_v18_1"/>
+      <child link="${namespace}/Stepper_v5_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rev3" type="revolute">
+      <origin rpy="0 0 0" xyz="0.0 ${joint_scale*0.013} 0.0"/>
+      <parent link="${namespace}/Stepper_v5_1"/>
+      <child link="${namespace}/link1_v12_1"/>
+      <axis xyz="-0.0 1.0 0.0"/>
+      <limit effort="100" lower="0.0" upper="6.108652" velocity="100"/>
+    </joint>
+
+    <joint name="${namespace}/Rigid4" type="fixed">
+      <origin rpy="0 0 0" xyz="0.0 ${joint_scale*0.00515} 0.0"/>
+      <parent link="${namespace}/link1_v12_1"/>
+      <child link="${namespace}/Dynamixel_1_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rev5" type="revolute">
+      <origin rpy="0 0 0" xyz="${joint_scale*-0.019} 0.035251 ${joint_scale*1e-06}"/>
+      <parent link="${namespace}/Dynamixel_1_1"/>
+      <child link="${namespace}/Link_v5_1"/>
+      <axis xyz="-1.0 -0.0 0.0"/>
+      <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+    </joint>
+      
+    <joint name="${namespace}/Rigid6" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*0.0194} ${joint_scale*0.0653} 0.0"/>
+      <parent link="${namespace}/Link_v5_1"/>
+      <child link="${namespace}/Dynamixel_2_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rev7" type="continuous">
+      <origin rpy="0 0 0" xyz="${joint_scale*-0.02} ${joint_scale*0.035251} ${joint_scale*1e-06}"/>
+      <parent link="${namespace}/Dynamixel_2_1"/>
+      <child link="${namespace}/Link_v5__1__1"/>
+      <axis xyz="-1.0 -0.0 0.0"/>
+    </joint>
+
+    <joint name="${namespace}/Rigid8" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*0.02095} ${joint_scale*0.0653} 0.0"/>
+      <parent link="${namespace}/Link_v5__1__1"/>
+      <child link="${namespace}/Dynamixel_3_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rev9" type="revolute">
+      <origin rpy="0 0 0" xyz="${joint_scale*-0.02} ${joint_scale*0.03525} ${joint_scale*1e-06}"/>
+      <parent link="${namespace}/Dynamixel_3_1"/>
+      <child link="${namespace}/Link_v5__2__1"/>
+      <axis xyz="-1.0 -0.0 0.0"/>
+      <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+    </joint>
+      
+    <joint name="${namespace}/Rigid10" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*0.02095} ${joint_scale*0.0653} 0.0"/>
+      <parent link="${namespace}/Link_v5__2__1"/>
+      <child link="${namespace}/gripL2_v14_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rigid12" type="fixed">
+      <origin rpy="0 0 0" xyz="0.0 ${joint_scale*0.018} 0.0"/>
+      <parent link="${namespace}/gripL2_v14_1"/>
+      <child link="${namespace}/gripL1_v7_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rigid13" type="fixed">
+      <origin rpy="0 0 0" xyz="0.0 ${joint_scale*0.003} 0.0"/>
+      <parent link="${namespace}/gripL1_v7_1"/>
+      <child link="${namespace}/ModifiedDynamixel_v12_1"/>
+    </joint>
+
+    <joint name="${namespace}/Rigid14" type="fixed">
+      <origin rpy="0 0 0" xyz="${joint_scale*-1e-06} ${joint_scale*0.037} ${joint_scale*0.012001}"/>
+      <parent link="${namespace}/ModifiedDynamixel_v12_1"/>
+      <child link="${namespace}/EETrack_rebuild_v6_1"/>
+    </joint>
+
+    <joint name="${namespace}/Slider16" type="prismatic">
+      <origin rpy="0 0 0" xyz="0.0 ${joint_scale*0.0052} 0.0"/>
+      <parent link="${namespace}/EETrack_rebuild_v6_1"/>
+      <child link="${namespace}/Grip_v5_1"/>
+      <axis xyz="0.0 -0.0 1.0"/>
+      <limit effort="100" lower="-0.015" upper="0.0" velocity="100"/>
+    </joint>
+
+    <joint name="${namespace}/Slider17" type="prismatic">
+      <origin rpy="0 0 0" xyz="${joint_scale*0.03502} ${joint_scale*0.449425} ${joint_scale*-0.043968}"/>
+      <parent link="${namespace}/EETrack_rebuild_v6_1"/>
+      <child link="${namespace}/Grip_v5__1__1"/>
+      <axis xyz="0.0 -0.0 1.0"/>
+      <limit effort="100" lower="0.053" upper="0.068" velocity="100"/>
+    </joint>
+
+    <!-- Call required xacro macros -->
+    <!-- Transmission -->
+    <xacro:perseus_arm_transmission hw_interface="${transmission_hw_interface}" namespace="${namespace}"/>
+      <!-- Gazebo macro -->
+    <xacro:perseus_arm_gazebo namespace="${namespace}"/>
+
+  </xacro:macro>
+
+</robot>
