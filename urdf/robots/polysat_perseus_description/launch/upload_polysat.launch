@@ -3,5 +3,5 @@
   <arg name="namespace" default="polysat"/>
   <arg name="debug" default="false"/>
 
-  <param name="/$(arg namespace)/polysat" command="$(find xacro)/xacro '$(find polysat_description)/urdf/polysat_robot.urdf.xacro' debug:=$(arg debug) namespace:=$(arg namespace)"/>
+  <param name="/$(arg namespace)/polysat" command="$(find xacro)/xacro '$(find polysat_perseus_description)/urdf/polysat_robot.urdf.xacro' debug:=$(arg debug) namespace:=$(arg namespace)"/>
 </launch>

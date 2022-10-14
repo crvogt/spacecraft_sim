@@ -25,12 +25,12 @@
   <joint name="perseus_l_anchor" type="fixed">
     <parent link="$(arg namespace)/base_link"/>
     <child link="perseus_l/base"/>
-    <origin rpy="0 -1.57079632 0" xyz="0.10 0.32 -0.00"/>
+    <origin rpy="0 -3.14159265 0" xyz="0.25 0.15 -0.00"/>
   </joint>
   <joint name="perseus_r_anchor" type="fixed">
     <parent link="$(arg namespace)/base_link"/>
     <child link="perseus_r/base"/>
-    <origin rpy="3.14159265 1.57079632 0" xyz="0.10 -0.32 -0.00"/>
+    <origin rpy="3.14159265 3.14159265 0" xyz="0.25 -0.15 -0.00"/>
   </joint>
 
 </robot>
