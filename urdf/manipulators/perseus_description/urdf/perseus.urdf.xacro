@@ -426,7 +426,7 @@
       <parent link="${namespace}/EETrack_rebuild_v6_1"/>
       <child link="${namespace}/Grip_v5__1__1"/>
       <axis xyz="0.0 -0.0 1.0"/>
-      <limit effort="100" lower="0.053" upper="0.068" velocity="100"/>
+      <limit effort="100" lower="0.0048" upper="0.01" velocity="100"/>
     </joint>
 
     <!-- Call required xacro macros -->
