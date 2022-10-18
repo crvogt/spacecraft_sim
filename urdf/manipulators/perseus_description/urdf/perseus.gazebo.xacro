@@ -2,9 +2,6 @@
 <robot name="perseus" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:macro name="perseus_arm_gazebo" params="namespace">
     <xacro:property name="body_color" value="Gazebo/Silver" />
-    <!--gazebo>
-      <plugin name="control" filename="libgazebo_ros_control.so"/>
-    </gazebo-->
     <gazebo reference="base_link">
       <material>${body_color}</material>
       <mu1>0.2</mu1>
