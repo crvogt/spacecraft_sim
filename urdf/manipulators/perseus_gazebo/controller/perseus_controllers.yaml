@@ -12,23 +12,6 @@ gripper_position_r:
     state_publish_rate: 25
     action_monitor_rate: 10
 
-gripper_effort_r:
-    type: effort_controllers/JointTrajectoryController
-    joints:
-        - perseus_r/Slider16 
-        - perseus_r/Slider17 
-    gains:
-        perseus_r/Slider16: {p: 10.0, i: 0.01, d: 0.005}
-        perseus_r/Slider17: {p: 10.0, i: 0.01, d: 0.005}
-    constraints:
-        goal_time: 2.0
-        stopped_velocity_tolerance: 0.05
-        perseus_r/Slider16: {trajectory: 1, goal: 1}
-        persues_r/Slider17: {trajectory: 1, goal: 1}
-    stop_trajectory_duration: 0.5
-    state_publish_rate: 25
-    action_monitor_rate: 10
-
 gripper_position_l:
     type: position_controllers/JointTrajectoryController
     joints:
@@ -43,14 +26,31 @@ gripper_position_l:
     state_publish_rate: 25
     action_monitor_rate: 10
 
+gripper_effort_r:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+        - perseus_r/Slider16 
+        - perseus_r/Slider17 
+    gains:
+        perseus_r/Slider16: {p: 50.0, i: 25, d: 0.5}
+        perseus_r/Slider17: {p: 50.0, i: 25, d: 0.5}
+    constraints:
+        goal_time: 2.0
+        stopped_velocity_tolerance: 0.05
+        perseus_r/Slider16: {trajectory: 1, goal: 1}
+        persues_r/Slider17: {trajectory: 1, goal: 1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate: 25
+    action_monitor_rate: 10
+
 gripper_effort_l:
     type: effort_controllers/JointTrajectoryController
     joints:
         - perseus_l/Slider16 
         - perseus_l/Slider17 
     gains:
-        perseus_l/Slider16: {p: 10.0, i: 0.01, d: 0.005}
-        perseus_l/Slider17: {p: 10.0, i: 0.01, d: 0.005}
+        perseus_l/Slider16: {p: 50.0, i: 25, d: 0.5}
+        perseus_l/Slider17: {p: 50.0, i: 25, d: 0.5}
     constraints:
         goal_time: 2.0
         stopped_velocity_tolerance: 0.05
@@ -104,10 +104,10 @@ arm_effort_l:
         - perseus_l/Rev7
         - perseus_l/Rev9
     gains:
-        perseus_l/Rev3: {p: 75.0, i: 0.1, d: 0.05}
-        perseus_l/Rev5: {p: 20.0, i: 0.05, d: 0.01}
-        perseus_l/Rev7: {p: 20.0, i: 0.05, d: 0.01}
-        perseus_l/Rev9: {p: 10.0, i: 0.03, d: 0.01}
+        perseus_l/Rev3: {p: 100.0, i: 50, d: 0.1}
+        perseus_l/Rev5: {p: 60.0, i: 30, d: 0.1}
+        perseus_l/Rev7: {p: 30.0, i: 10, d: 0.1}
+        perseus_l/Rev9: {p: 30.0, i: 10, d: 0.1}
     constraints:
         goal_time: 5.0
         stopped_velocity_tolerance: 0.05
@@ -127,10 +127,10 @@ arm_effort_r:
         - perseus_r/Rev7
         - perseus_r/Rev9
     gains:
-        perseus_r/Rev3: {p: 75.0, i: 0.1, d: 0.05}
-        perseus_r/Rev5: {p: 20.0, i: 0.05, d: 0.01}
-        perseus_r/Rev7: {p: 20.0, i: 0.05, d: 0.01}
-        perseus_r/Rev9: {p: 10.0, i: 0.03, d: 0.01}
+        perseus_r/Rev3: {p: 100.0, i: 50.0, d: 0.1}
+        perseus_r/Rev5: {p: 60.0, i: 30.0, d: 0.1}
+        perseus_r/Rev7: {p: 30.0, i: 10.0, d: 0.1}
+        perseus_r/Rev9: {p: 30.0, i: 10.0, d: 0.1}
     constraints:
         goal_time: 5.0
         stopped_velocity_tolerance: 0.05
