@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="polysat"/>
+  <arg name="debug" default="false"/>
+
+  <param name="/$(arg namespace)/polysat" command="'$(find polysat_description)/urdf/polysat_robot.urdf' debug:=$(arg debug) namespace:=$(arg namespace)"/>
+</launch>

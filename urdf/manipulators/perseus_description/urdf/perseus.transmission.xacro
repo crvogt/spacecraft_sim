@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:macro name="perseus_arm_transmission" params="hw_interface namespace">
+
+    <transmission name="${namespace}/Rev3_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Rev3">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Rev3_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+      
+    <transmission name="${namespace}/Rev5_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Rev5">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Rev5_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${namespace}/Rev7_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Rev7">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Rev7_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${namespace}/Rev9_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Rev9">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Rev9_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${namespace}/Slider16_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Slider16">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Slider16_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${namespace}/Slider17_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${namespace}/Slider17">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${namespace}/Slider17_actr">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+</robot>

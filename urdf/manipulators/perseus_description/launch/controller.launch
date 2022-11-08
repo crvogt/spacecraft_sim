@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find perseus_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="perseus" args="Rev3_position_controller Rev5_position_controller Rev7_position_controller Rev9_position_controller Slider16_position_controller Slider17_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/perseus/joint_states"/>
+</node>
+
+</launch>
