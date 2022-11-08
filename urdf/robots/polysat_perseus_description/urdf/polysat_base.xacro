@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<robot name="polysat" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  
+  <!-- <xacro:property name="debug" default="false"/> -->
+  <xacro:arg name="namespace" default="polysat"/>
+
+  <xacro:include filename="$(find polysat_perseus_description)/urdf/polysat_thrusters.xacro"/>
+  <xacro:include filename="$(find polysat_perseus_description)/urdf/polysat_thruster_visuals.xacro"/>
+
+  <xacro:macro name="polysat_base" params="namespace">
+    <xacro:property name="sf" value="0.33"/>
+    <!-- "Dummy base link to eliminate root link inertia warning -->
+    <link name="$(arg namespace)/base_link"/>
+
+    <!-- Start of main robot body -->
+    <link name="$(arg namespace)/polysat_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="50.0"/>
+        <inertia
+          ixx="10.0" ixy="0.0" ixz="0.0"
+          iyy="10.0" iyz="0.0"
+          izz="10.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="${sf*0} ${sf*0} ${sf*0}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${sf*2} ${sf*1} ${sf*1}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="${sf*0} ${sf*0} ${sf*0}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${sf*2} ${sf*1} ${sf*1}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Connect dummy link to main link -->
+    <joint name="$(arg namespace)/polysat_base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="$(arg namespace)/base_link"/>
+      <child link="$(arg namespace)/polysat_link"/>
+    </joint>
+
+    <!-- Add thruster visuals -->
+    <!-- Top -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="5" sfac="${sf}" x="${sf*-0.075}" y="${sf*(0.5-0.15)}" z="${sf*0.5}" R="0" P="0" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="4" sfac="${sf}" x="${sf*-0.075}" y="${sf*-0.5}" z="${sf*0.5}" R="0" P="0" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="6" sfac="${sf}" x="${sf*-0.17}" y="${sf*0.595}" z="${sf*0.55}" R="${pi/2}" P="0" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="7" sfac="${sf}" x="${sf*-0.17}" y="${sf*-0.255}" z="${sf*0.55}" R="${pi/2}" P="0" Y="0"/>
+    <!-- Bottom -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="6" sfac="${sf}" x="${sf*-0.15/2}" y="${sf*0.5}" z="${sf*-0.5}" R="${pi}" P="0" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="7" sfac="${sf}" x="${sf*-0.15/2}" y="${sf*(-0.5+0.15)}" z="${sf*-0.5}" R="${pi}" P="0" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="5" sfac="${sf}" x="${sf*-0.17}" y="${sf*0.255}" z="${sf*-0.55}" R="${-pi/2}" P="0" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="4" sfac="${sf}" x="${sf*-0.17}" y="${sf*-0.595}" z="${sf*-0.55}" R="${-pi/2}" P="0" Y="0"/>
+    <!-- Front -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="8" sfac="${sf}" x="${sf*1}" y="${sf*(0.5-0.15)}" z="${sf*(0+0.075)}" R="0" P="${pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="9" sfac="${sf}" x="${sf*1}" y="${sf*-0.5}" z="${sf*(0+0.075)}" R="${0}" P="${pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="1" sfac="${sf}" x="${sf*1}" y="${sf*-0.15/2}" z="${sf*(-0.5+0.15)}" R="${0}" P="${pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="0" sfac="${sf}" x="${sf*1}" y="${sf*-0.15/2}" z="${sf*0.5}" R="${0}" P="${pi/2}" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="10" sfac="${sf}" x="${sf*1.05}" y="${sf*0.595}" z="${sf*-0.16}" R="${0}" P="0" Y="${-pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="11" sfac="${sf}" x="${sf*1.05}" y="${sf*-0.26}" z="${sf*-0.17}" R="${0}" P="0" Y="${-pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="3" sfac="${sf}" x="${sf*1.05}" y="${sf*0.17}" z="${sf*-0.59}" R="${0}" P="0" Y="${-pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="2" sfac="${sf}" x="${sf*1.05}" y="${sf*0.17}" z="${sf*0.26}" R="${0}" P="0" Y="${-pi/2}"/>
+    <!-- Back -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="10" sfac="${sf}" x="${sf*-1}" y="${sf*(0.5-0.15)}" z="${sf*(0-0.075)}" R="0" P="${-pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="11" sfac="${sf}" x="${sf*-1}" y="${sf*-0.5}" z="${sf*(0-0.075)}" R="${0}" P="${-pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="3" sfac="${sf}" x="${sf*-1}" y="${sf*(0-0.075)}" z="${sf*-0.5}" R="${0}" P="${-pi/2}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="2" sfac="${sf}" x="${sf*-1}" y="${sf*(0-0.075)}" z="${sf*(0.5-0.15)}" R="${0}" P="${-pi/2}" Y="0"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="8" sfac="${sf}" x="${sf*-1.05}" y="${sf*0.26}" z="${sf*-0.16}" R="${0}" P="0" Y="${pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="9" sfac="${sf}" x="${sf*-1.05}" y="${sf*-0.595}" z="${sf*-0.17}" R="${0}" P="0" Y="${pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="1" sfac="${sf}" x="${sf*-1.05}" y="${sf*-0.17}" z="${sf*-0.59}" R="${0}" P="0" Y="${pi/2}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="0" sfac="${sf}" x="${sf*-1.05}" y="${sf*-0.17}" z="${sf*0.26}" R="${0}" P="0" Y="${pi/2}"/>
+    <!-- Sides -->
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="12" sfac="${sf}" x="${sf*-0.15/2}" y="${sf*-0.5}" z="${sf*-0.15/2}" R="${pi/2}" P="${0}" Y="0"/>
+    <xacro:thruster_visual_macro namespace="$(arg namespace)" thruster_id="13" sfac="${sf}" x="${sf*-0.15/2}" y="${sf*0.5}" z="${sf*0.15/2}" R="${-pi/2}" P="${0}" Y="${0}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="12" sfac="${sf}" x="${sf*0.17}" y="${sf*-0.55}" z="${sf*-0.17}" R="${0}" P="0" Y="${pi}"/>
+    <xacro:thrust_plume_visual_macro namespace="$(arg namespace)" thruster_id="13" sfac="${sf}" x="${sf*0.17}" y="${sf*0.55}" z="${sf*0.17}" R="${0}" P="${pi}" Y="${0}"/>
+
+    <!-- Add maneuvering thrusters -->
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="0">
+      <origin xyz="0.5 0 0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="1">
+      <origin xyz="0.5 0 -0.5" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="2">
+      <origin xyz="-0.5 0 0.5" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="3">
+      <origin xyz="-0.5 0 -0.5" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+    
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="4">
+      <origin xyz="0 0.5 0.5" rpy="0 -1.5707963268 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="5">
+      <origin xyz="0 -0.5 0.5" rpy="0 -1.5707963268 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="6">
+      <origin xyz="0 0.5 -0.5" rpy="0 1.5707963268 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="7">
+      <origin xyz="0 -0.5 -0.5" rpy="0 1.5707963268 0"/>
+    </xacro:thruster_macro>
+     
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="8">
+      <origin xyz="0.5 0.5 0" rpy="0 0 0"/> 
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="9">
+      <origin xyz="0.5 -0.5 0" rpy="0 0 0"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="10">
+      <origin xyz="-0.5 0.5 0" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="11">
+      <origin xyz="-0.5 -0.5 0" rpy="0 0 3.1415926535"/>
+    </xacro:thruster_macro>
+
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="12">
+      <origin xyz="0 0.5 0" rpy="0 0 1.5707963268"/>
+    </xacro:thruster_macro>
+    <xacro:thruster_macro namespace="${namespace}" thruster_id="13">
+      <origin xyz="0 -0.5 0" rpy="0 0 -1.5707963268"/>
+    </xacro:thruster_macro>
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      </plugin>
+    </gazebo>
+
+    <xacro:arg name="inertial_reference_frame" default="world"/>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
+    <xacro:default_imu_macro
+      namespace="$(arg namespace)"
+      parent_link="$(arg namespace)/base_link"
+      inertial_reference_frame="$(arg inertial_reference_frame)">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:default_imu_macro>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/pose_3d.xacro"/>
+    <xacro:default_pose_3d
+      namespace="$(arg namespace)"
+      parent_link="$(arg namespace)/base_link">
+    </xacro:default_pose_3d>
+   </xacro:macro>
+</robot>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="thruster_visual_macro" params="namespace thruster_id sfac x y z R P Y">
+    <link name="${namespace}/thruster_${thruster_id}_visual">
+      <xacro:box_inertial x="0.001" y="0.001" z="0.001" mass="0.0001">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </xacro:box_inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find polysat_description)/meshes/thruster.stl" scale="${sfac*0.001} ${sfac*0.001} ${sfac*0.001}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find polysat_description)/meshes/thruster.stl" scale="${sfac*0.001} ${sfac*0.001} ${sfac*0.001}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${namespace}/thruster_${thruster_id}_visual_joint" type="fixed">
+      <origin xyz="${x} ${y} ${z}" rpy="${R} ${P} ${Y}"/>
+      <parent link="${namespace}/base_link"/>
+      <child link="${namespace}/thruster_${thruster_id}_visual"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="thrust_plume_visual_macro" params="namespace thruster_id sfac x y z R P Y">
+    <link name="${namespace}/thrust_plume_${thruster_id}_visual">
+      <xacro:box_inertial x="0.001" y="0.001" z="0.001" mass="0.0001">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </xacro:box_inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find polysat_description)/meshes/thrust_plume.stl" scale="${sfac*0.001} ${sfac*0.001} ${sfac*0.001}"/>
+        </geometry>
+        <plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_${thruster_id}">
+          <thrust_color>1 0 0 1</thrust_color>
+          <thruster_number>${thruster_id}</thruster_number>
+        </plugin>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.0001 0.0001 0.0001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${namespace}/thrust_plume_${thruster_id}_visual_joint" type="fixed">
+      <origin xyz="${x} ${y} ${z}" rpy="${R} ${P} ${Y}"/>
+      <parent link="${namespace}/base_link"/>
+      <child link="${namespace}/thrust_plume_${thruster_id}_visual"/>
+    </joint>
+  </xacro:macro>
+
+</robot>

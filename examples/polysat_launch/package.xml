@@ -10,6 +10,5 @@
   <depend>polysat_description</depend>
   <depend>sc_gazebo_plugins</depend>
   <export>
-    <!-- Other tools can request additional information be placed here -->
   </export>
 </package>

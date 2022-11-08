@@ -2,15 +2,6 @@ import time
 
 # File that needs paths changed. This one is enough to spawn the model in 
 # polysat_sdf.launch
-filename = "/home/carson/libs/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/urdf/polysat_robot.sdf"
-
-# This just tells the script what characters to look for
-check_a = 'spacecraft_sim'
-
-#-----CHANGE THIS ------#
-# Put in the full path to your cloned spacecraft_sim directory
-# Ex. '<uri>/home/carson/libs/spacecraft_sim'
-path_sub_a = '<uri>/path/to/Angelia/s/spacecraft_sim' 
 
 # This reads the lines in the file to an object
 print("Modifying file {}...".format(filename))

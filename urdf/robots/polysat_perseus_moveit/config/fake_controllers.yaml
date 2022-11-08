@@ -1,0 +1,30 @@
+controller_list:
+  - name: fake_arm_l_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - perseus_l/Rev3
+      - perseus_l/Rev5
+      - perseus_l/Rev7
+      - perseus_l/Rev9
+  - name: fake_arm_r_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - perseus_r/Rev3
+      - perseus_r/Rev5
+      - perseus_r/Rev7
+      - perseus_r/Rev9
+  - name: fake_grip_l_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - perseus_l/Slider16
+      - perseus_l/Slider17
+  - name: fake_grip_r_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - perseus_r/Slider16
+      - perseus_r/Slider17
+initial:  # Define initial robot poses per group
+  - group: arm_l
+    pose: home
+  - group: arm_r
+    pose: home

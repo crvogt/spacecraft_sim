@@ -23,14 +23,15 @@ class PositionControllerNode:
         self.t_val = 0
         self.num_thrusters = 14
         self.msg_vals = np.asarray([0.0] * self.num_thrusters)
+        self.init_count = 0
         
         # Set PID values
         # Simple split
         # R, P, Y, x, y, z
-        self.p_vals = np.array([5.0, 4.5, 5.0, 3.0, 3.0, 3.0])
-        self.i_vals = np.array([3.0, 2.5, 3.0, 1.5, 1.5, 1.5])
+        self.p_vals = np.array([5.0, 1.5, 5.0, 3.0, 3.0, 3.0])
+        self.i_vals = np.array([3.0, 1.0, 3.0, 2.5, 2.5, 2.5])
         self.d_vals = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-        self.sat_vals = np.array([500, 500, 500, 10, 10, 10])
+        self.sat_vals = np.array([10, 10, 10, 10, 10, 10])
         self.pid_list = [0] * 6 
         self.set_pid_vals()
         self.pid_out = [0] * 6
@@ -95,7 +96,9 @@ class PositionControllerNode:
         # Send values to regulator
         for ii, pid_reg in enumerate(self.pid_list):
             self.pid_out[ii] = pid_reg.regulate(error_list[ii], self.t_val, ii)
-            self.publish_vals()
+            if self.init_count > 500:
+                self.publish_vals()
+            self.init_count += 1
 
     def publish_vals(self):
         # multiply gains 

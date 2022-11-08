@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="perseus">
+  <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+  <xacro:arg name="parent" default="world"/>
+  <xacro:arg name="namespace" default="perseus"/>
+  <xacro:arg name="xyzpos" default="0.0 0.0 2.0"/>
+
+  <!-- common -->
+  <xacro:include filename="$(find perseus_description)/urdf/common.gazebo.xacro"/>
+
+  <!-- perseus -->
+  <xacro:include filename="$(find perseus_description)/urdf/perseus.urdf.xacro"/>
+  <xacro:perseus_arm transmission_hw_interface="$(arg transmission_hw_interface)" namespace="$(arg namespace)"/>
+
+  <!-- Link robot to world -->
+  <link name="$(arg parent)"/>
+
+  <joint name="anchor_joint" type="fixed">
+    <parent link="$(arg parent)"/>
+    <child link="$(arg namespace)/base"/>
+    <origin rpy="0 0 0" xyz="$(arg xyzpos)"/>
+  </joint>
+</robot>
+

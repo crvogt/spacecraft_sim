@@ -7,9 +7,9 @@
   <arg name="joy_id" default="0"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
-  <arg name="x" default="0"/>
+  <arg name="x" default="2.5"/>
   <arg name="y" default="0"/>
-  <arg name="z" default="2"/>
+  <arg name="z" default="5"/>
   <arg name="roll" default="0"/>
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
@@ -33,8 +33,8 @@
       respawn="false" output="screen"
       args="-sdf -param $(arg namespace)/polysat -model polysat -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
-  <node name="position_command" pkg="sc_control" type="position_command.py">
-  </node>
+  <!--<node name="position_command" pkg="sc_control" type="position_command.py">
+  </node>-->
 
   <!-- Load general controllers -->
   <include file="$(find oberon7_gazebo)/launch/controller_utils.launch"/>
