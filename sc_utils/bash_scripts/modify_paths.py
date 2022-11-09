@@ -3,7 +3,12 @@ import time
 # File that needs paths changed. This one is enough to spawn the model in 
 # polysat_sdf.launch
 
-# This reads the lines in the file to an object
+filename = "/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/urdf/polysat_robot.sdf"
+
+check_a = 'polysat_description'
+# check_a = 'oberon7_description'
+path_sub_a = '<uri>model://' + check_a
+
 print("Modifying file {}...".format(filename))
 # Give time to back out...
 time.sleep(2)
