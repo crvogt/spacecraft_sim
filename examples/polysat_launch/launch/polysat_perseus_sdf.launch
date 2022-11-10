@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/basic_space.world"/>
+  <arg name="namespace" default="polysat"/>
+  <arg name="joy_id" default="0"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="2"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+  <arg name="polysat_urdf" default="$(find polysat_perseus_description)/urdf/polysat_robot.urdf.xacro"/>
+
+  <!-- World details -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(arg polysat_urdf)"/>
+  <param name="$(arg namespace)/polysat" textfile="$(find polysat_perseus_description)/urdf/polysat_perseus_robot.sdf"/>
+
+  <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+      args="-sdf -param $(arg namespace)/polysat -model polysat -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+  <node name="position_command" pkg="sc_control" type="position_command.py">
+  </node>
+
+  <!-- Load general controllers -->
+  <include file="$(find perseus_gazebo)/launch/controller_utils.launch"/>
+
+  <rosparam file="$(find perseus_gazebo)/controller/perseus_controllers.yaml" command="load"/>
+
+  <!-- Load chosen controller types -->
+  <node name="controllers_spawner" pkg="controller_manager" type="spawner" args="gripper_effort_r gripper_effort_l arm_effort_l arm_effort_r" respawn="false" output="screen"/>
+
+</launch>

@@ -1,0 +1,3853 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <model name='polysat'>
+    <link name='polysat/base_link'>
+      <inertial>
+        <pose>0.004633 -0 -1e-06 0 -0 0</pose>
+        <mass>50.9637</mass>
+        <inertia>
+          <ixx>10.0391</ixx>
+          <ixy>-1.55283e-05</ixy>
+          <ixz>-6.7358e-06</ixz>
+          <iyy>10.0601</iyy>
+          <iyz>4.23368e-05</iyz>
+          <izz>10.0963</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_l/base_collision'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_l/basePlate_v18_1_collision_1'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_l/Stepper_v5_1_collision_2'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_r/base_collision_3'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_r/basePlate_v18_1_collision_4'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__perseus_r/Stepper_v5_1_collision_5'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_collision_6'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.66 0.33 0.33</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_collision_7'>
+        <pose>-0.3465 -0.0561 0.0858 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_collision_8'>
+        <pose>0.3465 0.19635 -0.0528 0 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_collision_9'>
+        <pose>0.3465 -0.0858 -0.0561 0 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_collision_10'>
+        <pose>0.0561 -0.1815 -0.0561 0 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_collision_11'>
+        <pose>0.0561 0.1815 0.0561 3.14159 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_collision_12'>
+        <pose>-0.3465 -0.0561 -0.1947 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_collision_13'>
+        <pose>0.3465 0.0561 0.0858 0 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_collision_14'>
+        <pose>0.3465 0.0561 -0.1947 0 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_collision_15'>
+        <pose>-0.0561 -0.19635 -0.1815 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_collision_16'>
+        <pose>-0.0561 0.08415 -0.1815 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_collision_17'>
+        <pose>-0.0561 0.19635 0.1815 1.5708 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_collision_18'>
+        <pose>-0.0561 -0.08415 0.1815 1.5708 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_collision_19'>
+        <pose>-0.3465 0.0858 -0.0528 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_collision_20'>
+        <pose>-0.3465 -0.19635 -0.0561 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.0001 0.0001</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_collision_21'>
+        <pose>0.33 -0.02475 0.165 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_collision_22'>
+        <pose>-0.33 0.1155 -0.02475 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_collision_23'>
+        <pose>-0.33 -0.165 -0.02475 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_collision_24'>
+        <pose>-0.02475 -0.165 -0.02475 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_collision_25'>
+        <pose>-0.02475 0.165 0.02475 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_collision_26'>
+        <pose>0.33 -0.02475 -0.1155 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_collision_27'>
+        <pose>-0.33 -0.02475 0.1155 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_collision_28'>
+        <pose>-0.33 -0.02475 -0.165 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_collision_29'>
+        <pose>-0.02475 -0.165 0.165 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_collision_30'>
+        <pose>-0.02475 0.1155 0.165 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_collision_31'>
+        <pose>-0.02475 0.165 -0.165 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_collision_32'>
+        <pose>-0.02475 -0.1155 -0.165 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_collision_33'>
+        <pose>0.33 0.1155 0.02475 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_collision_34'>
+        <pose>0.33 -0.165 0.02475 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_l/base_visual'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_l/basePlate_v18_1_visual_1'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_l/Stepper_v5_1_visual_2'>
+        <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_r/base_visual_3'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_r/basePlate_v18_1_visual_4'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__perseus_r/Stepper_v5_1_visual_5'>
+        <pose>0.25 -0.15 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/polysat_link_visual_6'>
+					<material>
+						<ambient>1.0 0.84 0 1</ambient>
+						<diffuse>1.0 0.8 0 1</diffuse>
+						<specular>1.0 0.8 0 1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.66 0.33 0.33</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_0_visual_visual_7'>
+        <pose>-0.3465 -0.0561 0.0858 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_10_visual_visual_8'>
+        <pose>0.3465 0.19635 -0.0528 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_11_visual_visual_9'>
+        <pose>0.3465 -0.0858 -0.0561 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_12_visual_visual_10'>
+        <pose>0.0561 -0.1815 -0.0561 0 -0 3.14159</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_13_visual_visual_11'>
+        <pose>0.0561 0.1815 0.0561 3.14159 -0 3.14159</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_1_visual_visual_12'>
+        <pose>-0.3465 -0.0561 -0.1947 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_2_visual_visual_13'>
+        <pose>0.3465 0.0561 0.0858 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_3_visual_visual_14'>
+        <pose>0.3465 0.0561 -0.1947 0 0 -1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_4_visual_visual_15'>
+        <pose>-0.0561 -0.19635 -0.1815 -1.5708 0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_5_visual_visual_16'>
+        <pose>-0.0561 0.08415 -0.1815 -1.5708 0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_6_visual_visual_17'>
+        <pose>-0.0561 0.19635 0.1815 1.5708 -0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_7_visual_visual_18'>
+        <pose>-0.0561 -0.08415 0.1815 1.5708 -0 0</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_8_visual_visual_19'>
+        <pose>-0.3465 0.0858 -0.0528 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thrust_plume_9_visual_visual_20'>
+        <pose>-0.3465 -0.19635 -0.0561 0 -0 1.5708</pose>
+					<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_0">
+						<thrust_color>1 0 0 1</thrust_color>
+						<thruster_number>0</thruster_number>
+					</plugin>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_0_visual_visual_21'>
+        <pose>0.33 -0.02475 0.165 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_10_visual_visual_22'>
+        <pose>-0.33 0.1155 -0.02475 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_11_visual_visual_23'>
+        <pose>-0.33 -0.165 -0.02475 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_12_visual_visual_24'>
+        <pose>-0.02475 -0.165 -0.02475 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_13_visual_visual_25'>
+        <pose>-0.02475 0.165 0.02475 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_1_visual_visual_26'>
+        <pose>0.33 -0.02475 -0.1155 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_2_visual_visual_27'>
+        <pose>-0.33 -0.02475 0.1155 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_3_visual_visual_28'>
+        <pose>-0.33 -0.02475 -0.165 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_4_visual_visual_29'>
+        <pose>-0.02475 -0.165 0.165 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_5_visual_visual_30'>
+        <pose>-0.02475 0.1155 0.165 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_6_visual_visual_31'>
+        <pose>-0.02475 0.165 -0.165 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_7_visual_visual_32'>
+        <pose>-0.02475 -0.1155 -0.165 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_8_visual_visual_33'>
+        <pose>0.33 0.1155 0.02475 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <visual name='polysat/base_link_fixed_joint_lump__polysat/thruster_9_visual_visual_34'>
+        <pose>0.33 -0.165 0.02475 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.00033 0.00033 0.00033</scale>
+							<uri>model://polysat_description/meshes/thruster.stl</uri>
+          </mesh>
+        </geometry>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Rev3' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.249896 0.230623 2.3e-05 3.14159 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>perseus_l/link1_v12_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>6.10865</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/link1_v12_1'>
+      <pose relative_to='perseus_l/Rev3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-7.8e-05 0.027406 2e-06 0 -0 0</pose>
+        <mass>0.38326</mass>
+        <inertia>
+          <ixx>0.00010304</ixx>
+          <ixy>-2.26791e-07</ixy>
+          <ixz>2.71394e-10</ixz>
+          <iyy>6.90073e-05</iyy>
+          <iyz>8.42399e-09</iyz>
+          <izz>0.000114047</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/link1_v12_1_collision'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/link1_v12_1_fixed_joint_lump__perseus_l/Dynamixel_1_1_collision_1'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/link1_v12_1_visual'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/link1_v12_1_fixed_joint_lump__perseus_l/Dynamixel_1_1_visual_1'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Rev5' type='revolute'>
+      <pose relative_to='perseus_l/link1_v12_1'>-0.019 0.040401 1e-06 0 -0 0</pose>
+      <parent>perseus_l/link1_v12_1</parent>
+      <child>perseus_l/Link_v5_1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/Link_v5_1'>
+      <pose relative_to='perseus_l/Rev5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019362 0.086442 0 0 -0 0</pose>
+        <mass>0.373325</mass>
+        <inertia>
+          <ixx>0.00013877</ixx>
+          <ixy>3.64327e-08</ixy>
+          <ixz>-5.52201e-14</ixz>
+          <iyy>6.6e-05</iyy>
+          <iyz>6.33089e-11</iyz>
+          <izz>0.00015577</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/Link_v5_1_collision'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5_1_fixed_joint_lump__perseus_l/Dynamixel_2_1_collision_1'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/Link_v5_1_visual'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5_1_fixed_joint_lump__perseus_l/Dynamixel_2_1_visual_1'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Rev7' type='revolute'>
+      <pose relative_to='perseus_l/Link_v5_1'>-0.0006 0.100551 1e-06 0 -0 0</pose>
+      <parent>perseus_l/Link_v5_1</parent>
+      <child>perseus_l/Link_v5__1__1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/Link_v5__1__1'>
+      <pose relative_to='perseus_l/Rev7'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.020912 0.086441 0 0 -0 0</pose>
+        <mass>0.373325</mass>
+        <inertia>
+          <ixx>0.00013877</ixx>
+          <ixy>3.64327e-08</ixy>
+          <ixz>-5.52201e-14</ixz>
+          <iyy>6.6e-05</iyy>
+          <iyz>6.33089e-11</iyz>
+          <izz>0.00015577</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/Link_v5__1__1_collision'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5__1__1_fixed_joint_lump__perseus_l/Dynamixel_3_1_collision_1'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/Link_v5__1__1_visual'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5__1__1_fixed_joint_lump__perseus_l/Dynamixel_3_1_visual_1'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Rev9' type='revolute'>
+      <pose relative_to='perseus_l/Link_v5__1__1'>0.00095 0.10055 1e-06 0 -0 0</pose>
+      <parent>perseus_l/Link_v5__1__1</parent>
+      <child>perseus_l/Link_v5__2__1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/Link_v5__2__1'>
+      <pose relative_to='perseus_l/Rev9'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.020968 0.100143 0.000296 0 -0 0</pose>
+        <mass>0.411498</mass>
+        <inertia>
+          <ixx>0.000208309</ixx>
+          <ixy>-1.90975e-07</ixy>
+          <ixz>-3.19207e-08</ixz>
+          <iyy>0.000111245</iyy>
+          <iyz>-1.71461e-06</iyz>
+          <izz>0.000170072</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/Link_v5__2__1_collision'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL2_v14_1_collision_1'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL1_v7_1_collision_2'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/ModifiedDynamixel_v12_1_collision_3'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/EETrack_rebuild_v6_1_collision_4'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/Link_v5__2__1_visual'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL2_v14_1_visual_1'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL1_v7_1_visual_2'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/ModifiedDynamixel_v12_1_visual_3'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/EETrack_rebuild_v6_1_visual_4'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Slider16' type='prismatic'>
+      <pose relative_to='perseus_l/Link_v5__2__1'>0.020949 0.1285 0.012001 0 -0 0</pose>
+      <parent>perseus_l/Link_v5__2__1</parent>
+      <child>perseus_l/Grip_v5_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.015</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/Grip_v5_1'>
+      <pose relative_to='perseus_l/Slider16'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.013323 -0.009634 0 -0 0</pose>
+        <mass>0.0199876</mass>
+        <inertia>
+          <ixx>2e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/Grip_v5_1_collision'>
+        <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/Grip_v5_1_visual'>
+        <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_l/Slider17' type='prismatic'>
+      <pose relative_to='perseus_l/Link_v5__2__1'>0.055969 0.572725 -0.031967 0 -0 0</pose>
+      <parent>perseus_l/Link_v5__2__1</parent>
+      <child>perseus_l/Grip_v5__1__1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0.0048</lower>
+          <upper>0.01</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_l/Grip_v5__1__1'>
+      <pose relative_to='perseus_l/Slider17'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.034391 -0.430902 0.054601 0 -0 0</pose>
+        <mass>0.0199876</mass>
+        <inertia>
+          <ixx>2e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_l/Grip_v5__1__1_collision'>
+        <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_l/Grip_v5__1__1_visual'>
+        <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Rev3' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.249896 -0.230623 -2.3e-05 0 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>perseus_r/link1_v12_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>6.10865</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/link1_v12_1'>
+      <pose relative_to='perseus_r/Rev3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-7.8e-05 0.027406 2e-06 0 -0 0</pose>
+        <mass>0.38326</mass>
+        <inertia>
+          <ixx>0.00010304</ixx>
+          <ixy>-2.26791e-07</ixy>
+          <ixz>2.71394e-10</ixz>
+          <iyy>6.90073e-05</iyy>
+          <iyz>8.42399e-09</iyz>
+          <izz>0.000114047</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/link1_v12_1_collision'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/link1_v12_1_fixed_joint_lump__perseus_r/Dynamixel_1_1_collision_1'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/link1_v12_1_visual'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/link1_v12_1_fixed_joint_lump__perseus_r/Dynamixel_1_1_visual_1'>
+        <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Rev5' type='revolute'>
+      <pose relative_to='perseus_r/link1_v12_1'>-0.019 0.040401 1e-06 0 -0 0</pose>
+      <parent>perseus_r/link1_v12_1</parent>
+      <child>perseus_r/Link_v5_1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/Link_v5_1'>
+      <pose relative_to='perseus_r/Rev5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019362 0.086442 0 0 -0 0</pose>
+        <mass>0.373325</mass>
+        <inertia>
+          <ixx>0.00013877</ixx>
+          <ixy>3.64327e-08</ixy>
+          <ixz>-5.52201e-14</ixz>
+          <iyy>6.6e-05</iyy>
+          <iyz>6.33089e-11</iyz>
+          <izz>0.00015577</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/Link_v5_1_collision'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5_1_fixed_joint_lump__perseus_r/Dynamixel_2_1_collision_1'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/Link_v5_1_visual'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5_1_fixed_joint_lump__perseus_r/Dynamixel_2_1_visual_1'>
+        <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Rev7' type='revolute'>
+      <pose relative_to='perseus_r/Link_v5_1'>-0.0006 0.100551 1e-06 0 -0 0</pose>
+      <parent>perseus_r/Link_v5_1</parent>
+      <child>perseus_r/Link_v5__1__1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/Link_v5__1__1'>
+      <pose relative_to='perseus_r/Rev7'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.020912 0.086441 0 0 -0 0</pose>
+        <mass>0.373325</mass>
+        <inertia>
+          <ixx>0.00013877</ixx>
+          <ixy>3.64327e-08</ixy>
+          <ixz>-5.52201e-14</ixz>
+          <iyy>6.6e-05</iyy>
+          <iyz>6.33089e-11</iyz>
+          <izz>0.00015577</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/Link_v5__1__1_collision'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5__1__1_fixed_joint_lump__perseus_r/Dynamixel_3_1_collision_1'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/Link_v5__1__1_visual'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5__1__1_fixed_joint_lump__perseus_r/Dynamixel_3_1_visual_1'>
+        <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Rev9' type='revolute'>
+      <pose relative_to='perseus_r/Link_v5__1__1'>0.00095 0.10055 1e-06 0 -0 0</pose>
+      <parent>perseus_r/Link_v5__1__1</parent>
+      <child>perseus_r/Link_v5__2__1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/Link_v5__2__1'>
+      <pose relative_to='perseus_r/Rev9'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.020968 0.100143 0.000296 0 -0 0</pose>
+        <mass>0.411498</mass>
+        <inertia>
+          <ixx>0.000208309</ixx>
+          <ixy>-1.90975e-07</ixy>
+          <ixz>-3.19207e-08</ixz>
+          <iyy>0.000111245</iyy>
+          <iyz>-1.71461e-06</iyz>
+          <izz>0.000170072</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/Link_v5__2__1_collision'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL2_v14_1_collision_1'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL1_v7_1_collision_2'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/ModifiedDynamixel_v12_1_collision_3'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/EETrack_rebuild_v6_1_collision_4'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/Link_v5__2__1_visual'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL2_v14_1_visual_1'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL1_v7_1_visual_2'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/ModifiedDynamixel_v12_1_visual_3'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/EETrack_rebuild_v6_1_visual_4'>
+        <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Slider16' type='prismatic'>
+      <pose relative_to='perseus_r/Link_v5__2__1'>0.020949 0.1285 0.012001 0 -0 0</pose>
+      <parent>perseus_r/Link_v5__2__1</parent>
+      <child>perseus_r/Grip_v5_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.015</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/Grip_v5_1'>
+      <pose relative_to='perseus_r/Slider16'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.013323 -0.009634 0 -0 0</pose>
+        <mass>0.0199876</mass>
+        <inertia>
+          <ixx>2e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/Grip_v5_1_collision'>
+        <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/Grip_v5_1_visual'>
+        <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='perseus_r/Slider17' type='prismatic'>
+      <pose relative_to='perseus_r/Link_v5__2__1'>0.055969 0.572725 -0.031967 0 -0 0</pose>
+      <parent>perseus_r/Link_v5__2__1</parent>
+      <child>perseus_r/Grip_v5__1__1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0.0048</lower>
+          <upper>0.01</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perseus_r/Grip_v5__1__1'>
+      <pose relative_to='perseus_r/Slider17'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.034391 -0.430902 0.054601 0 -0 0</pose>
+        <mass>0.0199876</mass>
+        <inertia>
+          <ixx>2e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='perseus_r/Grip_v5__1__1_collision'>
+        <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='perseus_r/Grip_v5__1__1_visual'>
+        <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/imu_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/imu_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/imu_link'>
+      <pose relative_to='polysat/imu_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/pose_sensor_default_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 0 0 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/pose_sensor_link_default</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/pose_sensor_link_default'>
+      <pose relative_to='polysat/pose_sensor_default_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_0_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.5 0 0.5 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_0</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_0'>
+      <pose relative_to='polysat/thruster_0_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_0_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_0_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_10_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>-0.5 0.5 0 0 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_10</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_10'>
+      <pose relative_to='polysat/thruster_10_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_10_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_10_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_11_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>-0.5 -0.5 0 0 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_11</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_11'>
+      <pose relative_to='polysat/thruster_11_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_11_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_11_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_12_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 0.5 0 0 -0 1.5708</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_12</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_12'>
+      <pose relative_to='polysat/thruster_12_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_12_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_12_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_13_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 -0.5 0 0 0 -1.5708</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_13</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_13'>
+      <pose relative_to='polysat/thruster_13_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_13_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_13_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_1_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.5 0 -0.5 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_1'>
+      <pose relative_to='polysat/thruster_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_2_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>-0.5 0 0.5 0 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_2'>
+      <pose relative_to='polysat/thruster_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_3_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>-0.5 0 -0.5 0 -0 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_3'>
+      <pose relative_to='polysat/thruster_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_4_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 0.5 0.5 3.14159 -1.57079 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_4'>
+      <pose relative_to='polysat/thruster_4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_5_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 -0.5 0.5 3.14159 -1.57079 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_5</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_5'>
+      <pose relative_to='polysat/thruster_5_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_6_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 0.5 -0.5 3.14159 1.57079 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_6</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_6'>
+      <pose relative_to='polysat/thruster_6_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_7_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0 -0.5 -0.5 3.14159 1.57079 3.14159</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_7</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_7'>
+      <pose relative_to='polysat/thruster_7_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_7_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_7_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_8_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.5 0.5 0 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_8</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_8'>
+      <pose relative_to='polysat/thruster_8_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_8_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_8_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint name='polysat/thruster_9_joint' type='revolute'>
+      <pose relative_to='polysat/base_link'>0.5 -0.5 0 0 -0 0</pose>
+      <parent>polysat/base_link</parent>
+      <child>polysat/thruster_9</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='polysat/thruster_9'>
+      <pose relative_to='polysat/thruster_9_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='polysat/thruster_9_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-07</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='polysat/thruster_9_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1e-06</length>
+            <radius>1e-07</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <plugin name='polysat_0_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_0</linkName>
+        <jointName>polysat/thruster_0_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_0</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_0_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_1_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_1</linkName>
+        <jointName>polysat/thruster_1_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_1</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_1_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_2_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_2</linkName>
+        <jointName>polysat/thruster_2_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_2</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_2_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_3_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_3</linkName>
+        <jointName>polysat/thruster_3_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_3</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_3_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_4_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_4</linkName>
+        <jointName>polysat/thruster_4_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_4</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_4_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_5_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_5</linkName>
+        <jointName>polysat/thruster_5_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_5</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_5_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_6_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_6</linkName>
+        <jointName>polysat/thruster_6_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_6</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_6_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_7_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_7</linkName>
+        <jointName>polysat/thruster_7_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_7</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_7_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_8_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_8</linkName>
+        <jointName>polysat/thruster_8_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_8</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_8_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_9_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_9</linkName>
+        <jointName>polysat/thruster_9_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_9</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_9_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_10_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_10</linkName>
+        <jointName>polysat/thruster_10_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_10</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_10_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_11_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_11</linkName>
+        <jointName>polysat/thruster_11_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_11</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_11_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_12_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_12</linkName>
+        <jointName>polysat/thruster_12_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_12</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_12_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='polysat_13_thruster_model' filename='libsc_gazebo_thrust_plugin.so'>
+      <thruster>
+        <linkName>polysat/thruster_13</linkName>
+        <jointName>polysat/thruster_13_joint</jointName>
+        <cmdTopic>polysat/thrusters/thruster_13</cmdTopic>
+        <angleTopic>polysat/thrusters/thruster_13_angle</angleTopic>
+        <enableAngle>0</enableAngle>
+      </thruster>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='libsc_imu_gazebo_plugin' filename='libsc_imu_gazebo_plugin.so'>
+      <robot_namespace>polysat</robot_namespace>
+      <link_name>polysat/imu_link</link_name>
+      <sensor_topic>imu</sensor_topic>
+      <gyroscope_noise_density>0.0003394</gyroscope_noise_density>
+      <gyroscope_random_walk>3.8785e-05</gyroscope_random_walk>
+      <gyroscope_bias_correlation_time>1000.0</gyroscope_bias_correlation_time>
+      <gyroscope_turn_on_bias_sigma>0.0087</gyroscope_turn_on_bias_sigma>
+      <accelerometer_noise_density>0.004</accelerometer_noise_density>
+      <accelerometer_random_walk>0.006</accelerometer_random_walk>
+      <accelerometer_bias_correlation_time>300.0</accelerometer_bias_correlation_time>
+      <accelerometer_turn_on_bias_sigma>0.196</accelerometer_turn_on_bias_sigma>
+      <orientation_noise>0.01</orientation_noise>
+      <update_rate>50</update_rate>
+      <enable_gazebo_messages>0</enable_gazebo_messages>
+      <enable_local_ned_frame>0</enable_local_ned_frame>
+      <static_reference_frame>world</static_reference_frame>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name='pose_3d_plugin' filename='libsc_pose_gt_plugin.so'>
+      <robot_namespace>polysat</robot_namespace>
+      <link_name>polysat/base_link</link_name>
+      <sensor_topic>pose_gt</sensor_topic>
+      <static_reference_frame>world</static_reference_frame>
+      <noise_sigma>0.0</noise_sigma>
+      <noise_amplitude>0.0</noise_amplitude>
+      <update_rate>20</update_rate>
+      <enable_gazebo_messages>0</enable_gazebo_messages>
+      <publish_ned_odom>0</publish_ned_odom>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <frame name='perseus_l/Rigid2' attached_to='perseus_l/basePlate_v18_1'>
+      <pose>0.060809 0.0075 0.06075 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/Stepper_v5_1' attached_to='perseus_l/Rigid2'/>
+    <frame name='perseus_l/Rigid4' attached_to='perseus_l/link1_v12_1'>
+      <pose>0 0.00515 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/Dynamixel_1_1' attached_to='perseus_l/Rigid4'/>
+    <frame name='perseus_l/Rigid6' attached_to='perseus_l/Link_v5_1'>
+      <pose>0.0194 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/Dynamixel_2_1' attached_to='perseus_l/Rigid6'/>
+    <frame name='perseus_l/Rigid8' attached_to='perseus_l/Link_v5__1__1'>
+      <pose>0.02095 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/Dynamixel_3_1' attached_to='perseus_l/Rigid8'/>
+    <frame name='perseus_l/Rigid14' attached_to='perseus_l/ModifiedDynamixel_v12_1'>
+      <pose>-1e-06 0.037 0.012001 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/EETrack_rebuild_v6_1' attached_to='perseus_l/Rigid14'/>
+    <frame name='perseus_l/Rigid13' attached_to='perseus_l/gripL1_v7_1'>
+      <pose>0 0.003 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/ModifiedDynamixel_v12_1' attached_to='perseus_l/Rigid13'/>
+    <frame name='perseus_l/Rigid12' attached_to='perseus_l/gripL2_v14_1'>
+      <pose>0 0.018 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/gripL1_v7_1' attached_to='perseus_l/Rigid12'/>
+    <frame name='perseus_l/Rigid10' attached_to='perseus_l/Link_v5__2__1'>
+      <pose>0.02095 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/gripL2_v14_1' attached_to='perseus_l/Rigid10'/>
+    <frame name='perseus_l/Rigid1' attached_to='perseus_l/base'>
+      <pose>-0.060705 0.060123 -0.060773 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_l/basePlate_v18_1' attached_to='perseus_l/Rigid1'/>
+    <frame name='perseus_l_anchor' attached_to='polysat/base_link'>
+      <pose>0.25 0.15 -0 3.14159 -0 3.14159</pose>
+    </frame>
+    <frame name='perseus_l/base' attached_to='perseus_l_anchor'/>
+    <frame name='perseus_r/Rigid2' attached_to='perseus_r/basePlate_v18_1'>
+      <pose>0.060809 0.0075 0.06075 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/Stepper_v5_1' attached_to='perseus_r/Rigid2'/>
+    <frame name='perseus_r/Rigid4' attached_to='perseus_r/link1_v12_1'>
+      <pose>0 0.00515 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/Dynamixel_1_1' attached_to='perseus_r/Rigid4'/>
+    <frame name='perseus_r/Rigid6' attached_to='perseus_r/Link_v5_1'>
+      <pose>0.0194 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/Dynamixel_2_1' attached_to='perseus_r/Rigid6'/>
+    <frame name='perseus_r/Rigid8' attached_to='perseus_r/Link_v5__1__1'>
+      <pose>0.02095 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/Dynamixel_3_1' attached_to='perseus_r/Rigid8'/>
+    <frame name='perseus_r/Rigid14' attached_to='perseus_r/ModifiedDynamixel_v12_1'>
+      <pose>-1e-06 0.037 0.012001 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/EETrack_rebuild_v6_1' attached_to='perseus_r/Rigid14'/>
+    <frame name='perseus_r/Rigid13' attached_to='perseus_r/gripL1_v7_1'>
+      <pose>0 0.003 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/ModifiedDynamixel_v12_1' attached_to='perseus_r/Rigid13'/>
+    <frame name='perseus_r/Rigid12' attached_to='perseus_r/gripL2_v14_1'>
+      <pose>0 0.018 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/gripL1_v7_1' attached_to='perseus_r/Rigid12'/>
+    <frame name='perseus_r/Rigid10' attached_to='perseus_r/Link_v5__2__1'>
+      <pose>0.02095 0.0653 0 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/gripL2_v14_1' attached_to='perseus_r/Rigid10'/>
+    <frame name='perseus_r/Rigid1' attached_to='perseus_r/base'>
+      <pose>-0.060705 0.060123 -0.060773 0 -0 0</pose>
+    </frame>
+    <frame name='perseus_r/basePlate_v18_1' attached_to='perseus_r/Rigid1'/>
+    <frame name='perseus_r_anchor' attached_to='polysat/base_link'>
+      <pose>0.25 -0.15 -0 0 -0 3.14159</pose>
+    </frame>
+    <frame name='perseus_r/base' attached_to='perseus_r_anchor'/>
+    <frame name='polysat/polysat_base_joint' attached_to='polysat/base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+    </frame>
+    <frame name='polysat/polysat_link' attached_to='polysat/polysat_base_joint'/>
+    <frame name='polysat/thrust_plume_0_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.3465 -0.0561 0.0858 0 -0 1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_0_visual' attached_to='polysat/thrust_plume_0_visual_joint'/>
+    <frame name='polysat/thrust_plume_10_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.3465 0.19635 -0.0528 0 0 -1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_10_visual' attached_to='polysat/thrust_plume_10_visual_joint'/>
+    <frame name='polysat/thrust_plume_11_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.3465 -0.0858 -0.0561 0 0 -1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_11_visual' attached_to='polysat/thrust_plume_11_visual_joint'/>
+    <frame name='polysat/thrust_plume_12_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.0561 -0.1815 -0.0561 0 -0 3.14159</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_12_visual' attached_to='polysat/thrust_plume_12_visual_joint'/>
+    <frame name='polysat/thrust_plume_13_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.0561 0.1815 0.0561 3.14159 -0 3.14159</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_13_visual' attached_to='polysat/thrust_plume_13_visual_joint'/>
+    <frame name='polysat/thrust_plume_1_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.3465 -0.0561 -0.1947 0 -0 1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_1_visual' attached_to='polysat/thrust_plume_1_visual_joint'/>
+    <frame name='polysat/thrust_plume_2_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.3465 0.0561 0.0858 0 0 -1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_2_visual' attached_to='polysat/thrust_plume_2_visual_joint'/>
+    <frame name='polysat/thrust_plume_3_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.3465 0.0561 -0.1947 0 0 -1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_3_visual' attached_to='polysat/thrust_plume_3_visual_joint'/>
+    <frame name='polysat/thrust_plume_4_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.0561 -0.19635 -0.1815 -1.5708 0 0</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_4_visual' attached_to='polysat/thrust_plume_4_visual_joint'/>
+    <frame name='polysat/thrust_plume_5_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.0561 0.08415 -0.1815 -1.5708 0 0</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_5_visual' attached_to='polysat/thrust_plume_5_visual_joint'/>
+    <frame name='polysat/thrust_plume_6_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.0561 0.19635 0.1815 1.5708 -0 0</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_6_visual' attached_to='polysat/thrust_plume_6_visual_joint'/>
+    <frame name='polysat/thrust_plume_7_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.0561 -0.08415 0.1815 1.5708 -0 0</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_7_visual' attached_to='polysat/thrust_plume_7_visual_joint'/>
+    <frame name='polysat/thrust_plume_8_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.3465 0.0858 -0.0528 0 -0 1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_8_visual' attached_to='polysat/thrust_plume_8_visual_joint'/>
+    <frame name='polysat/thrust_plume_9_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.3465 -0.19635 -0.0561 0 -0 1.5708</pose>
+    </frame>
+    <frame name='polysat/thrust_plume_9_visual' attached_to='polysat/thrust_plume_9_visual_joint'/>
+    <frame name='polysat/thruster_0_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.33 -0.02475 0.165 3.14159 1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_0_visual' attached_to='polysat/thruster_0_visual_joint'/>
+    <frame name='polysat/thruster_10_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.33 0.1155 -0.02475 3.14159 -1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_10_visual' attached_to='polysat/thruster_10_visual_joint'/>
+    <frame name='polysat/thruster_11_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.33 -0.165 -0.02475 3.14159 -1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_11_visual' attached_to='polysat/thruster_11_visual_joint'/>
+    <frame name='polysat/thruster_12_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 -0.165 -0.02475 1.5708 -0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_12_visual' attached_to='polysat/thruster_12_visual_joint'/>
+    <frame name='polysat/thruster_13_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 0.165 0.02475 -1.5708 0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_13_visual' attached_to='polysat/thruster_13_visual_joint'/>
+    <frame name='polysat/thruster_1_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.33 -0.02475 -0.1155 3.14159 1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_1_visual' attached_to='polysat/thruster_1_visual_joint'/>
+    <frame name='polysat/thruster_2_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.33 -0.02475 0.1155 3.14159 -1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_2_visual' attached_to='polysat/thruster_2_visual_joint'/>
+    <frame name='polysat/thruster_3_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.33 -0.02475 -0.165 3.14159 -1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_3_visual' attached_to='polysat/thruster_3_visual_joint'/>
+    <frame name='polysat/thruster_4_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 -0.165 0.165 0 -0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_4_visual' attached_to='polysat/thruster_4_visual_joint'/>
+    <frame name='polysat/thruster_5_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 0.1155 0.165 0 -0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_5_visual' attached_to='polysat/thruster_5_visual_joint'/>
+    <frame name='polysat/thruster_6_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 0.165 -0.165 3.14159 -0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_6_visual' attached_to='polysat/thruster_6_visual_joint'/>
+    <frame name='polysat/thruster_7_visual_joint' attached_to='polysat/base_link'>
+      <pose>-0.02475 -0.1155 -0.165 3.14159 -0 0</pose>
+    </frame>
+    <frame name='polysat/thruster_7_visual' attached_to='polysat/thruster_7_visual_joint'/>
+    <frame name='polysat/thruster_8_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.33 0.1155 0.02475 3.14159 1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_8_visual' attached_to='polysat/thruster_8_visual_joint'/>
+    <static>0</static>
+    <frame name='polysat/thruster_9_visual_joint' attached_to='polysat/base_link'>
+      <pose>0.33 -0.165 0.02475 3.14159 1.57079 3.14159</pose>
+    </frame>
+    <frame name='polysat/thruster_9_visual' attached_to='polysat/thruster_9_visual_joint'/>
+    <pose>0 0 2 0 -0 0</pose>
+  </model>
+</sdf>
