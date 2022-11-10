@@ -1,5 +1,5 @@
-sdf_orig_file = '/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/urdf/polysat_robot_world.sdf'
-sdf_file = '/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/urdf/polysat_robot.sdf'
+sdf_orig_file = '/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_perseus_description/urdf/polysat_perseus_working.sdf'
+sdf_file = '/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_perseus_description/urdf/polysat_perseus_robot.sdf'
 
 # Number of parts to change
 plume_thrusters = 14
@@ -19,7 +19,7 @@ line_num = len(world_lines)
 
 while True:
     # Thrust plume visual plugin text
-    thrust_vis_plug = '\t\t\t\t\t<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_'+str(counter)+'">\n\t\t\t\t\t\t<thrust_color>1 0 0 1</thrust_color>\n\t\t\t\t\t\t<thruster_number>'+str(counter)+'</thruster_number>\n\t\t\t\t\t</plugin>\n'
+    thrust_vis_plug = '\t\t\t\t\t<plugin filename="libsc_thrust_visual_plugin.so" name="thrust_visual_'+str(plume_count)+'">\n\t\t\t\t\t\t<thrust_color>1 0 0 1</thrust_color>\n\t\t\t\t\t\t<thruster_number>'+str(plume_count)+'</thruster_number>\n\t\t\t\t\t</plugin>\n'
     # Thrust nozel color
     thrust_material = '\t\t\t\t\t<material>\n\t\t\t\t\t\t<ambient>0.1 0.1 0.1 1</ambient>\n\t\t\t\t\t\t<diffuse>0.1 0.1 0.2 1</diffuse>\n\t\t\t\t\t\t<specular>0 0 0 0</specular>\n\t\t\t\t\t\t<emissive>0 0 0 1</emissive>\n\t\t\t\t\t</material>\n'
     # Sat body color
@@ -51,7 +51,7 @@ while True:
         if check_str in world_lines[ii] and (sat_count < sat_viz):
             # Print which thruster we're on
             print("On sat count " + str(sat_count))
-            id_location = ii + 8
+            id_location = ii + 1
             world_lines.insert(id_location, sat_material)
             sat_count += 1
             ii = 0
