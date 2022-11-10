@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/base_link.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/base_link.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -41,7 +41,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/basePlate_v18_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -63,7 +63,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Stepper_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -85,7 +85,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/base_link.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/base_link.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -107,7 +107,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/basePlate_v18_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -129,7 +129,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Stepper_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -466,7 +466,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -488,7 +488,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -510,7 +510,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -532,7 +532,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -554,7 +554,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -576,7 +576,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -598,7 +598,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -620,7 +620,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -642,7 +642,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -664,7 +664,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -686,7 +686,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -708,7 +708,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -730,7 +730,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -752,7 +752,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -770,56 +770,92 @@
         </surface>
       </collision>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_l/base_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/base_link.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/base_link.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_l/basePlate_v18_1_visual_1'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/basePlate_v18_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_l/Stepper_v5_1_visual_2'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 0.15 0 3.14159 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Stepper_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_r/base_visual_3'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 -0.15 0 0 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/base_link.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/base_link.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_r/basePlate_v18_1_visual_4'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 -0.15 0 0 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/basePlate_v18_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/basePlate_v18_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='polysat/base_link_fixed_joint_lump__perseus_r/Stepper_v5_1_visual_5'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.25 -0.15 0 0 -0 3.14159</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Stepper_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Stepper_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -846,7 +882,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -859,7 +895,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -872,7 +908,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -885,7 +921,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -898,7 +934,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -911,7 +947,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -924,7 +960,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -937,7 +973,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -950,7 +986,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -963,7 +999,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -976,7 +1012,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -989,7 +1025,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1002,7 +1038,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1015,7 +1051,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thrust_plume.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thrust_plume.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1024,7 +1060,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1039,7 +1075,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1054,7 +1090,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1069,7 +1105,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1084,7 +1120,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1099,7 +1135,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1114,7 +1150,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1129,7 +1165,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1144,7 +1180,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1159,7 +1195,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1174,7 +1210,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1189,7 +1225,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1204,7 +1240,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1219,7 +1255,7 @@
         <geometry>
           <mesh>
             <scale>0.00033 0.00033 0.00033</scale>
-							<uri>model://polysat_description/meshes/thruster.stl</uri>
+            <uri>file:///home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_description/meshes/thruster.stl</uri>
           </mesh>
         </geometry>
 					<material>
@@ -1270,7 +1306,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/link1_v12_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1292,7 +1328,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_1_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1310,20 +1346,32 @@
         </surface>
       </collision>
       <visual name='perseus_l/link1_v12_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/link1_v12_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/link1_v12_1_fixed_joint_lump__perseus_l/Dynamixel_1_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_1_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1368,7 +1416,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1390,7 +1438,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_2_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1408,20 +1456,32 @@
         </surface>
       </collision>
       <visual name='perseus_l/Link_v5_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5_1_fixed_joint_lump__perseus_l/Dynamixel_2_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_2_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1464,7 +1524,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__1__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1486,7 +1546,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_3_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1504,20 +1564,32 @@
         </surface>
       </collision>
       <visual name='perseus_l/Link_v5__1__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__1__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5__1__1_fixed_joint_lump__perseus_l/Dynamixel_3_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_3_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1562,7 +1634,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__2__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1584,7 +1656,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL2_v14_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1606,7 +1678,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL1_v7_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1628,7 +1700,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1650,7 +1722,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1668,47 +1740,77 @@
         </surface>
       </collision>
       <visual name='perseus_l/Link_v5__2__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__2__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL2_v14_1_visual_1'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL2_v14_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/gripL1_v7_1_visual_2'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL1_v7_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/ModifiedDynamixel_v12_1_visual_3'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_l/Link_v5__2__1_fixed_joint_lump__perseus_l/EETrack_rebuild_v6_1_visual_4'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1753,7 +1855,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1771,11 +1873,17 @@
         </surface>
       </collision>
       <visual name='perseus_l/Grip_v5_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1820,7 +1928,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5__1__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1838,11 +1946,17 @@
         </surface>
       </collision>
       <visual name='perseus_l/Grip_v5__1__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5__1__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1887,7 +2001,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/link1_v12_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1909,7 +2023,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_1_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1927,20 +2041,32 @@
         </surface>
       </collision>
       <visual name='perseus_r/link1_v12_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/link1_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/link1_v12_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/link1_v12_1_fixed_joint_lump__perseus_r/Dynamixel_1_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.000104 -0.080623 2.3e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_1_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_1_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1985,7 +2111,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2007,7 +2133,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_2_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2025,20 +2151,32 @@
         </surface>
       </collision>
       <visual name='perseus_r/Link_v5_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5_1_fixed_joint_lump__perseus_r/Dynamixel_2_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018896 -0.121024 2.2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_2_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_2_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2081,7 +2219,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__1__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2103,7 +2241,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_3_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2121,20 +2259,32 @@
         </surface>
       </collision>
       <visual name='perseus_r/Link_v5__1__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__1__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5__1__1_fixed_joint_lump__perseus_r/Dynamixel_3_1_visual_1'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.019496 -0.221575 2.1e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Dynamixel_3_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Dynamixel_3_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2179,7 +2329,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__2__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2201,7 +2351,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL2_v14_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2223,7 +2373,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL1_v7_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2245,7 +2395,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2267,7 +2417,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2285,47 +2435,77 @@
         </surface>
       </collision>
       <visual name='perseus_r/Link_v5__2__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Link_v5__2__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Link_v5__2__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL2_v14_1_visual_1'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL2_v14_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL2_v14_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/gripL1_v7_1_visual_2'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/gripL1_v7_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/gripL1_v7_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/ModifiedDynamixel_v12_1_visual_3'>
+					<material>
+						<ambient>0.1 0.1 0.1 1</ambient>
+						<diffuse>0.1 0.1 0.2 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/ModifiedDynamixel_v12_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='perseus_r/Link_v5__2__1_fixed_joint_lump__perseus_r/EETrack_rebuild_v6_1_visual_4'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>0.018546 -0.322125 2e-05 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/EETrack_rebuild_v6_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2370,7 +2550,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5_1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2388,11 +2568,17 @@
         </surface>
       </collision>
       <visual name='perseus_r/Grip_v5_1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.002403 -0.450625 -0.011981 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5_1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5_1.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2437,7 +2623,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5__1__1.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -2455,11 +2641,17 @@
         </surface>
       </collision>
       <visual name='perseus_r/Grip_v5__1__1_visual'>
+					<material>
+						<ambient>1 1 1 1</ambient>
+						<diffuse>0.5 0.5 0.5 1</diffuse>
+						<specular>0.1 0.1 0.1 0.1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
         <pose>-0.037423 -0.89485 0.031987 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-							<uri>model://perseus_description/meshes/Grip_v5__1__1.stl</uri>
+            <uri>/home/carson/sc_ws/src/spacecraft_sim/urdf/manipulators/perseus_description/meshes/Grip_v5__1__1.stl</uri>
           </mesh>
         </geometry>
       </visual>
