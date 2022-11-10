@@ -23,7 +23,7 @@ while True:
     # Thrust nozel color
     thrust_material = '\t\t\t\t\t<material>\n\t\t\t\t\t\t<ambient>0.1 0.1 0.1 1</ambient>\n\t\t\t\t\t\t<diffuse>0.1 0.1 0.2 1</diffuse>\n\t\t\t\t\t\t<specular>0 0 0 0</specular>\n\t\t\t\t\t\t<emissive>0 0 0 1</emissive>\n\t\t\t\t\t</material>\n'
     # Sat body color
-    sat_material = '\t\t\t\t\t<material>\n\t\t\t\t\t\t<ambient>0.1 0.1 0.1 1</ambient>\n\t\t\t\t\t\t<diffuse>0.1 0.1 0.2 1</diffuse>\n\t\t\t\t\t\t<specular>0 0 0 0</specular>\n\t\t\t\t\t\t<emissive>0 0 0 1</emissive>\n\t\t\t\t\t</material>\n'
+    sat_material = '\t\t\t\t\t<material>\n\t\t\t\t\t\t<ambient>1.0 0.84 0 1</ambient>\n\t\t\t\t\t\t<diffuse>1.0 0.8 0 1</diffuse>\n\t\t\t\t\t\t<specular>1.0 0.8 0 1</specular>\n\t\t\t\t\t\t<emissive>0 0 0 1</emissive>\n\t\t\t\t\t</material>\n'
 
     # Go through each line and check for the thrust plume visual
     while ii < line_num:
