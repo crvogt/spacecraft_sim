@@ -4040,6 +4040,6 @@
       <pose>0.33 -0.165 0.02475 3.14159 1.57079 3.14159</pose>
     </frame>
     <frame name='polysat/thruster_9_visual' attached_to='polysat/thruster_9_visual_joint'/>
-    <pose>0 0 2 0 -0 0</pose>
+    <pose>0 0 0 0 -0 0</pose>
   </model>
 </sdf>
