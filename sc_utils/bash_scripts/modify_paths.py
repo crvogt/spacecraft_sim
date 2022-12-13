@@ -5,8 +5,8 @@ import time
 
 filename = "/home/carson/sc_ws/src/spacecraft_sim/urdf/robots/polysat_perseus_description/urdf/polysat_perseus_robot.sdf"
 
-#check_a = 'polysat_description'
-check_a = 'perseus_description'
+check_a = 'polysat_description'
+#check_a = 'perseus_description'
 path_sub_a = '<uri>model://' + check_a
 
 print("Modifying file {}...".format(filename))
