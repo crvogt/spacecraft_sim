@@ -131,7 +131,7 @@
 
     <xacro:arg name="inertial_reference_frame" default="world"/>
 
-    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
+    <!--xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
     <xacro:default_imu_macro
       namespace="$(arg namespace)"
       parent_link="$(arg namespace)/base_link"
@@ -143,6 +143,6 @@
     <xacro:default_pose_3d
       namespace="$(arg namespace)"
       parent_link="$(arg namespace)/base_link">
-    </xacro:default_pose_3d>
+    </xacro:default_pose_3d-->
    </xacro:macro>
 </robot>
