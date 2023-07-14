@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
   <xacro:include filename="$(find sc_gazebo_plugins)/urdf/pose_3d.xacro"/>
-  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/hokuyo_lx30.xacro"/>
+  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/basic_lidar.xacro"/>
 
   <xacro:macro name="add_sensors" params="namespace inertial_reference_frame">
     <!-- IMU  -->
@@ -20,11 +20,12 @@
       parent_link="${namespace}/base_link">
     </xacro:default_pose_3d>
 
-    <!-- hokuyo node --> 
-    <xacro:hokuyo_macro
+    <!-- lidar macro --> 
+    <xacro:lidar_macro
       namespace="${namespace}"
-      parent_link="${namespace}/base_link">
-    </xacro:hokuyo_macro>
+      parent_link="${namespace}/base_link"
+      inertial_reference_frame="${inertial_reference_frame}">
+    </xacro:lidar_macro>
   </xacro:macro>
 
 </robot>

@@ -162,3 +162,8 @@ endif()
 
 install(DIRECTORY include/${PROJECT_NAME}/
         DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+
+# for Python scripts
+catkin_install_python(PROGRAMS
+  scripts/sc_tf_broadcaster.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
