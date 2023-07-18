@@ -57,5 +57,7 @@
   <!-- <node name="rviz" type="rviz" pkg="rviz" args="-d $(find sc_control)/rviz_config/sc_rviz.rviz"/> -->
 
   <!--<include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>-->
+  <node name="polysat_tf_broadcaster" pkg="sc_gazebo_plugins" type="sc_tf_broadcaster.py">
+  </node>
 
 </launch>

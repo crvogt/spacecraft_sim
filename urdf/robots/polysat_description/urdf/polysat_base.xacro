@@ -130,19 +130,4 @@
     </gazebo>
 
     <xacro:arg name="inertial_reference_frame" default="world"/>
-
-    <!--xacro:include filename="$(find sc_gazebo_plugins)/urdf/imu.xacro"/>
-    <xacro:default_imu_macro
-      namespace="$(arg namespace)"
-      parent_link="$(arg namespace)/base_link"
-      inertial_reference_frame="$(arg inertial_reference_frame)">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:default_imu_macro>
-
-    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/pose_3d.xacro"/>
-    <xacro:default_pose_3d
-      namespace="$(arg namespace)"
-      parent_link="$(arg namespace)/base_link">
-    </xacro:default_pose_3d-->
-   </xacro:macro>
 </robot>
