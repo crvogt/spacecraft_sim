@@ -153,6 +153,19 @@ install(TARGETS sc_pose_gt_plugin
   RUNTIME DESTINATION bin
 )
 
+add_library(sc_reaction_wheel_plugin
+  src/sc_reaction_wheel_plugin.cc
+)
+target_link_libraries(sc_reaction_wheel_plugin
+  ${catkin_LIBRARIES}
+  ${GAZEBO_LIBRARIES}
+)
+install(TARGETS sc_reaction_wheel_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 set(XACRO_INORDER)
 if(DEFINED ENV{ROS_DISTRO})
   if($ENV{ROS_DISTRO} STREQUAL "kinetic")
