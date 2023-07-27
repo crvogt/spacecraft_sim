@@ -211,7 +211,7 @@ void ScWheel::Update()
 
    
     // Apply torque for each wheel
-    this->wheels[i].link->AddRelativeTorque(wtorquev);
+    this->wheels[i].link->AddTorque(wtorquev);
   }
 
   // Publish the joint state

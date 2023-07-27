@@ -4,10 +4,10 @@
   <xacro:macro name="reaction_wheel_macro" params="namespace wheel_id *origin">
     <link name="${namespace}/wheel_${wheel_id}_link">
       <inertial>
-        <mass value="0.1"/>
-        <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-                 iyy="0.00001" iyz="0.0"
-                 izz="0.00001"/>
+        <mass value="10"/> 
+        <inertia ixx="1" ixy="0.0" ixz="0.0"
+                 iyy="1" iyz="0.0"
+                 izz="1"/>
       </inertial>
       <visual>
         <geometry>
@@ -16,26 +16,26 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </visual>
       <collision>
-        <geomtery>
+        <geometry>
           <cylinder length="0.0000001" radius="0.0000001"/>
         </geometry>
       </collision>
     </link>
 
-    <joint name="${namespace}/wheel_${wheel_id}_joint" type="fixed">
+    <joint name="${namespace}/wheel_${wheel_id}_joint" type="revolute">
       <xacro:insert_block name="origin"/>
       <parent link="${namespace}/base_link"/>
       <child link="${namespace}/wheel_${wheel_id}_link"/>
-      <axis xyz="1 0 0"/>
+      <limit effort="0" lower="0" upper="0" velocity="0"/>
     </joint>
 
     <gazebo>
       <plugin name="${namespace}_${wheel_id}_reaction_wheel_model" filename="libsc_reaction_wheel_plugin.so">
-        <wheel>
-          <linkName>${namespace}/wheel_${wheel_id}_link</linkName>
+        <reaction_wheel>
+          <linkName>${namespace}/base_link</linkName>
           <jointName>${namespace}/wheel_${wheel_id}_joint</jointName>
           <cmdTopic>${namespace}/wheels/wheel_${wheel_id}</cmdTopic>
-        </wheel>
+        </reaction_wheel>
       </plugin>
     </gazebo>
 

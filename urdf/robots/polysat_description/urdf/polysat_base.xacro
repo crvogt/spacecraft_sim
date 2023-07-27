@@ -4,6 +4,7 @@
   <!-- <xacro:property name="debug" default="false"/> -->
   <xacro:arg name="namespace" default="polysat"/>
 
+  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thrusters.xacro"/>
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thruster_visuals.xacro"/>
 
