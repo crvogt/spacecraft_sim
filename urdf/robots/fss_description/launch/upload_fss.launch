@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="fss"/>
+  <arg name="debug" default="false"/>
+
+  <param name="/$(arg namespace)/fss" command="$(find xacro)/xacro '$(find fss_description)/urdf/fss_robot.urdf.xacro' debug:=$(arg debug) namespace:=$(arg namespace)"/>
+</launch>

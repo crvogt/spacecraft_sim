@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fss_launch</name>
+  <version>3.1.1</version>
+  <description>The fss_launch package</description>
+  <maintainer email="crvogt@nps.edu">Carson Vogt</maintainer>
+  <license>Apache2</license>
+  <author email="crvogt@nps.edu">Carson Vogt</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>fss_description</depend>
+  <depend>sc_gazebo_plugins</depend>
+  <export>
+  </export>
+</package>
