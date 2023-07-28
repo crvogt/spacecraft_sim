@@ -25,13 +25,13 @@
       <visual>
         <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <mesh filename="file://$(find sc_models)/models/import_cube/untitled.dae" scale="1 1 1"/>
+          <mesh filename="file://$(find polysat_description)/meshes/base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="-0.5 1.0 -0.5" rpy="1.570796326794 0 0"/>
         <geometry>
-          <mesh filename="file://$(find sc_models)/models/import_cube/untitled.dae" scale="1 1 1"/>
+          <mesh filename="file://$(find polysat_description)/meshes/base.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
