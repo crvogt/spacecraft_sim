@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
+
+  <xacro:macro name="add_wheels" params="namespace">
+    <xacro:reaction_wheel_macro namespace="${namespace}" wheel_id="0">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:reaction_wheel_macro>
+  </xacro:macro>
+
+</robot>
+

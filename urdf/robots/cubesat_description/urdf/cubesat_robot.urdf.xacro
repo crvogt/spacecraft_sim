@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="cubesat">
+  <xacro:arg name="namespace" default="cubesat"/>
+  <xacro:arg name="debug" default="false"/>
+  <xacro:arg name="inertial_reference_frame" default="world"/>
+  <xacro:arg name="controller_type" default="effort"/>
+  <xacro:property name="controller" value="$(arg controller_type)"/>
+
+  <xacro:include filename="$(find cubesat_description)/urdf/cubesat_base.xacro"/>
+  <xacro:cubesat_base namespace="$(arg namespace)"/>
+
+  <!--xacro:include filename="$(find cubesat_description)/urdf/cubesat_reaction_wheels.xacro"/>
+  <xacro:add_wheels namespace="$(arg namespace)"/-->
+
+</robot>
+

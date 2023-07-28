@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="cubesat" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  
+  <!-- <xacro:property name="debug" default="false"/> -->
+  <xacro:arg name="namespace" default="cubesat"/>
+
+  <xacro:macro name="cubesat_base" params="namespace">
+    <!-- "Dummy base link to eliminate root link inertia warning -->
+    <link name="$(arg namespace)/base_link"/>
+
+    <!-- Start of main robot body -->
+    <link name="$(arg namespace)/cubesat_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="10.0"/>
+        <inertia
+          ixx="10.0" ixy="0.0" ixz="0.0"
+          iyy="10.0" iyz="0.0"
+          izz="10.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="1.570796326794 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.570796326794 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Connect dummy link to main link -->
+    <joint name="$(arg namespace)/cubesat_base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="$(arg namespace)/base_link"/>
+      <child link="$(arg namespace)/cubesat_link"/>
+    </joint>
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      </plugin>
+    </gazebo>
+
+    <xacro:arg name="inertial_reference_frame" default="world"/>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
+    <xacro:reaction_wheel_macro namespace="$(arg namespace)" wheel_id="0">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:reaction_wheel_macro>
+
+  </xacro:macro>
+</robot>

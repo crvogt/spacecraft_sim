@@ -9,7 +9,8 @@
   <xacro:include filename="$(find polysat_description)/urdf/polysat_base.xacro"/>
   <xacro:polysat_base namespace="$(arg namespace)"/>
 
-  <!--xacro:include filename="$(find polysat_description)/urdf/polysat_sensors.xacro"/-->
+  <xacro:include filename="$(find polysat_description)/urdf/polysat_sensors.xacro"/>
+  <xacro:add_sensors namespace="$(arg namespace)" inertial_reference_frame="$(arg inertial_reference_frame)"/>
 
   <!-- oberon7 -->
   <xacro:include filename="$(find oberon7_description)/urdf/oberon7.urdf.xacro"/>

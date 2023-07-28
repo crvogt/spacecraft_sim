@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="reaction_wheel_macro" params="namespace wheel_id *origin">
+    <link name="${namespace}/wheel_${wheel_id}_link">
+      <inertial>
+        <mass value="10"/> 
+        <inertia ixx="1" ixy="0.0" ixz="0.0"
+                 iyy="1" iyz="0.0"
+                 izz="1"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <cylinder length="0.0000001" radius="0.0000001"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder length="0.0000001" radius="0.0000001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${namespace}/wheel_${wheel_id}_joint" type="revolute">
+      <xacro:insert_block name="origin"/>
+      <parent link="${namespace}/base_link"/>
+      <child link="${namespace}/wheel_${wheel_id}_link"/>
+      <limit effort="0" lower="0" upper="0" velocity="0"/>
+    </joint>
+
+    <gazebo>
+      <plugin name="${namespace}_${wheel_id}_reaction_wheel_model" filename="libsc_reaction_wheel_plugin.so">
+        <reaction_wheel>
+          <linkName>${namespace}/base_link</linkName>
+          <jointName>${namespace}/wheel_${wheel_id}_joint</jointName>
+          <cmdTopic>${namespace}/wheels/wheel_${wheel_id}</cmdTopic>
+        </reaction_wheel>
+      </plugin>
+    </gazebo>
+
+    <gazebo reference="${namespace}/wheel_${wheel_id}_link">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>
