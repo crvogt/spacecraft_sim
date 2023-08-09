@@ -12,6 +12,7 @@
     </include>
     <include>
       <uri>model://granite_table</uri>
+      <static>1</static>
     </include>
 
     <!-- Focus camera on tall pendulum -->
