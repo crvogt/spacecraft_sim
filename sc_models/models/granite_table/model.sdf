@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<sdf version ='1.6'>
+  <model name ='granite_table'>
+
+    <link name="table_link">
+      <inertial name="table_inertial">
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>75</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>19</iyy>
+          <iyz>0</iyz>
+          <izz>75</izz>
+        </inertia>
+        <mass value="50"/>
+      </inertial>
+      <visual name ='table_visual'>
+        <pose>0 0 0 0 0 1.5707963267948966</pose>
+        <geometry>
+          <mesh>
+            <uri>model://granite_table/meshes/granite_table.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name ='table_collision'>
+        <pose>0 0 0 0 0 1.5707963267948966</pose>
+        <geometry>
+          <mesh>
+            <uri>model://granite_table/meshes/granite_table.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+  </model>
+</sdf>
