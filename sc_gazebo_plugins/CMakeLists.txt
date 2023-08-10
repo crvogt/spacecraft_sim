@@ -166,6 +166,19 @@ install(TARGETS sc_reaction_wheel_plugin
   RUNTIME DESTINATION bin
 )
 
+add_library(sc_torsional_spring_joint_plugin
+  src/sc_torsional_spring_joint_plugin.cc
+)
+target_link_libraries(sc_torsional_spring_joint_plugin
+  ${catkin_LIBRARIES}
+  ${GAZEBO_LIBRARIES}
+)
+install(TARGETS sc_torsional_spring_joint_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 set(XACRO_INORDER)
 if(DEFINED ENV{ROS_DISTRO})
   if($ENV{ROS_DISTRO} STREQUAL "kinetic")
