@@ -4,7 +4,7 @@
   <xacro:macro name="reaction_wheel_macro" params="namespace wheel_id *origin">
     <link name="${namespace}/wheel_${wheel_id}_link">
       <inertial>
-        <mass value="10"/> 
+        <mass value="1"/> 
         <inertia ixx="1" ixy="0.0" ixz="0.0"
                  iyy="1" iyz="0.0"
                  izz="1"/>

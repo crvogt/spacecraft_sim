@@ -30,6 +30,15 @@
             <uri>model://granite_table/meshes/granite_table.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+            <torsional>0</torsional>
+          </friction>
+        </surface>
       </collision>
     </link>
 

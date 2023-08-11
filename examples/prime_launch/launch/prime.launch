@@ -2,18 +2,18 @@
 <launch>
   <arg name="gui" default="true"/>
   <arg name="paused" default="false"/>
-  <arg name="world_name" default="$(find sc_worlds)/worlds/basic_space.world"/>
-  <arg name="namespace" default="cubesat"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/granite_table.world"/>
+  <arg name="namespace" default="prime"/>
   <arg name="joy_id" default="0"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
-  <arg name="z" default="5"/>
+  <arg name="z" default="1.55"/>
   <arg name="roll" default="0"/>
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
-  <arg name="cubesat_xacro" default="$(find cubesat_description)/urdf/cubesat_robot.urdf.xacro"/>
+  <arg name="prime_xacro" default="$(find prime_description)/urdf/prime_robot.urdf.xacro"/>
 
   <!-- World details -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -26,20 +26,20 @@
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
 
-  <include file="$(find cubesat_description)/launch/upload_cubesat.launch"/>
-  <param name="robot_description" command="$(find xacro)/xacro $(arg cubesat_xacro)"/>
+  <include file="$(find prime_description)/launch/upload_prime.launch"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg prime_xacro)"/>
   
-  <node name="spawn_cubesat" pkg="gazebo_ros" type="spawn_model"
+  <node name="spawn_prime" pkg="gazebo_ros" type="spawn_model"
       respawn="false" output="screen"
       args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description"/>
 
   <!-- Start the state publisher --> 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
-    <remap from="robot_description" to="$(arg namespace)/cubesat"/>
+    <remap from="robot_description" to="$(arg namespace)/prime"/>
   </node>
 
   <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
-    <remap from="robot_description" to="$(arg namespace)/cubesat"/>
+    <remap from="robot_description" to="$(arg namespace)/prime"/>
   </node-->
 
 </launch>

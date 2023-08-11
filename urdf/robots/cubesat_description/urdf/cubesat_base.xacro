@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="cubesat" xmlns:xacro="https://www.ros.org/wiki/xacro">
   
-  <!-- <xacro:property name="debug" default="false"/> -->
   <xacro:arg name="namespace" default="cubesat"/>
 
   <xacro:macro name="cubesat_base" params="namespace">

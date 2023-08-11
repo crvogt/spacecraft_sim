@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot name="prime" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  
+  <xacro:arg name="namespace" default="prime"/>
+
+  <xacro:macro name="prime_base" params="namespace">
+    <!-- "Dummy base link to eliminate root link inertia warning -->
+    <link name="$(arg namespace)/base_link"/>
+
+    <!-- Start of main robot body -->
+    <link name="$(arg namespace)/prime_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="50.0"/>
+        <inertia
+          ixx="30.0" ixy="0.0" ixz="0.0"
+          iyy="30.0" iyz="0.0"
+          izz="20.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Connect dummy link to main link -->
+    <joint name="$(arg namespace)/prime_base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="$(arg namespace)/base_link"/>
+      <child link="$(arg namespace)/prime_link"/>
+    </joint>
+
+    <!-- Add air bearings -->
+    <xacro:include filename="$(find prime_description)/urdf/prime_air_bearing.xacro"/>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="0">
+      <origin xyz="0 ${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="1">
+      <origin xyz="${0.27/2-0.05/2} -${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="2">
+      <origin xyz="${-0.27/2+0.05/2} -${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing>
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      </plugin>
+    </gazebo>
+
+    <xacro:arg name="inertial_reference_frame" default="world"/>
+
+    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
+    <xacro:reaction_wheel_macro namespace="$(arg namespace)" wheel_id="0">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:reaction_wheel_macro>
+
+  </xacro:macro>
+</robot>
