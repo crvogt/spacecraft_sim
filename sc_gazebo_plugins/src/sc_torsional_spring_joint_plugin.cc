@@ -56,6 +56,7 @@ class ScTorsionalSpring : public ModelPlugin
   {
     double current_angle = this->tJoint->Position(0);
     this->tJoint->SetForce(0, this->kx*(this->setPoint - current_angle));
+    ROS_INFO_STREAM("current_angle " << current_angle << " force " << this->kx*(this->setPoint-current_angle));
   }
 };
 GZ_REGISTER_MODEL_PLUGIN(ScTorsionalSpring)
