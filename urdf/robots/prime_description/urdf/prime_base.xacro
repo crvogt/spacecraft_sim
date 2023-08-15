@@ -38,42 +38,49 @@
       <child link="$(arg namespace)/prime_link"/>
     </joint>
 
+    <!-- Connect base to world, fixed -->
+    <joint name="$(arg namespace)/world_fixed" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="world"/>
+      <child link="$(arg namespace)/base_link"/>
+    </joint>
+
     <!-- Add experimental spring and bar -->
     <link name="$(arg namespace)/mass_bar">
       <inertial>
-        <origin xyz="0 0 2" rpy="0 0 0"/>
-        <mass value="1.0"/>
+        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
+        <mass value="2.0"/>
         <inertia
-          ixx="2.0" ixy="0.0" ixz="0.0"
-          iyy="2.0" iyz="0.0"
-          izz="1.0"/>
+          ixx="0.5" ixy="0.0" ixz="0.0"
+          iyy="0.5" iyz="0.0"
+          izz="0.25"/>
       </inertial>
       <visual>
-        <origin xyz="0 0 2" rpy="0 0 0"/>
+        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
         <geometry>
-          <box size="0.1 0.1 1.0"/>
+          <box size="0.05 0.05 0.5"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 2" rpy="0 0 0"/>
+        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
         <geometry>
-          <box size="0.1 0.1 1.0"/>
+          <box size="0.05 0.05 0.5"/>
         </geometry>
       </collision>
     </link>
 
     <joint name="$(arg namespace)/torsion_spring_joint" type="revolute">
-      <origin xyz="0 0 1.0" rpy="0 0 0"/>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <parent link="$(arg namespace)/prime_link"/>
       <child link="$(arg namespace)/mass_bar"/>
       <axis xyz="0 0 1"/>
-      <limit effort="0" lower="-1.57" upper="1.57" velocity="0.0"/>
+      <limit effort="100000" lower="-1.57" upper="1.57" velocity="0.0"/>
     </joint>
 
     <gazebo>
       <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
         <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
-        <kx>0.0</kx>
+        <kx>0.5</kx>
         <set_point>0.0</set_point>
       </plugin>
     </gazebo>

@@ -2,9 +2,11 @@
 #include <gazebo/physics/physics.hh>
 #include <gazebo/common/common.hh>
 #include <ros/ros.h>
+#include <std_msgs/Float32.h>
+#include <sc_gazebo_plugins/ROSBaseModelPlugin.hh>
 
 using namespace gazebo;
-class ScTorsionalSpring : public ModelPlugin
+class ScTorsionalSpring : public ROSBaseModelPlugin
 {
   public: ScTorsionalSpring() = default;
   public: virtual ~ScTorsionalSpring() = default;
@@ -24,6 +26,7 @@ class ScTorsionalSpring : public ModelPlugin
     ROS_DEBUG("Loading sc_torsional_spring_plugin");
     this->model = _model;
     this->world = this->model->GetWorld();
+    this->rosSensorOutputPub = this->rosNode->advertise<std_msgs::Float32>(this->sensorOutputTopic, 1);
 
     //Get parameters from SDF
     if(_model->GetJointCount() == 0)
@@ -56,7 +59,7 @@ class ScTorsionalSpring : public ModelPlugin
   {
     double current_angle = this->tJoint->Position(0);
     this->tJoint->SetForce(0, this->kx*(this->setPoint - current_angle));
-    ROS_INFO_STREAM("current_angle " << current_angle << " force " << this->kx*(this->setPoint-current_angle));
+    ROS_INFO_STREAM("angledif " << (this->setPoint - current_angle) << " force " << this->kx*(this->setPoint-current_angle));
   }
 };
 GZ_REGISTER_MODEL_PLUGIN(ScTorsionalSpring)
