@@ -7,6 +7,7 @@
   <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thrusters.xacro"/>
   <xacro:include filename="$(find polysat_description)/urdf/polysat_thruster_visuals.xacro"/>
+  <xacro:include filename="$(find sc_gazebo_plugins)/urdf/camera.xacro"/>
 
   <xacro:macro name="polysat_base" params="namespace">
     <!-- "Dummy base link to eliminate root link inertia warning -->
@@ -42,6 +43,22 @@
       <parent link="$(arg namespace)/base_link"/>
       <child link="$(arg namespace)/polysat_link"/>
     </joint>
+
+    <!-- Add camera -->
+    <xacro:regular_camera_plugin_macro namespace="$(arg namespace)" 
+      suffix="1" 
+      parent_link="$(arg namespace)/polysat_link" 
+      topic="camera_topic" 
+      mass="0.01"
+      update_rate="30" 
+      hfov="1.5125"
+      width="640"
+      height="480"
+      stddev="0.02"
+      scale="1.0">
+      <origin xyz="0 0 2" rpy="0 0 0"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.000001"/>
+    </xacro:regular_camera_plugin_macro>
 
     <!-- Add thruster visuals -->
     <!-- Top -->
