@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>prime_description</name>
+  <version>3.1.1</version>
+  <description>The prime_description package</description>
+  <author email="crvogt26@gmail.com">Carson Vogt</author>
+  <maintainer email="crvogt26@gmail.com">Carson Vogt</maintainer>
+  <license>Apache2</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>gazebo_ros</depend>
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/.."/>
+  </export>
+</package>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="add_bearing" params="namespace bearing_id *origin">
+    <link name="${namespace}/bearing_${bearing_id}">
+      <xacro:box_inertial mass="0.0001">
+        <xacro:insert_block name="origin"/>
+      </xacro:box_inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find prime_description)/meshes/air_bearing.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find prime_description)/meshes/air_bearing.dae"/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+            </ode>
+            <torsional>0</torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name="${namespace}/bearing_${bearing_id}_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${namespace}/base_link"/>
+      <child link="${namespace}/bearing_${bearing_id}"/>
+    </joint>
+
+    <gazebo reference="${namespace}/bearing_${bearing_id}">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="box_inertial" params="mass *origin">
+    <inertial>
+      <mass value="${mass}"/>
+      <xacro:insert_block name="origin"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0"
+               izz="0.00001"/>
+    </inertial>
+  </xacro:macro>
+</robot>
+

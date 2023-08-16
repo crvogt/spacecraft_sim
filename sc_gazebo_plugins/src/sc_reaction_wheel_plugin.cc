@@ -205,7 +205,7 @@ void ScWheel::Update()
 
     // Apply torque mapping
     ignition::math::Vector3d wtorquev(0, 0, 0);
-    wtorquev.X() = this->ScaleTorqueCmd(this->wheels[i].currCmd,
+    wtorquev.Z() = this->ScaleTorqueCmd(this->wheels[i].currCmd,
                                         this->wheels[i].maxCmd,
                                         this->wheels[i].maxTorque);
 
