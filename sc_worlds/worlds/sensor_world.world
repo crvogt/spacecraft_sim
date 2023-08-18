@@ -36,6 +36,12 @@
       <cast_shadows>false</cast_shadows>
     </light>
 
+    <!-- Include models -->
+    <include>
+      <uri>model://grab_solar_panel</uri>
+      <pose>1.58 0 1.51 0 0 3.143.143.14</pose>
+    </include>
+
     <gui fullscreen="0">
       <camera name="user_camera">
         <pose frame=''>9.62 8.51 5.9 0 0.292 -2.36</pose>

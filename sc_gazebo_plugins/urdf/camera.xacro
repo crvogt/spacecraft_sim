@@ -85,7 +85,7 @@
           <attenuationB>0.0</attenuationB>
 
           <!-- required for ros depth cam -->
-          <imageTopicName>${topic}_image</imageTopicName>
+          <imageTopicName>image_${topic}</imageTopicName>
           <pointCloudTopicName>${topic}_cloud</pointCloudTopicName>
           <depthImageTopicName>${topic}_depth</depthImageTopicName>
           <depthImageCameraInfoTopicName>${topic}_depth_info</depthImageCameraInfoTopicName>
