@@ -13,9 +13,9 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="13.0"/>
         <inertia
-          ixx="30.0" ixy="0.0" ixz="0.0"
-          iyy="30.0" iyz="0.0"
-          izz="20.0"/>
+          ixx="0.15795" ixy="0.0" ixz="0.0"
+          iyy="0.15795" iyz="0.0"
+          izz="0.15795"/>
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -51,9 +51,9 @@
         <origin xyz="0 0.5 0.0" rpy="1.57 0 0"/>
         <mass value="0.5"/>
         <inertia
-          ixx="0.5" ixy="0.0" ixz="0.0"
-          iyy="0.5" iyz="0.0"
-          izz="0.25"/>
+          ixx="0.0416833" ixy="0.0" ixz="0.0"
+          iyy="0.0000333" iyz="0.0"
+          izz="0.0416833"/>
       </inertial>
       <visual>
         <origin xyz="0 0.5 0" rpy="1.57 0 0"/>
@@ -81,7 +81,7 @@
       <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
         <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
         <kx>0.11</kx>
-        <set_point>0.05</set_point>
+        <set_point>0.0</set_point>
       </plugin>
     </gazebo>
 
