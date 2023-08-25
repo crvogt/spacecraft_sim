@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+<sdf version ='1.6'>
+  <model name ='grab_solar_panel'>
+
+    <link name ='grab_solar_panel'>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>true</self_collide>
+
+      <visual name ='grab_solar_panel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://grab_solar_panel/meshes/grasp_panel.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name ='grab_solar_panel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://grab_solar_panel/meshes/grasp_panel.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <!--pose>-0.1 0 0 0 0 0</pose-->
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2</iyy>
+          <iyz>0</iyz>
+          <izz>0.5</izz>
+        </inertia>
+        <mass>0.5</mass>
+      </inertial>
+    </link>
+
+  </model>
+</sdf>
