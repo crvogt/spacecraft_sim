@@ -11,7 +11,7 @@
     <link name="$(arg namespace)/prime_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="50.0"/>
+        <mass value="13.0"/>
         <inertia
           ixx="30.0" ixy="0.0" ixz="0.0"
           iyy="30.0" iyz="0.0"
@@ -48,29 +48,29 @@
     <!-- Add experimental spring and bar -->
     <link name="$(arg namespace)/mass_bar">
       <inertial>
-        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
-        <mass value="2"/>
+        <origin xyz="0 0.5 0.0" rpy="1.57 0 0"/>
+        <mass value="0.5"/>
         <inertia
           ixx="0.5" ixy="0.0" ixz="0.0"
           iyy="0.5" iyz="0.0"
           izz="0.25"/>
       </inertial>
       <visual>
-        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
+        <origin xyz="0 0.5 0" rpy="1.57 0 0"/>
         <geometry>
-          <box size="0.05 0.05 0.5"/>
+          <box size="0.02 0.02 1.0"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0.45 0" rpy="1.57 0 0"/>
+        <origin xyz="0 0.5 0" rpy="1.57 0 0"/>
         <geometry>
-          <box size="0.05 0.05 0.5"/>
+          <box size="0.02 0.02 1.0"/>
         </geometry>
       </collision>
     </link>
 
     <joint name="$(arg namespace)/torsion_spring_joint" type="revolute">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0.135 0.025" rpy="0 0 0"/>
       <parent link="$(arg namespace)/prime_link"/>
       <child link="$(arg namespace)/mass_bar"/>
       <axis xyz="0 0 1"/>
@@ -80,8 +80,8 @@
     <gazebo>
       <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
         <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
-        <kx>0.1</kx>
-        <set_point>0.2</set_point>
+        <kx>0.11</kx>
+        <set_point>0.05</set_point>
       </plugin>
     </gazebo>
 
