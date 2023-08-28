@@ -101,7 +101,7 @@ void ScThrustVisualPlugin::Update()
   // TODO change thruster output to only ever be positive...
   else if(alpha < 0.0)
     alpha = 0.0;
-  alpha = 0.0;
+  //alpha = 0.0;
   double red = this->dataPtr->thrustColor.R();
   double blue = this->dataPtr->thrustColor.B();
   double green = this->dataPtr->thrustColor.G();
