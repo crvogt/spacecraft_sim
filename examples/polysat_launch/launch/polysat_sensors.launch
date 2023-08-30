@@ -60,4 +60,7 @@
   <node name="polysat_tf_broadcaster" pkg="sc_gazebo_plugins" type="sc_tf_broadcaster.py">
   </node>
 
+  <remap from="/polysat/camera1/camera_info" to="/polysat/camera_info"/>
+  <remap from="/polysat/camera1/image_image_rect" to="/polysat/image_rect"/>
+
 </launch>
