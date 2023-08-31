@@ -56,9 +56,10 @@
           izz="0.0416833"/>
       </inertial>
       <visual>
-        <origin xyz="0 0.5 0" rpy="1.57 0 0"/>
+        <origin xyz="0 0.5 0" rpy="-1.57 0 0"/>
         <geometry>
-          <box size="0.02 0.02 1.0"/>
+          <mesh filename="file://$(find sc_models)/models/grab_solar_panel/meshes/grasp_panel.dae" scale="1 1 0.715"/>
+          <!--box size="0.02 0.02 1.0"/-->
         </geometry>
       </visual>
       <collision>
