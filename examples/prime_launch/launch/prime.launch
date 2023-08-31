@@ -38,9 +38,9 @@
     <remap from="robot_description" to="$(arg namespace)/prime"/>
   </node>
 
-  <node name="position_plot" pkg = "rqt_plot" type="rqt_plot" args="/prime_dif/angle_dif"/>
+  <!--node name="position_plot" pkg = "rqt_plot" type="rqt_plot" args="/prime_dif/angle_dif"/-->
   <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
-    <remap from="robot_description" to="$(arg namespace)/prime"/>
+   <remap from="robot_description" to="$(arg namespace)/prime"/>
   </node-->
 
 </launch>

@@ -182,8 +182,10 @@ double ScWheel::ScaleTorqueCmd(const double _cmd, const double _maxCmd,
 {
   double val = 0.0;
   
-  val = _cmd / _maxCmd * _maxPos;
-  val = std::min(std::abs(val), _maxPos);
+  if(_cmd > _maxCmd)
+    val = _maxCmd;
+  else
+    val = _cmd; // _maxCmd * _maxPos;
 
   return val;
 }
@@ -209,7 +211,7 @@ void ScWheel::Update()
                                         this->wheels[i].maxCmd,
                                         this->wheels[i].maxTorque);
 
-   
+    ROS_INFO_STREAM("Torque: " << wtorquev.Z());
     // Apply torque for each wheel
     this->wheels[i].link->AddTorque(wtorquev);
   }

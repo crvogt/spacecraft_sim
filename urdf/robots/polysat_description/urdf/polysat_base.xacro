@@ -147,7 +147,7 @@
       </plugin>
     </gazebo>
 
-    <xacro:arg name="inertial_reference_frame" default="world"/>
+    <!--xacro:arg name="inertial_reference_frame" default="world"/-->
 
   </xacro:macro>
 </robot>
