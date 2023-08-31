@@ -22,7 +22,7 @@
       <xacro:no_collision/>
     </link>
 
-    <joint name="${namespace}/camer_joint" type="revolute">
+    <joint name="${namespace}/camera_joint" type="revolute">
       <xacro:insert_block name="origin"/>
       <parent link="${parent_link}"/>
       <child link="${namespace}/camera_link"/>
@@ -43,12 +43,12 @@
         <geometry>
           <cylinder length="0.000001" radius="0.000001"/>
         </geometry>
-        <origin xyz="0 0 0" rpy="0 ${0.5*pi} 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
       </collision>
     </link>
 
     <joint name="${namespace}/camera_optical_joint" type="revolute">
-      <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${namespace}/camera_link"/>
       <child link="${namespace}/camera_link_optical"/>
       <limit upper="0" lower="0" effort="0" velocity="0"/>
