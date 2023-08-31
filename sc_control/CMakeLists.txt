@@ -52,5 +52,6 @@ catkin_install_python(PROGRAMS
   scripts/position_command.py
   scripts/position_manager.py
   scripts/bimanual_simple_demo.py
+  scripts/apriltag_grasp.py
   scripts/move_group_python_interface_tutorial.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
