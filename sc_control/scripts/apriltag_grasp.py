@@ -370,7 +370,7 @@ class MoveGroupPythonInterface(object):
                     #counter = 0
                     #while counter < 10:
                     #rospy.sleep(2)
-                    print(self.panel_msg)
+                    print(self.panel_msg.detections[0].pose.pose.pose.position)
                     #counter = counter + 1
                     #rospy.sleep(1)
             except:

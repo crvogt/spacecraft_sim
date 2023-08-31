@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="gui" default="true"/>
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="world_name" default="$(find sc_worlds)/worlds/sensor_world.world"/>
   <arg name="namespace" default="polysat"/>
   <arg name="joy_id" default="0"/>
@@ -31,7 +31,8 @@
   
   <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
       respawn="false" output="screen"
-      args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description"/>
+    args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description
+          -J oberon7_r/azimuth -0.8"/>
 
     <!--<node pkg="tf2_ros" type="static_transform_publisher" name="world_ned_frame_publisher" args="0 0 0 1.570796326794 0 3.14159265358 world world_ned"/>-->
 

@@ -39,7 +39,7 @@
     <!-- Include models -->
     <include>
       <uri>model://grab_solar_panel</uri>
-      <pose>1.58 -0.1 1.51 0 0 3.143.143.14</pose>
+      <pose>1.0 -0.1 1.51 0 0 3.143.143.14</pose>
     </include>
 
     <gui fullscreen="0">
