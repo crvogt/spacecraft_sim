@@ -350,7 +350,8 @@ class MoveGroupPythonInterface(object):
         # Grasp the panel 
         while not rospy.is_shutdown():
             try:
-                if action_num == 4:
+                # Go to initial grasp pose
+                if action_num == 0:
                     target_quat = self.move_group_arm_r.get_current_pose().pose.orientation
                     target_pose = self.move_group_arm_r.get_current_pose().pose.position
 
@@ -358,14 +359,38 @@ class MoveGroupPythonInterface(object):
                     target_pose.y=-0.55
                     target_pose.z = -0.3
                     self.go_to_pose_goal_r(False, target_pose, target_quat)
-                    
-                elif action_num == 5:
+                    rospy.sleep(2)
+                # Open gripper
+                elif action_num == 1:
                     self.gripper_r_pose(0.4)
-                elif action_num == 6:
-                    counter = 0
-                    #self.gripper_r_pose(0.26)
-                elif action_num == 6:
+                    rospy.sleep(2)
+                # Get position of panel
+                elif action_num == 2:
                     print(self.panel_msg.detections[0].pose.pose.pose.position)
+                    rospy.sleep(2)
+                # Move to panel position
+                elif action_num == 3:
+                    target_quat = self.move_group_arm_r.get_current_pose().pose.orientation
+                    target_pose = self.move_group_arm_r.get_current_pose().pose.position
+
+                    # Need to convert from opencv coords to robot coords
+                    target_pose.z = -self.panel_msg.detections[0].pose.pose.pose.position.y                    
+                    print(target_pose.z)
+                    self.go_to_pose_goal_r(False, target_pose, target_quat)
+                    rospy.sleep(2)
+                # Close gripper
+                elif action_num == 4:
+                    self.gripper_r_pose(0.0)
+                    rospy.sleep(2)
+                # Move panel 
+                elif action_num == 5:
+                    target_quat = self.move_group_arm_r.get_current_pose().pose.orientation
+                    target_pose = self.move_group_arm_r.get_current_pose().pose.position
+
+                    target_pose.z = -0.3
+                    self.go_to_pose_goal_r(False, target_pose, target_quat)
+                    rospy.sleep(2)
+
             except:
                 print("Error ocurred")
 
@@ -378,9 +403,9 @@ def main():
         print("Setting up moveit commander")
         bimanual_demo = MoveGroupPythonInterface()
         # First four are left arm
-        for action_num in range(7):
-            print("\naction_num ")
-            print(action_num)
+        action_num = 1
+        while(action_num > 0):
+            input("Enter val: 0 - 6")
             bimanual_demo.run_node(action_num)
         
     except rospy.ROSInterruptException:
