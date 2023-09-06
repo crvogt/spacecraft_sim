@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="cubesat"/>
+  <arg name="debug" default="false"/>
+
+  <param name="/$(arg namespace)/cubesat" command="$(find xacro)/xacro '$(find cubesat_b_description)/urdf/cubesat_robot.urdf.xacro' debug:=$(arg debug) namespace:=$(arg namespace)"/>
+</launch>

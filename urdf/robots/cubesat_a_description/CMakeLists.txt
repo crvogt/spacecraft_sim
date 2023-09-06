@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.1)
-project(cubesat_description)
+project(cubesat_a_description)
 
 find_package(catkin REQUIRED)
 
