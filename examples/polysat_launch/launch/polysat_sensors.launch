@@ -29,10 +29,13 @@
   <include file="$(find polysat_description)/launch/upload_polysat.launch"/>
   <param name="robot_description" command="$(find xacro)/xacro $(arg polysat_xacro)"/>
   
-  <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
+  <!--node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
       respawn="false" output="screen"
     args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description
-          -J oberon7_r/azimuth -0.8"/>
+          -J oberon7_r/azimuth -0.8"/-->
+  <node name="spawn_polysat" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+    args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description"/>
 
     <!--<node pkg="tf2_ros" type="static_transform_publisher" name="world_ned_frame_publisher" args="0 0 0 1.570796326794 0 3.14159265358 world world_ned"/>-->
 
@@ -46,6 +49,8 @@
   </node>
 
   <node name="position_command" pkg="sc_control" type="position_command.py">
+  </node>
+  <node name="position_control" pkg="sc_control" type="position_control.py">
   </node>
   
   <!-- Load general controllers -->

@@ -353,26 +353,19 @@ class MoveGroupPythonInterface(object):
                 if action_num == 4:
                     target_quat = self.move_group_arm_r.get_current_pose().pose.orientation
                     target_pose = self.move_group_arm_r.get_current_pose().pose.position
-                    #target_quat.x = 0.7070
-                    #target_quat.y = 0
-                    #target_quat.z = 0.0
-                    #target_quat.w = 0.7
-                    
-                    target_pose.x = 1.5 
-                    target_pose.y = -0.48
-                    target_pose.z = -0.0
+
+                    target_pose.x = 1.13
+                    target_pose.y=-0.55
+                    target_pose.z = -0.3
                     self.go_to_pose_goal_r(False, target_pose, target_quat)
+                    
                 elif action_num == 5:
-                    self.gripper_r_pose()
+                    self.gripper_r_pose(0.4)
                 elif action_num == 6:
-                    self.gripper_r_pose(0.26)
-                elif action_num == 0:
-                    #counter = 0
-                    #while counter < 10:
-                    #rospy.sleep(2)
+                    counter = 0
+                    #self.gripper_r_pose(0.26)
+                elif action_num == 6:
                     print(self.panel_msg.detections[0].pose.pose.pose.position)
-                    #counter = counter + 1
-                    #rospy.sleep(1)
             except:
                 print("Error ocurred")
 
@@ -385,7 +378,7 @@ def main():
         print("Setting up moveit commander")
         bimanual_demo = MoveGroupPythonInterface()
         # First four are left arm
-        for action_num in range(5):
+        for action_num in range(7):
             print("\naction_num ")
             print(action_num)
             bimanual_demo.run_node(action_num)
