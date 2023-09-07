@@ -44,10 +44,6 @@
     <remap from="robot_description" to="$(arg namespace)/polysat"/>
   </node>-->
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
-    <remap from="robot_description" to="$(arg namespace)/polysat"/>
-  </node>
-
   <node name="position_command" pkg="sc_control" type="position_command.py">
   </node>
   <node name="position_control" pkg="sc_control" type="position_control.py">
@@ -65,8 +61,4 @@
   <!--<include file="$(find sc_control)/launch/polysat_thrusterop.launch"/>-->
   <node name="polysat_tf_broadcaster" pkg="sc_gazebo_plugins" type="sc_tf_broadcaster.py">
   </node>
-
-  <remap from="/polysat/camera1/camera_info" to="/polysat/camera_info"/>
-  <remap from="/polysat/camera1/image_image_rect" to="/polysat/image_rect"/>
-
 </launch>
