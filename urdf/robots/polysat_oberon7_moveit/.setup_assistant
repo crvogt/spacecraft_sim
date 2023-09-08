@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/polysat.srdf
   CONFIG:
-    author_name: Carson Vogt
-    author_email: crvogt@nps.edu
-    generated_timestamp: 1657658397
+    author_name: Carson
+    author_email: crvogt26@gmail.com
+    generated_timestamp: 1694127733

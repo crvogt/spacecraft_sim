@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <launch>
 
   <!-- GDB Debug Option -->
@@ -91,6 +90,10 @@
     <param name="default_planning_pipeline" value="$(arg pipeline)" />
     <param name="capabilities" value="$(arg capabilities)" />
     <param name="disable_capabilities" value="$(arg disable_capabilities)" />
+
+    <!-- do not copy dynamics information from /joint_states to internal robot monitoring
+         default to false, because almost nothing in move_group relies on this information -->
+    <param name="monitor_dynamics" value="false" />
 
     <!-- Publish the planning scene of the physical robot so that rviz plugin can know actual robot -->
     <param name="planning_scene_monitor/publish_planning_scene" value="$(arg publish_monitored_planning_scene)" />

@@ -32,7 +32,7 @@ controller_list:
       - oberon7_r/finger_right_joint
       - oberon7_r/finger_tip_right_joint
 initial:  # Define initial robot poses per group
-  - group: arm_l
-    pose: tucked_l
-  - group: arm_r
-    pose: tucked_r
+#  - group: arm_l
+#    pose: home
+
+  []
