@@ -27,28 +27,10 @@
         <link name="oberon7_r/finger_right"/>
         <link name="oberon7_r/finger_tip_right"/>
     </group>
-    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="tucked_l" group="arm_l">
-        <joint name="oberon7_l/azimuth" value="-0.0521"/>
-        <joint name="oberon7_l/elbow" value="0.264"/>
-        <joint name="oberon7_l/pitch" value="0"/>
-        <joint name="oberon7_l/roll" value="-0.013"/>
-        <joint name="oberon7_l/shoulder" value="-0.8591"/>
-        <joint name="oberon7_l/wrist" value="0"/>
-    </group_state>
-    <group_state name="tucked_r" group="arm_r">
-        <joint name="oberon7_r/azimuth" value="0.1599"/>
-        <joint name="oberon7_r/elbow" value="0.3479"/>
-        <joint name="oberon7_r/pitch" value="0.512"/>
-        <joint name="oberon7_r/roll" value="0"/>
-        <joint name="oberon7_r/shoulder" value="-0.7396"/>
-        <joint name="oberon7_r/wrist" value="-1.3017"/>
-    </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="oberon7_l/base" link2="oberon7_l/elbow_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_l/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_l/shoulder_link" reason="Adjacent"/>
-    <disable_collisions link1="oberon7_l/base" link2="oberon7_l/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/base" reason="Adjacent"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/elbow_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/end_effector" reason="Never"/>
@@ -60,6 +42,9 @@
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/base" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/base" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/base" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/base" link2="polysat/lidar_sensor_link" reason="Adjacent"/>
     <disable_collisions link1="oberon7_l/base" link2="polysat/polysat_link" reason="Adjacent"/>
     <disable_collisions link1="oberon7_l/base" link2="polysat/thrust_plume_0_visual" reason="Adjacent"/>
     <disable_collisions link1="oberon7_l/base" link2="polysat/thrust_plume_10_visual" reason="Adjacent"/>
@@ -123,6 +108,9 @@
     <disable_collisions link1="oberon7_l/elbow_link" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/elbow_link" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/elbow_link" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/polysat_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/elbow_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
@@ -177,16 +165,20 @@
     <disable_collisions link1="oberon7_l/end_effector" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="oberon7_r/upper_arm" reason="Never"/>
-    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_10_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/lidar_sensor_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_13_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_1_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_2_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_3_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_4_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_5_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_7_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_l/end_effector" link2="polysat/thruster_0_visual" reason="Never"/>
@@ -219,10 +211,12 @@
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_l/wrist_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/base" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/elbow_link" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/finger_right" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_left" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_left" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_left" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_left" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -269,9 +263,12 @@
     <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/base" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/elbow_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/finger_right" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/forearm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/finger_tip_right" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_right" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_right" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_right" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_right" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -317,9 +314,14 @@
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_l/wrist_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/base" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/elbow_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/finger_left" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/finger_tip_left" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_left" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -363,12 +365,12 @@
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_l/wrist_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/base" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/elbow_link" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/end_effector" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/finger_left" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/finger_tip_left" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/forearm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/finger_right" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -384,7 +386,6 @@
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thrust_plume_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thruster_0" reason="Never"/>
-    <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thruster_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thruster_1" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thruster_10" reason="Never"/>
     <disable_collisions link1="oberon7_l/finger_tip_right" link2="polysat/thruster_10_visual" reason="Never"/>
@@ -416,10 +417,15 @@
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/end_effector" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/finger_left" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/finger_right" reason="Never"/>
+    <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/finger_tip_left" reason="Never"/>
+    <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/finger_tip_right" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/forearm" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/forearm" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/forearm" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/forearm" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -473,9 +479,11 @@
     <disable_collisions link1="oberon7_l/shoulder_link" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/polysat_link" reason="Default"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_13_visual" reason="Never"/>
@@ -486,6 +494,7 @@
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_5_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_7_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_l/shoulder_link" link2="polysat/thruster_0_visual" reason="Never"/>
@@ -526,9 +535,11 @@
     <disable_collisions link1="oberon7_l/upper_arm" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/polysat_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_0_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_13_visual" reason="Never"/>
@@ -539,6 +550,7 @@
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_5_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_7_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_l/upper_arm" link2="polysat/thruster_0_visual" reason="Never"/>
@@ -572,13 +584,16 @@
     <disable_collisions link1="oberon7_l/wrist_link" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_13_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_1_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_2_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_3_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_4_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_5_visual" reason="Never"/>
     <disable_collisions link1="oberon7_l/wrist_link" link2="polysat/thrust_plume_6_visual" reason="Never"/>
@@ -614,6 +629,9 @@
     <disable_collisions link1="oberon7_r/base" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_r/base" link2="oberon7_r/shoulder_link" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/base" link2="oberon7_r/upper_arm" reason="Never"/>
+    <disable_collisions link1="oberon7_r/base" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/base" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/base" link2="polysat/lidar_sensor_link" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/base" link2="polysat/polysat_link" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/base" link2="polysat/thrust_plume_0_visual" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/base" link2="polysat/thrust_plume_10_visual" reason="Adjacent"/>
@@ -666,6 +684,9 @@
     <disable_collisions link1="oberon7_r/elbow_link" link2="oberon7_r/shoulder_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/elbow_link" link2="oberon7_r/upper_arm" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/elbow_link" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/polysat_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/elbow_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
@@ -715,9 +736,11 @@
     <disable_collisions link1="oberon7_r/end_effector" link2="oberon7_r/finger_tip_right" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="oberon7_r/wrist_link" reason="Adjacent"/>
+    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_10_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_13_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_1_visual" reason="Never"/>
@@ -728,9 +751,9 @@
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_7_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_8_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_0_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_1" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_10" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/end_effector" link2="polysat/thruster_11" reason="Never"/>
@@ -758,6 +781,9 @@
     <disable_collisions link1="oberon7_r/finger_left" link2="oberon7_r/finger_tip_right" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_left" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_left" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_left" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_left" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_left" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_left" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_left" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_left" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -801,6 +827,9 @@
     <disable_collisions link1="oberon7_r/finger_right" link2="oberon7_r/finger_tip_left" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_right" link2="oberon7_r/finger_tip_right" reason="Adjacent"/>
     <disable_collisions link1="oberon7_r/finger_right" link2="oberon7_r/forearm" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_right" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_right" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_right" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_right" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_right" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_right" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -844,6 +873,9 @@
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="oberon7_r/finger_tip_right" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -886,6 +918,9 @@
     <disable_collisions link1="oberon7_r/finger_tip_left" link2="polysat/thruster_9" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="oberon7_r/forearm" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="oberon7_r/wrist_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/thrust_plume_10_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/thrust_plume_11_visual" reason="Never"/>
@@ -928,9 +963,11 @@
     <disable_collisions link1="oberon7_r/finger_tip_right" link2="polysat/thruster_9" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="oberon7_r/upper_arm" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="oberon7_r/wrist_link" reason="Adjacent"/>
+    <disable_collisions link1="oberon7_r/forearm" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/forearm" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/forearm" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_10_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_13_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_1_visual" reason="Never"/>
@@ -941,6 +978,7 @@
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_7_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_8_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_r/forearm" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thruster_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thruster_1" reason="Never"/>
@@ -969,6 +1007,9 @@
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thruster_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/forearm" link2="polysat/thruster_9" reason="Never"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="oberon7_r/upper_arm" reason="Adjacent"/>
+    <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/polysat_link" reason="Default"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
@@ -1012,6 +1053,9 @@
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/thruster_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/thruster_9" reason="Never"/>
     <disable_collisions link1="oberon7_r/shoulder_link" link2="polysat/thruster_9_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/polysat_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/thrust_plume_10_visual" reason="Never"/>
@@ -1054,9 +1098,11 @@
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/thruster_8" reason="Never"/>
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/thruster_8_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/upper_arm" link2="polysat/thruster_9" reason="Never"/>
+    <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/camera_link" reason="Never"/>
+    <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/camera_link_optical" reason="Never"/>
+    <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/lidar_sensor_link" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
-    <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_11_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_12_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_13_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_1_visual" reason="Never"/>
@@ -1067,6 +1113,7 @@
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_6_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_7_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_8_visual" reason="Never"/>
+    <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thrust_plume_9_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_0" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_0_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_1" reason="Never"/>
@@ -1092,6 +1139,138 @@
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_7_visual" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_8" reason="Never"/>
     <disable_collisions link1="oberon7_r/wrist_link" link2="polysat/thruster_8_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/camera_link_optical" reason="Adjacent"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/lidar_sensor_link" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/polysat_link" reason="Adjacent"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_0_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_10_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_11_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_12_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_13_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_1_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_2_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_3_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_4_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_5_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_6_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_7_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_8_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thrust_plume_9_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_0" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_0_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_1" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_10" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_10_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_11" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_11_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_12" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_12_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_13" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_13_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_1_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_2" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_2_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_3" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_3_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_4" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_4_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_5" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_5_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_6" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_6_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_7" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_7_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_8" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_8_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_9" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link" link2="polysat/thruster_9_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/lidar_sensor_link" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/polysat_link" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_0_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_10_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_11_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_12_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_13_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_1_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_2_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_3_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_4_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_5_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_6_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_7_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_8_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thrust_plume_9_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_0" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_0_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_1" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_10" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_10_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_11" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_11_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_12" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_12_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_13" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_13_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_1_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_2" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_2_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_3" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_3_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_4" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_4_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_5" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_5_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_6" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_6_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_7" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_7_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_8" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_8_visual" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_9" reason="Never"/>
+    <disable_collisions link1="polysat/camera_link_optical" link2="polysat/thruster_9_visual" reason="Never"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/polysat_link" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_0_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_10_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_11_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_12_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_13_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_1_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_2_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_3_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_4_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_5_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_6_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_7_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_8_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thrust_plume_9_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_0" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_0_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_1" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_10" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_10_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_11" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_11_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_12" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_12_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_13" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_13_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_1_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_2" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_2_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_3" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_3_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_4" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_4_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_5" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_5_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_6" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_6_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_7" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_7_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_8" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_8_visual" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_9" reason="Adjacent"/>
+    <disable_collisions link1="polysat/lidar_sensor_link" link2="polysat/thruster_9_visual" reason="Adjacent"/>
     <disable_collisions link1="polysat/polysat_link" link2="polysat/thrust_plume_0_visual" reason="Adjacent"/>
     <disable_collisions link1="polysat/polysat_link" link2="polysat/thrust_plume_10_visual" reason="Adjacent"/>
     <disable_collisions link1="polysat/polysat_link" link2="polysat/thrust_plume_11_visual" reason="Adjacent"/>
