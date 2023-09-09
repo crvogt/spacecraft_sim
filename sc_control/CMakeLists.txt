@@ -53,4 +53,5 @@ catkin_install_python(PROGRAMS
   scripts/position_manager.py
   scripts/bimanual_simple_demo.py
   scripts/move_group_python_interface_tutorial.py
+  scripts/torque_input.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
