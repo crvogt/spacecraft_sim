@@ -52,7 +52,7 @@
         <mass value="0.5"/>
         <inertia
           ixx="0.0416833" ixy="0.0" ixz="0.0"
-          iyy="0.0000333" iyz="0.0"
+          iyy="0.0400333" iyz="0.0"
           izz="0.0416833"/>
       </inertial>
       <visual>

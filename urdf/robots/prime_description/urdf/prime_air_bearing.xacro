@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:macro name="add_bearing" params="namespace bearing_id *origin">
     <link name="${namespace}/bearing_${bearing_id}">
-      <xacro:box_inertial mass="0.0001">
+      <xacro:box_inertial mass="0.000001">
         <xacro:insert_block name="origin"/>
       </xacro:box_inertial>
       <visual>
@@ -44,9 +44,9 @@
     <inertial>
       <mass value="${mass}"/>
       <xacro:insert_block name="origin"/>
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0"
+               iyy="0.000001" iyz="0.0"
+               izz="0.000001"/>
     </inertial>
   </xacro:macro>
 </robot>
