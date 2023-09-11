@@ -380,7 +380,7 @@ class MoveGroupPythonInterface(object):
                     rospy.sleep(2)
                 # Close gripper
                 elif action_num == 4:
-                    self.gripper_r_pose(0.0)
+                    self.gripper_r_pose(0.05)
                     rospy.sleep(2)
                 # Move panel 
                 elif action_num == 5:
@@ -404,8 +404,8 @@ def main():
         bimanual_demo = MoveGroupPythonInterface()
         # First four are left arm
         action_num = 1
-        while(action_num > 0):
-            input("Enter val: 0 - 6")
+        while(action_num >= 0):
+            action_num = int(input("Enter val: 0 - 6 "))
             bimanual_demo.run_node(action_num)
         
     except rospy.ROSInterruptException:
