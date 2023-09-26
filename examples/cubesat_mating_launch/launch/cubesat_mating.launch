@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="world_name" default="$(find sc_worlds)/worlds/basic_space.world"/>
+  <arg name="namespace" default="cubesat"/>
+  <arg name="joy_id" default="0"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="5"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+  <arg name="cubesat_xacro" default="$(find cubesat_description)/urdf/cubesat_robot.urdf.xacro"/>
+
+  <!-- World details -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+
+  <include file="$(find cubesat_description)/launch/upload_cubesat.launch"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg cubesat_xacro)"/>
+  
+  <node name="spawn_cubesat" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+      args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -model $(arg namespace) -param robot_description"/>
+
+  <!-- Start the state publisher --> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <remap from="robot_description" to="$(arg namespace)/cubesat"/>
+  </node>
+
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false">
+    <remap from="robot_description" to="$(arg namespace)/cubesat"/>
+  </node-->
+
+</launch>
