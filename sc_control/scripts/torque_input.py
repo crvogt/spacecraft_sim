@@ -22,7 +22,8 @@ class TorqueInputNode:
         self.torque_msg = Float32()
         self.pose_gt_sub = rospy.Subscriber("/%s/pose_gt"%(self.namespace), Odometry, self.pose_callback)
         self.torque_pub = rospy.Publisher('/%s/wheels/wheel_0'%(self.namespace), Float32, queue_size=1)
-        self.t_list = [15.0198, 15.8076, 16.598, 31.6153]
+        #self.t_list = [15.0198, 15.8076, 16.598, 31.6153]
+        self.t_list = [17.2093, 20.11859, 21.1105, 34.43167]
 
     def pose_callback(self, _msg):
         self.getPoseMsg = _msg

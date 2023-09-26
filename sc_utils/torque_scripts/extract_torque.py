@@ -13,6 +13,16 @@ if t > 16.598 and t <= 31.6153, torque = 0.005
 if t > 31.6153, torque = 0
 '''
 
+'''
+For TimeTorque_p2.txt
+
+if t <= 17.259037, torque = -0.005
+if t > 17.259037 and t <= 20.11859, torque = 0.005
+if t > 20.11859 and t <= 21.1105, torque = -0.005
+if t > 21.1105 and t <= 34.43167, torque = 0.005
+if t > 34.431672, torque = 0
+'''
+
 def findDeriv(time, values):
     prev_val = 0
     cur_val = 0
@@ -24,13 +34,16 @@ def findDeriv(time, values):
             prev_time = time[ii]
         else:
             deriv = (val - prev_val)/(time[ii] - prev_time)
+            if abs(deriv) > 0:
+                print("deriv {}, time {}, val {}".format(deriv, prev_time, prev_val))
             prev_time = time[ii]
             prev_val = val
             if abs(deriv) > 1:
-                print("time {}, val {}".format(prev_time, prev_val))
+                pass
+                # print("time {}, val {}".format(prev_time, prev_val))
 
 
-filename = "TimeTorque_p1.txt"
+filename = "TimeTorque_p2.txt"
 
 t = []
 torque = []
@@ -42,7 +55,9 @@ with open(filename, 'r') as t_file:
         t.append(float(current_line[0]))
         torque.append(float(current_line[1].strip()))
 
+print()
 findDeriv(t, torque)
+print()
 
 print("max torque {}, min torque {}".format(max(torque), min(torque)))
 print("final time {}".format(t[-1]))
