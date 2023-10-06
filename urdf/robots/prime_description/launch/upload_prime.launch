@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <arg name="namespace" default="prime"/>
-  <arg name="debug" default="false"/>
-
-  <param name="/$(arg namespace)/prime" command="$(find xacro)/xacro '$(find prime_description)/urdf/prime_robot.urdf.xacro' debug:=$(arg debug) namespace:=$(arg namespace)"/>
-</launch>

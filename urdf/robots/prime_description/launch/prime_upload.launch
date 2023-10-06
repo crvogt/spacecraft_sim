@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="limited" default="false"/>
+	<arg name="parent" default="world"/>    
+	<arg name="namespace" default="prime"/>
+	<arg name="xyzpos" default="0.0 0.0 2.0"/>
+
+	<param unless="$(arg limited)" name="robot_description" command="$(find xacro)/xacro '$(find prime_description)/urdf/prime_robot.urdf.xacro' namespace:=$(arg namespace) xyzpos:='$(arg xyzpos)' parent:=$(arg parent)"/>
+	
+	<param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro '$(find prime_description)/urdf/prime_robot.urdf.xacro' namespace:=$(arg namespace) xyzpos:='$(arg xyzpos)' parent:=$(arg parent)"/>
+</launch>

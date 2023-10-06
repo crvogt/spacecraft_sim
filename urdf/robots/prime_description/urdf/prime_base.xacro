@@ -78,6 +78,36 @@
       <limit effort="100000" lower="-1.57" upper="1.57" velocity="200" />
     </joint>
 
+    <!--link name="$(arg namespace)/direction_beam">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia
+          ixx="0.001" ixy="0.0" ixz="0.0"
+          iyy="0.001" iyz="0.0"
+          izz="0.001"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.01" length="1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.000001" length="0.00001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="$(arg namespace)/direction_beam_joint" type="revolute">
+      <origin xyz="0.135 0 0.025" rpy="0 1.57 0"/>
+      <parent link="$(arg namespace)/prime_link"/>
+      <child link="$(arg namespace)/direction_beam"/>
+      <limit effort="100000" lower="0" upper="0" velocity="200" />
+    </joint-->
+
     <gazebo>
       <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
         <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
