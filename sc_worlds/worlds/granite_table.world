@@ -7,16 +7,6 @@
     </include>
 
     <!-- Global light source -->
-    <!--include>
-      <uri>model://sun</uri>
-      <pose>20 0 1.55 0 0 0</pose>
-      <cast_shadows>true</cast_shadows>
-    </include-->
-    <!--light name="sun" type="point">
-      <cast_shadows>true</cast_shadows>
-      <pose>20 0 1.55 0 0 0</pose>
-      <direction>0 0 1</direction>
-    </light-->
     <light type="directional" name="sun1">
       <pose>50 0 1.5 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
@@ -24,6 +14,12 @@
       <direction>-1 0 0</direction>
       <cast_shadows>true</cast_shadows>
     </light>
+
+    <include>
+      <uri>model://solar_collector</uri>
+      <pose>-0.52 0.0 1.92</pose>
+      <static>1</static>
+    </include>
 
     <include>
       <uri>model://granite_table</uri>

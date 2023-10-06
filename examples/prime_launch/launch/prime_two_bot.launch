@@ -22,7 +22,7 @@
 		<include file="$(find prime_description)/launch/prime_multi.launch">
 			<arg name="parent" value="$(arg parent)"/>
 			<arg name="robot_name" value="robot1"/>
-      <arg name="x_val" value="0.5"/>
+      <arg name="x_val" value="1.3"/>
       <arg name="y_val" value="-1.0"/>
       <arg name="z_val" value="1.55"/>
       <arg name="namespace" value="prime_a"/>
@@ -34,7 +34,7 @@
 		<include file="$(find prime_description)/launch/prime_multi.launch">
 			<arg name="parent" value="$(arg parent)"/>
 			<arg name="robot_name" value="robot2"/>
-      <arg name="x_val" value="0.5"/>
+      <arg name="x_val" value="1.3"/>
       <arg name="y_val" value="1.0"/>
       <arg name="z_val" value="1.55"/>
       <arg name="namespace" value="prime_b"/>

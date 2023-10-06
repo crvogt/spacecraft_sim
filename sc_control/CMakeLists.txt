@@ -55,4 +55,5 @@ catkin_install_python(PROGRAMS
   scripts/apriltag_grasp.py
   scripts/move_group_python_interface_tutorial.py
   scripts/torque_input.py
+  scripts/multi_torque_input.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

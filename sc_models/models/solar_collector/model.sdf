@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version ='1.6'>
+  <model name ='solar_collector'>
+
+    <link name="collector_link">
+      <inertial name="collector_inertial">
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>75</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>19</iyy>
+          <iyz>0</iyz>
+          <izz>75</izz>
+        </inertia>
+        <mass value="50"/>
+      </inertial>
+      <visual name ='collector_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://solar_collector/meshes/collector.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name ='collector_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://solar_collector/meshes/collector.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+  </model>
+</sdf>
