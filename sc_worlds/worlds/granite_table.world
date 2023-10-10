@@ -17,7 +17,7 @@
 
     <include>
       <uri>model://solar_collector</uri>
-      <pose>-0.52 0.0 1.92</pose>
+      <pose>-0.52 0.0 1.55</pose>
       <static>1</static>
     </include>
 

@@ -56,8 +56,8 @@ class TorqueInputNode:
             self.torque_msg_b.data = -0.005
         elif te > self.t_list[1] and te <= self.t_list[2]:
             self.torque_msg_b.data = 0.005
-        elif te > self.t_list[2] and te <= self.t_list[3]:
-            self.torque_msg_b.data = -0.006
+        elif te > self.t_list[2] and te <= 37:
+            self.torque_msg_b.data = -0.0044
         else:
             self.torque_msg_b.data = 0.0
         
