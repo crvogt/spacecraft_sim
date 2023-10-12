@@ -18,19 +18,32 @@ def findDeriv(time, values):
     cur_val = 0
     prev_time = 0
     cur_time = 0
+    deriv_list = []
+    t_list = []
+
+    print()
+    
     for ii, val in enumerate(values):
         if ii == 0:
             prev_val = val
             prev_time = time[ii]
         else:
-            deriv = (val - prev_val)/(time[ii] - prev_time)
-            prev_time = time[ii]
-            prev_val = val
-            if abs(deriv) > 1:
-                print("time {}, val {}".format(prev_time, prev_val))
+            if(time[ii] != prev_time):
+                deriv = (val - prev_val)/(time[ii] - prev_time)
+                if abs(deriv) > 0:
+                    # print("{} {}".format(prev_time, prev_val))
+                    print("{:.10f},".format(prev_val), end="")
+                    deriv_list.append(prev_val)
+                    t_list.append(prev_time)
+                prev_time = time[ii]
+                prev_val = val
+    
+    print("\n",end="\n")
+
+    return t_list, deriv_list
 
 
-filename = "TimeTorque_p1.txt"
+filename = "../data/clouse_2023_torque_v_time.txt"
 
 t = []
 torque = []
@@ -38,18 +51,19 @@ torque = []
 with open(filename, 'r') as t_file:
     file_lines = t_file.readlines()
     for current_line in file_lines:
-        current_line = current_line.split("\t")
+        current_line = current_line.split(",")
         t.append(float(current_line[0]))
         torque.append(float(current_line[1].strip()))
 
-findDeriv(t, torque)
+ts_list, derivs_list = findDeriv(t, torque)
 
 print("max torque {}, min torque {}".format(max(torque), min(torque)))
 print("final time {}".format(t[-1]))
 
-
 plt.plot(t, torque)
+plt.scatter(ts_list, derivs_list)
 plt.xlabel("t (s)")
 plt.ylabel("torque (Nm)")
 plt.title("Torque v Time")
+plt.xlim([0, t[-1]])
 plt.show()
