@@ -32,7 +32,7 @@ def findDeriv(time, values):
                 deriv = (val - prev_val)/(time[ii] - prev_time)
                 if abs(deriv) > 0:
                     # print("{} {}".format(prev_time, prev_val))
-                    print("{:.10f},".format(prev_val), end="")
+                    print("{:.10f},".format(prev_time), end="")
                     deriv_list.append(prev_val)
                     t_list.append(prev_time)
                 prev_time = time[ii]
@@ -43,7 +43,7 @@ def findDeriv(time, values):
     return t_list, deriv_list
 
 
-filename = "../data/clouse_2023_torque_v_time.txt"
+filename = "../data/clouse_2023_torque_v_time_updated.txt"
 
 t = []
 torque = []
