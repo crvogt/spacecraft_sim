@@ -16,7 +16,9 @@
 */
 
 #include <gazebo/gazebo.hh>
-#include "sc_set_initial_velocity.hh"
+// Might just need this for the headers
+#include "sc_gazebo_plugins/sc_set_initial_velocity.hh"
+#include <ros/ros.h>
 //#include "ode_perfect_linear.hh"
 //#include "ode_perfect_angular.hh"
 //#include "ode_perfect_velocity.hh"
@@ -38,13 +40,14 @@ namespace gazebo
 
     public: void Update(const common::UpdateInfo &_info)
       {
-        if (update_num <= 200)
+        if (update_num >= 20000 && update_num < 20200)
         {
+          if(update_num == 20000){
+            ROS_INFO_STREAM("SET VELOCITY");
+          }
           // Link velocity instantaneously without applying forces
-          model->GetLink("white_link_0")->SetLinearVel({0, 1, 0});
-          model->GetLink("white_link_1")->SetLinearVel({0, 1, 0});
-          model->GetLink("white_link_1")->SetAngularVel({1, 0, 0});
-          model->GetLink("white_link_2")->SetAngularVel({1, 0, 0});
+          model->GetLink("prime/base_link")->SetAngularVel({0, 0, 1});
+          model->GetLink("prime/mass_bar")->SetAngularVel({0, 0, 1});
         }
 
         update_num++;

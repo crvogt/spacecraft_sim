@@ -8,7 +8,7 @@
 
 #ifndef GAZEBO_TUTORIALS_SET_VELOCITY_ODE_PERFECT_ANGULAR_HH_
 #define GAZEBO_TUTORIALS_SET_VELOCITY_ODE_PERFECT_ANGULAR_HH_
-
+/*
 using namespace gazebo;
 
 namespace gazebo
@@ -66,4 +66,5 @@ namespace gazebo
     private: physics::JointPtr joint;
   };
 }
+*/
 #endif

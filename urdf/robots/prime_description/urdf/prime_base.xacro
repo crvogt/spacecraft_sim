@@ -86,6 +86,12 @@
       </plugin>
     </gazebo>
 
+    <gazebo>
+      <plugin name="${namespace}_initial_velocity" filename="libsc_set_initial_velocity_plugin.so">
+      </plugin>
+    </gazebo>
+
+
     <!-- Add air bearings -->
     <xacro:include filename="$(find prime_description)/urdf/prime_air_bearing.xacro"/>
     <xacro:add_bearing namespace="${namespace}" bearing_id="0">

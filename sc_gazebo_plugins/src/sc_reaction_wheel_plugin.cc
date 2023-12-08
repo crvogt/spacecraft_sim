@@ -211,7 +211,7 @@ void ScWheel::Update()
                                         this->wheels[i].maxCmd,
                                         this->wheels[i].maxTorque);
 
-    ROS_INFO_STREAM("Torque: " << wtorquev.Z());
+    //ROS_INFO_STREAM("Torque: " << wtorquev.Z());
     // Apply torque for each wheel
     this->wheels[i].link->AddTorque(wtorquev);
   }

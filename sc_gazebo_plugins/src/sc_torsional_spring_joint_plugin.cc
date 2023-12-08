@@ -23,6 +23,7 @@ class ScTorsionalSpring : public ModelPlugin
   public: double kx;
   public: double setPoint;
   public: double currentAngle;
+  public: int iter_count;
   //public: std_msgs::Float32 currentAngle;
 
   public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
@@ -30,6 +31,7 @@ class ScTorsionalSpring : public ModelPlugin
     ROS_DEBUG("Loading sc_torsional_spring_plugin");
     this->model = _model;
     this->world = this->model->GetWorld();
+    this->iter_count = 0;
 
     //Get parameters from SDF
     if(_model->GetJointCount() == 0)
@@ -62,13 +64,23 @@ class ScTorsionalSpring : public ModelPlugin
 
   protected: virtual void Update()
   {
-    this->currentAngle = this->tJoint->Position(0);
-    double force = this->setPoint - this->currentAngle;
+    if(this->iter_count < 7000){
+        this->tJoint->SetPosition(0, 0.0, 1);
+        this->iter_count++;
+    }
+    else{
+        if(this->iter_count == 7000){
+            ROS_INFO_STREAM("UNLOCKED");
+            this->iter_count++;
+        }
+        this->currentAngle = this->tJoint->Position(0);
+        double force = this->setPoint - this->currentAngle;
 
-    this->tJoint->SetForce(0, this->kx*(this->setPoint - this->currentAngle));
-    this->angleVal.data = this->setPoint - this->currentAngle;
-    this->rosAnglePub.publish(this->angleVal);
-    // ROS_INFO_STREAM("angledif " << (this->setPoint - this->currentAngle) << " force " << this->kx*(this->setPoint-currentAngle));
+        this->tJoint->SetForce(0, this->kx*(this->setPoint - this->currentAngle));
+        this->angleVal.data = this->setPoint - this->currentAngle;
+        this->rosAnglePub.publish(this->angleVal);
+        //ROS_INFO_STREAM("angledif " << (this->setPoint - this->currentAngle) << " force " << this->kx*(this->setPoint-currentAngle));
+    }
   }
 };
 GZ_REGISTER_MODEL_PLUGIN(ScTorsionalSpring)

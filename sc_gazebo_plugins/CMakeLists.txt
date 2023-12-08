@@ -179,6 +179,19 @@ install(TARGETS sc_torsional_spring_joint_plugin
   RUNTIME DESTINATION bin
 )
 
+add_library(sc_set_initial_velocity_plugin
+  src/sc_set_initial_velocity.cpp
+)
+target_link_libraries(sc_set_initial_velocity_plugin
+  ${catkin_LIBRARIES}
+  ${GAZEBO_LIBRARIES}
+)
+install(TARGETS sc_set_initial_velocity_plugin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 set(XACRO_INORDER)
 if(DEFINED ENV{ROS_DISTRO})
   if($ENV{ROS_DISTRO} STREQUAL "kinetic")
