@@ -82,7 +82,7 @@
       <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
         <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
         <kx>0.11</kx>
-        <set_point>0.0</set_point>
+        <set_point>0.00000</set_point>
       </plugin>
     </gazebo>
 

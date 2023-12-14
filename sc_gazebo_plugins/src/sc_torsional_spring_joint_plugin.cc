@@ -77,6 +77,7 @@ class ScTorsionalSpring : public ModelPlugin
         double force = this->setPoint - this->currentAngle;
 
         this->tJoint->SetForce(0, this->kx*(this->setPoint - this->currentAngle));
+        //this->tJoint->SetPosition(0, 0.0, 1);
         this->angleVal.data = this->setPoint - this->currentAngle;
         this->rosAnglePub.publish(this->angleVal);
         //ROS_INFO_STREAM("angledif " << (this->setPoint - this->currentAngle) << " force " << this->kx*(this->setPoint-currentAngle));
