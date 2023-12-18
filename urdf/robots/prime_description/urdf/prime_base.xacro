@@ -6,6 +6,16 @@
   <xacro:macro name="prime_base" params="namespace">
     <!-- "Dummy base link to eliminate root link inertia warning -->
     <link name="$(arg namespace)/base_link"/>
+    <!--link name="world"/-->
+
+    <!--joint name="$(arg namespace)/world_joint" type="continuous">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="world"/>
+      <child link="$(arg namespace)/base_link"/>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint-->
 
     <!-- Start of main robot body -->
     <link name="$(arg namespace)/prime_link">
@@ -35,6 +45,7 @@
     <joint name="$(arg namespace)/prime_base_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="$(arg namespace)/base_link"/>
+      <!--parent link="world"/-->
       <child link="$(arg namespace)/prime_link"/>
     </joint>
 
@@ -72,6 +83,7 @@
 
     <joint name="$(arg namespace)/torsion_spring_joint" type="revolute">
       <origin xyz="0 0.135 0.025" rpy="0 0 0"/>
+      <!--origin xyz="0 0.0 0.025" rpy="0 0 0"/-->
       <parent link="$(arg namespace)/prime_link"/>
       <child link="$(arg namespace)/mass_bar"/>
       <axis xyz="0 0 1"/>
@@ -86,6 +98,20 @@
       </plugin>
     </gazebo>
 
+    <!--gazebo>
+    <joint name="prime_riser" type="prismatic">
+      <parent>world</parent>
+      <child>prime/base_link</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>2</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+  </gazebo-->
+
     <gazebo>
       <plugin name="${namespace}_initial_velocity" filename="libsc_set_initial_velocity_plugin.so">
       </plugin>
@@ -93,7 +119,7 @@
 
 
     <!-- Add air bearings -->
-    <xacro:include filename="$(find prime_description)/urdf/prime_air_bearing.xacro"/>
+    <!--xacro:include filename="$(find prime_description)/urdf/prime_air_bearing.xacro"/>
     <xacro:add_bearing namespace="${namespace}" bearing_id="0">
       <origin xyz="0 ${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
     </xacro:add_bearing>
@@ -102,7 +128,7 @@
     </xacro:add_bearing>
     <xacro:add_bearing namespace="${namespace}" bearing_id="2">
       <origin xyz="${-0.27/2+0.05/2} -${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
-    </xacro:add_bearing>
+    </xacro:add_bearing-->
 
     <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -111,10 +137,10 @@
 
     <xacro:arg name="inertial_reference_frame" default="world"/>
 
-    <xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
+    <!--xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
     <xacro:reaction_wheel_macro namespace="$(arg namespace)" wheel_id="0">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:reaction_wheel_macro>
+    </xacro:reaction_wheel_macro-->
 
   </xacro:macro>
 </robot>

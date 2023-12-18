@@ -34,6 +34,7 @@
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/WrenchStamped.h>
+#include <std_msgs/Float32.h>
 
 
 namespace gazebo
@@ -49,6 +50,8 @@ namespace gazebo
         //this->angularVel = math::Vector3(0, 0, 0);
         this->updateConnection = event::Events::ConnectWorldUpdateBegin(
         std::bind(&SetLinkVelocityPlugin::Update, this, std::placeholders::_1));
+        rosNode.reset(new ros::NodeHandle("wheel_torque"));
+        torque_publisher = rosNode->advertise<std_msgs::Float32>("wheel_torque", 1);
 
         // Init torque_vec
         torque_applied.X() = 0.0;
@@ -72,18 +75,18 @@ namespace gazebo
           // Mass joint angle
           double theta_2 = 0.0;
           // Mass joint angular vel
-          double theta_2_dot = 0;
+          double theta_2_dot = 0.0;
 
           ignition::math::Vector3 theta_dot_vec(0.0, 0.0, theta_dot);
           ignition::math::Vector3 theta_2_dot_vec(0.0, 0.0, theta_2_dot);
           // Link velocity instantaneously without applying forces
-          //model->GetLink("prime/base_link")->SetAngularVel({0, 0, 1});
+          //model->GetLink("prime/prime_link")->SetAngularVel({0, 0, theta_dot});
           // Sets model angular vel, theta_dot
-          model->SetAngularVel(theta_dot_vec);
+          //model->SetAngularVel(theta_dot_vec);
           //Sets mass joint angle, theta_2
-          model->GetJoint("prime/torsion_spring_joint")->SetPosition(0, theta_2);
+          //model->GetJoint("prime/torsion_spring_joint")->SetPosition(0, theta_2);
           // Sets mass joint angular vel
-          model->GetLink("prime/mass_bar")->SetAngularVel(theta_2_dot_vec);
+          //model->GetLink("prime/mass_bar")->SetAngularVel(theta_2_dot_vec);
 
           
         }
@@ -100,14 +103,17 @@ namespace gazebo
               torque_applied.Z() = torque_vec[counter];
             }
             else if(curTime > time_vec.back()){
-              torque_applied.Z() = 0.0;
+              //torque_applied.Z() = 0.0;
             }           
             else{
               torque_applied.Z() = torque_vec[counter];
             }
+            wheel_torque_val.data = torque_applied.Z();
+            torque_publisher.publish(wheel_torque_val);
             // Apply torque to link
             ROS_INFO_STREAM("Cur time: " << curTime << " torque: " << torque_vec[counter]);
-            model->GetLink("prime/wheel_0_link")->AddTorque(torque_applied);
+            model->GetLink("prime/base_link")->AddTorque(torque_applied);
+
           }
         }
 
@@ -116,6 +122,7 @@ namespace gazebo
 
     public: void ReadTorqueTime(void)
       {
+        //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt");
         std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt");
         std::string out_line;
         char split_char = '\t';
@@ -145,6 +152,9 @@ namespace gazebo
     public: common::Time curTime; 
     public: common::Time startTime; 
     public: ignition::math::Vector3d torque_applied;
+    private: std::unique_ptr<ros::NodeHandle> rosNode;
+    protected: ros::Publisher torque_publisher;
+    private: std_msgs::Float32 wheel_torque_val;
   };
 
   GZ_REGISTER_MODEL_PLUGIN(SetLinkVelocityPlugin)

@@ -33,8 +33,8 @@ def findDeriv(time, values):
     return t_list, deriv_list
 
 
-filename = "../data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt"
-#filename = "../data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt"
+#filename = "../data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt"
+filename = "../data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt"
 
 t = []
 torque = []
