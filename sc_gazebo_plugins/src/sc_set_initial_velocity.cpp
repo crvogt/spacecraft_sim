@@ -71,11 +71,11 @@ namespace gazebo
           // Model angle, will not change
           double theta = 0;
           // Model angular vel
-          //double theta_dot = 0.0349066;
-          double theta_dot = 0.0;
+          double theta_dot = 0.0349066;
+          //double theta_dot = 0.0;
           // Mass joint angle
-          //double theta_2 = 0.0872665;
-          double theta_2 = 0.0;
+          double theta_2 = 0.0872665;
+          //double theta_2 = 0.0;
           // Mass joint angular vel
           //double theta_2_dot = 0.0;
           double theta_2_dot = 0.0349066;
@@ -104,14 +104,14 @@ namespace gazebo
 
             if(curTime > time_vec[counter]){
               counter++;
-              //torque_applied.Z() = torque_vec[counter];
+              torque_applied.Z() = torque_vec[counter];
             }
             else if(curTime > time_vec.back()){
               torque_applied.Z() = 0.0;
               ROS_INFO_STREAM("update num: " << update_num);
             }           
             else{
-              //torque_applied.Z() = torque_vec[counter];
+              torque_applied.Z() = torque_vec[counter];
             }
             wheel_torque_val.data = torque_applied.Z();
             torque_publisher.publish(wheel_torque_val);
