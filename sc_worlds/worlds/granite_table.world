@@ -10,10 +10,10 @@
     <include>
       <uri>model://sun</uri>
     </include>
-    <include>
+    <!--include>
       <uri>model://granite_table</uri>
       <static>1</static>
-    </include>
+    </include-->
 
     <!-- Focus camera on tall pendulum -->
     <gui fullscreen='0'>
@@ -24,6 +24,6 @@
       </camera>
     </gui>
 
-    <!--gravity>0 0 0</gravity-->
+    <gravity>0 0 0</gravity>
   </world>
 </sdf>

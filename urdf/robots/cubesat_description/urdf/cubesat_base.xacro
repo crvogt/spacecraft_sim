@@ -6,27 +6,29 @@
   <xacro:macro name="cubesat_base" params="namespace">
     <!-- "Dummy base link to eliminate root link inertia warning -->
     <link name="$(arg namespace)/base_link"/>
+    <xacro:property name="side" value="5"/>
+    <xacro:property name="mass" value="10"/>
 
     <!-- Start of main robot body -->
     <link name="$(arg namespace)/cubesat_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="10.0"/>
+        <mass value="${mass}"/>
         <inertia
-          ixx="10.0" ixy="0.0" ixz="0.0"
-          iyy="10.0" iyz="0.0"
-          izz="10.0"/>
+          ixx="${mass / 12.0 * (side*side + side*side)}" ixy="0.0" ixz="0.0"
+          iyy="${mass / 12.0 * (side*side + side*side)}" iyz="0.0"
+          izz="${mass / 12.0 * (side*side + side*side)}"/>
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="1.570796326794 0 0"/>
         <geometry>
-          <box size="0.1 0.1 0.1"/>
+          <box size="${side} ${side} ${side}"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="1.570796326794 0 0"/>
         <geometry>
-          <box size="0.1 0.1 0.1"/>
+          <box size="${side} ${side} ${side}"/>
         </geometry>
       </collision>
     </link>
