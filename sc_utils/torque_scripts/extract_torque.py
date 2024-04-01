@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+plt.rcParams.update({'font.size': 18})
 def findDeriv(time, values):
     prev_val = 0
     cur_val = 0
@@ -33,8 +34,10 @@ def findDeriv(time, values):
     return t_list, deriv_list
 
 
-filename = "../data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt"
+#filename = "../data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt"
 #filename = "../data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt"
+#filename = "../data/paper_files/Paper2_Ex1/ZVDD_ex1_RtR2.txt"
+filename = "../data/paper_files/Paper2_Ex2/ZVDD_ex1_nRtR.txt"
 
 t = []
 torque = []
@@ -57,4 +60,5 @@ plt.xlabel("t (s)")
 plt.ylabel("torque (Nm)")
 plt.title("Torque v Time")
 plt.xlim([0, t[-1]])
+plt.savefig("myImagePDF.png", format="png", bbox_inches="tight")
 plt.show()
