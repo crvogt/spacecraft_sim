@@ -68,29 +68,48 @@ namespace gazebo
             ReadTorqueTime();
           }
           
-          // Model angle, will not change
+          // P1E1
+           
           double theta = 0;
-          // Model angular vel
+          double theta_dot = 0.0;
+          double theta_2 = 0.0;
+          double theta_2_dot = 0.0;
+          
+
+          //P1E2
+          /*
+          double theta = 0;
           double theta_dot = 0.0349066;
-          //double theta_dot = 0.0;
-          // Mass joint angle
           double theta_2 = 0.0872665;
-          //double theta_2 = 0.0;
-          // Mass joint angular vel
-          //double theta_2_dot = 0.0;
           double theta_2_dot = 0.0349066;
+          */
+
+          //P2E1
+          /*
+          double theta = 0;
+          double theta_dot = 0.0;
+          double theta_2 = 0.0;
+          double theta_2_dot = 0.0;
+          */
+
+          //P2E2
+          /*
+          double theta = 0;
+          double theta_dot = 0.00872665;
+          double theta_2 = 0.261799;
+          double theta_2_dot =0.00872665;
+          */
 
           ignition::math::Vector3 theta_dot_vec(0.0, 0.0, theta_dot);
           ignition::math::Vector3 theta_2_dot_vec(0.0, 0.0, theta_2_dot);
+          
           // Link velocity instantaneously without applying forces
-          //model->GetLink("prime/prime_link")->SetAngularVel({0, 0, theta_dot});
           // Sets model angular vel, theta_dot
           model->SetAngularVel(theta_dot_vec);
           //Sets mass joint angle, theta_2
           model->GetJoint("prime/torsion_spring_joint")->SetPosition(0, theta_2);
           // Sets mass joint angular vel
           model->GetJoint("prime/torsion_spring_joint")->SetVelocity(0, theta_2_dot);
-          //model->GetLink("prime/mass_bar")->SetAngularVel(theta_2_dot_vec);
 
           
         }
@@ -127,10 +146,10 @@ namespace gazebo
 
     public: void ReadTorqueTime(void)
       {
-        //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque_cvmod.txt");
-        std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt");
-        //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt");
+        std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex1/myFile_ResttoRest_time_torque.txt");
+        //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper1_Ex2/myFile_nonRest_to_Rest_time_torque.txt");
         //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper2_Ex1/ZVDD_ex1_RtR2.txt");
+        //std::ifstream read_torque("/home/carson/sc_ws/src/spacecraft_sim/sc_utils/data/paper_files/Paper2_Ex2/ZVDD_ex1_nRtR.txt");
         std::string out_line;
         char split_char = '\t';
 

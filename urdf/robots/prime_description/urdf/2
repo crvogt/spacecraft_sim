@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<robot name="prime" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  
+  <xacro:arg name="namespace" default="prime"/>
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <!--xacro:property name="m1" value="13.0"/-->
+  <xacro:property name="m1" value="13"/>
+  <xacro:property name="m2" value="0.5"/>
+  <xacro:property name="l1" value="0.27"/>
+  <xacro:property name="l2" value="1.0"/>
+  <xacro:property name="l3" value="0.02"/>
+
+  <xacro:macro name="prime_base" params="namespace">
+    <!-- "Dummy base link to eliminate root link inertia warning -->
+    <link name="$(arg namespace)/base_link"/>
+
+    <!-- Start of main robot body -->
+    <link name="$(arg namespace)/prime_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${m1}"/>
+        <inertia
+          ixx="${m1 / 12 * (l1 * l1 + l1 * l1)}" ixy="0.0" ixz="0.0"
+          iyy="${m1 / 12 * (l1 * l1 + l1 * l1)}" iyz="0.0"
+          izz="${m1 / 12 * (l1 * l1 + l1 * l1)}"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/>
+          <!--box size="${l1} ${l1} ${l1}"/-->
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <!--mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/-->
+          <box size="0.027 0.027 0.027"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Connect dummy link to main link -->
+    <joint name="$(arg namespace)/prime_base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="$(arg namespace)/base_link"/>
+      <child link="$(arg namespace)/prime_link"/>
+    </joint>
+
+    <!-- Connect base to world, fixed >
+    <joint name="$(arg namespace)/world_fixed" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="world"/>
+      <child link="$(arg namespace)/base_link"/>
+    </joint-->
+
+    <!-- Add experimental spring and bar -->
+    <link name="$(arg namespace)/mass_bar">
+      <inertial>
+        <origin xyz="0 0.5 0.0" rpy="0 0 0"/>
+        <mass value="${m2}"/>
+        <inertia
+          ixx="${(1/12) * m2 * (l2*l2 + l3*l3)}" ixy="0.0" ixz="0.0"
+          iyy="${(1/6) * m2 * l3 * l3}" iyz="0.0"
+          izz="${(1/12) * m2 * (l2*l2 + l3*l3)}"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0.5 0.0" rpy="0 0 0"/>
+        <geometry>
+          <!--mesh filename="file://$(find sc_models)/models/grab_solar_panel/meshes/grasp_panel.dae" scale="1 1 0.715"/-->
+          <box size="0.02 1.0 0.02"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0.5 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.02 0.02 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="$(arg namespace)/torsion_spring_joint" type="revolute">
+      <origin xyz="0.0 0.135 0.0" rpy="0 0 0"/>
+      <parent link="$(arg namespace)/prime_link"/>
+      <child link="$(arg namespace)/mass_bar"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="100000" lower="-1.57" upper="1.57" velocity="2000" />
+    </joint>
+
+    <gazebo>
+      <plugin name="${namespace}_torsion_spring_joint" filename="libsc_torsional_spring_joint_plugin.so">
+        <torsion_joint>${namespace}/torsion_spring_joint</torsion_joint>
+        <kx>0.11</kx>
+        <set_point>0.0</set_point>
+      </plugin>
+    </gazebo>
+
+    <!--gazebo>
+    <joint name="prime_riser" type="prismatic">
+      <parent>world</parent>
+      <child>prime/base_link</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>2</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+  </gazebo-->
+
+    <gazebo>
+      <plugin name="${namespace}_initial_velocity" filename="libsc_set_initial_velocity_plugin.so">
+      </plugin>
+    </gazebo>
+
+
+    <!-- Add air bearings -->
+    <!--xacro:include filename="$(find prime_description)/urdf/prime_air_bearing.xacro"/>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="0">
+      <origin xyz="0 ${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="1">
+      <origin xyz="${0.27/2-0.05/2} -${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing>
+    <xacro:add_bearing namespace="${namespace}" bearing_id="2">
+      <origin xyz="${-0.27/2+0.05/2} -${0.27/2-0.05/2} ${-0.25-0.005}" rpy="0 0 0"/>
+    </xacro:add_bearing-->
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      </plugin>
+    </gazebo>
+
+    <xacro:arg name="inertial_reference_frame" default="world"/>
+
+    <!--xacro:include filename="$(find sc_gazebo_plugins)/urdf/reaction_wheel.xacro"/>
+    <xacro:reaction_wheel_macro namespace="$(arg namespace)" wheel_id="0">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:reaction_wheel_macro-->
+
+  </xacro:macro>
+</robot>

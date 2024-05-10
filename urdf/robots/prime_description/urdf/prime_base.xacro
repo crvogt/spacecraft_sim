@@ -13,26 +13,12 @@
   <xacro:macro name="prime_base" params="namespace">
     <!-- "Dummy base link to eliminate root link inertia warning -->
     <link name="$(arg namespace)/base_link"/>
-    <!--link name="world"/-->
-
-    <!--joint name="$(arg namespace)/world_joint" type="continuous">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <parent link="world"/>
-      <child link="$(arg namespace)/base_link"/>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint-->
 
     <!-- Start of main robot body -->
     <link name="$(arg namespace)/prime_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="${m1}"/>
-        <!--inertia
-          ixx="${(1/6) * m1 * l1 * l1}" ixy="0.0" ixz="0.0"
-          iyy="${(1/6) * m1 * l1 * l1}" iyz="0.0"
-          izz="${(1/6) * m1 * l1 * l1}"/-->
         <inertia
           ixx="${m1 / 12 * (l1 * l1 + l1 * l1)}" ixy="0.0" ixz="0.0"
           iyy="${m1 / 12 * (l1 * l1 + l1 * l1)}" iyz="0.0"
@@ -41,8 +27,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <!--mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/-->
-          <box size="${l1} ${l1} ${l1}"/>
+          <mesh filename="file://$(find prime_description)/meshes/prime_fss.dae"/>
+          <!--box size="${l1} ${l1} ${l1}"/-->
         </geometry>
       </visual>
       <collision>
@@ -79,16 +65,16 @@
           izz="${(1/12) * m2 * (l2*l2 + l3*l3)}"/>
       </inertial>
       <visual>
-        <origin xyz="0 0.5 0.0" rpy="0 0 0"/>
+        <origin xyz="0 0.5 0.0" rpy="${-PI/2} 0 0"/>
         <geometry>
-          <!--mesh filename="file://$(find sc_models)/models/grab_solar_panel/meshes/grasp_panel.dae" scale="1 1 0.715"/-->
-          <box size="0.02 1.0 0.02"/>
+          <mesh filename="file://$(find sc_models)/models/grab_solar_panel/meshes/grasp_panel.dae" scale="1 1 0.715"/>
+          <!--box size="0.02 1.0 0.02"/-->
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0.5 0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.02 0.02 1.0"/>
+          <box size="0.002 0.002 0.002"/>
         </geometry>
       </collision>
     </link>
