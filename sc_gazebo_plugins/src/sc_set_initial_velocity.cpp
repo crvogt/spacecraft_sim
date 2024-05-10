@@ -120,8 +120,11 @@ namespace gazebo
           else{
             // Add torque profile here
             curTime = this->world->SimTime() - startTime;
-
-            if(curTime > time_vec[counter]){
+            if(counter > (time_vec.size())){
+              torque_applied.Z() = 0.0;
+              ROS_INFO_STREAM("Counter greater than time_vec size");
+            }
+            else if(curTime > time_vec[counter]){
               counter++;
               torque_applied.Z() = torque_vec[counter];
             }
