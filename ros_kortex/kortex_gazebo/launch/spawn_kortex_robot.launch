@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 
     <!-- Arguments -->
@@ -134,8 +135,9 @@
         </node>
 
         <!-- Start robot state publisher -->
-        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-        respawn="false" output="screen" />
+        <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+          <param name="robot_description" value="/my_gen3/robot_description"/>
+        </node-->
 
         <!-- Start MoveIt main executable -->
         <!-- TODO Find cleaner way to do that and that will work with other arms -->
